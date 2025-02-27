@@ -1,0 +1,114 @@
+DATA_CONFIG:
+    _BASE_CONFIG_: /data1/turbo_data/wangruihao/code/4D_label/tracking/tools/cfgs/tk_dataset_cfgs/waymo_dataset_mogo_20241216.yaml
+
+
+MODEL:
+    NAME: DetZeroTracker
+
+    TRACKING:
+        NAME: TrackManager
+
+        FILTER:
+            NAME: KalmanFilter
+            X_DIM: 5
+            Z_DIM: 3
+            Q: [5, 15]
+            P: [50, 1000]
+            R: 0.1
+            DELTA_T: 0.1
+
+        TRACK_AGE:
+            BIRTH_AGE: 1
+            DEATH_AGE: -1
+
+        DATA_ASSOCIATION:
+            # CLASS_NAME: ['Vehicle', 'Pedestrian', 'Cyclist']
+            CLASS_NAME: ['car', 'bus', 'truck', 'bike', 'bicycle', 'person', 'motor', 'rider','NotUsed']
+
+            DISTINGUISH_CLASS: True
+            DISTANCE_METHOD: 'IoUBEV'
+            ASSIGNMENT_METHOD: 'GNN'
+            
+            STAGE:
+                NAME: 'two_stage'
+                # NAME: 'one_stage'
+                FIRST_STAGE:
+                    # DIST_THRESHOLD: 
+                    #     [0.2, 0.1, 0.1]
+                    DIST_THRESHOLD: 
+                        [0.2, 0.1, 0.1, 0.2, 0.2, 0.1, 0.1,0.1, 0.1] #第一次匹配iou阈值
+
+                SECOND_STAGE:
+                    SCORE_THRESHOLD:
+                        # [0.1, 0.1, 0.1]
+                        [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1,0.1,0.1]
+                    POINT_THRESHOLD:
+                        # [3, 1, 1]
+                        # [0, 0, 0]
+                        [0, 0, 0, 0, 0, 0, 0,0,0]
+                    DIST_THRESHOLD:
+                        # [0.3, 0.15, 0.15]
+                        [0.3, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15,0.15, 0.15] #第二次匹配阈值
+
+        TRACK_MERGE:
+            ENABLE: True
+            # CLASS_NAME: ['Vehicle', 'Pedestrian', 'Cyclist']
+            # CLASS_THRESHOLD: [0.5, 0.4, 0.4]
+            CLASS_NAME: ['car', 'bus', 'truck', 'bike', 'bicycle', 'person','motor','rider', 'NotUsed']
+            CLASS_THRESHOLD: [0.3, 0.3, 0.3, 0.35, 0.2, 0.25, 0.25, 0.25,0.25]
+            # CLASS_THRESHOLD: [0.5] #track merge阈值
+
+
+        REVERSE_TRACKING:
+            ENABLE: True
+
+    POST_PROCESS:
+        NAME: PostProcessor
+
+        CONFIG_LIST:
+            - NAME: empty_track_delete
+              LEAST_AGE: 10 #5
+              END_REMOVE: True
+
+            - NAME: velocity_optimize
+              HEADER_LENGTH: 0
+              FRAME_RATE: 10
+
+            - NAME: motion_classify
+
+            - NAME: static_drift_eliminate
+            
+            # - NAME: box_info_update
+            #   METHOD: 'max_score_box'
+            #   SCORE_THRESHOLD: { 
+            #     'car': 0.1, 
+            #     'bus': 0.1, 
+            #     'truck': 0.1, 
+            #     'bike': 0.1, 
+            #     'bicycle': 0.1, 
+            #     'person': 0.1, 
+            #     'motor': 0.1, 
+            #     'NotUsed': 0.1
+            #     }
+            # - NAME: box_size_update
+            #   METHOD: 'score_weigthed_box'
+            #   METHOD: 'max_score_box'
+            #   METHOD: 'largest_box'
+
+REFINING:
+    # IOU_THRESHOLDS: {
+    #     'Vehicle': 0.3, 
+    #     'Pedestrian': 0.1, 
+    #     'Cyclist': 0.1
+    # }
+    IOU_THRESHOLDS: {
+        'car': 0.3,
+        'bus': 0.3,
+        'person': 0.2,
+        'truck': 0.3,
+        'bike': 0.25,
+        'bicycle': 0.25,
+        'motor': 0.25,
+        'rider':0.25,
+        'NotUsed': 0.25,
+    }

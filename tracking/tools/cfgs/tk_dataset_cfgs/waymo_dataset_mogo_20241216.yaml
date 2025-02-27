@@ -1,0 +1,29 @@
+DATASET: 'WaymoTrackDataset'
+DATA_PATH: '/data1/turbo_data/wangruihao/code/4D_label/tracking/results' #save path
+PROCESSED_DATA_TAG: 'waymo_processed_data'
+
+CLASS_NAME: ['car', 'bus', 'truck', 'bike', 'bicycle', 'person', 'motor','rider','NotUsed']
+
+
+DATA_PROCESSOR:
+    - NAME: heading_process
+
+    # - NAME: low_confidence_box_filter
+
+    # - NAME: points_in_box
+
+    - NAME: overlap_box_filter
+      METHOD: max_score
+      CLASS_THRESHOLD: {
+          'car': 0.4,
+          'bus': 0.4,
+          'person': 0.4,
+          'truck': 0.4,
+          'bike': 0.25,
+          'bicycle': 0.25,
+          'motor': 0.25,
+          'rider': 0.25,
+          'NotUsed': 0.45,
+      }
+
+    - NAME: transform_to_global
