@@ -120,8 +120,7 @@ def plot_in_image(det_path, track_path):
         print("track_data_pkl.keys():{}".format(first_key))
         track_data = track_data_pkl[first_key]
     frame_id = 0
-    if len(det_data)!=len(track_data):
-        print("len(det_data):{};len(track_data):{}".format(len(det_data), len(track_data)))
+    print("len(det_data):{};len(track_data):{}".format(len(det_data), len(track_data)))
     
     
     for frame_idx in range(len(det_data)):
@@ -198,7 +197,7 @@ def plot_in_image(det_path, track_path):
                 plt.plot(
                     coords[index, :, 0],
                     coords[index, :, 1],
-                    linewidth=thickness * 2,
+                    linewidth=thickness * 3,
                     color=[1,1,1]#np.array(color or OBJECT_PALETTE.get(name, [255, 255, 255])) / 255,
                 ) # 绘制头部
         #################################
@@ -220,7 +219,7 @@ def plot_in_image(det_path, track_path):
                 plt.plot(
                     coords[index, :, 0],
                     coords[index, :, 1],
-                    linewidth=thickness * 2,
+                    linewidth=thickness,
                     color=[1,1,0]#np.array(color or OBJECT_PALETTE.get(name, [255, 255, 255])) / 255,
                 ) # 绘制头部
         #################################
@@ -290,9 +289,51 @@ def ExtractVideoFrame(video_path, num_frame=600):
     cap.release()
     return img_list
 
-if __name__ == '__main__':
-    det_path = '/home/mogo/data/dev/DetZero/tracking/track_input_20250120.pkl'
-    track_path = '/home/mogo/data/dev/DetZero/tracking/results/tracking/tracking-test-20250120-121847.pkl' # update box
-    # track_path = '/home/mogo/data/dev/DetZero/tracking/results/tracking/tracking-test-20250110-080917.pkl'
-    img_list = plot_in_image(det_path, track_path)
+def vis_single_clip(dir_path, clip_name):
+    det_path = os.path.join(dir_path, clip_name, 'track.pkl')
+    tracking_folder = os.path.join(dir_path, clip_name, 'tracking')
+    track_path = None
+    if os.path.exists(tracking_folder):
+        track_files = [f for f in os.listdir(tracking_folder) if f.startswith("track")]
+        if track_files:
+            track_path = os.path.join(tracking_folder, track_files[0])
+    if track_path:
+        img_list = plot_in_image(det_path, track_path)
+        generate_video(img_list, save_path=f"demo_{clip_name}.mp4")
+
+def vis_folder_clips(dir_path):
+    det_folders = os.listdir(dir_path)
+    path_couples = []
+    for clip_name in det_folders:
+        det_path = os.path.join(dir_path, clip_name, 'track.pkl')
+        
+        if not os.path.exists(det_path):
+            print(f"det_path does't exist: {det_path}")
+            continue
+        
+        tracking_folder = os.path.join(dir_path, clip_name, 'tracking')
+        
+        if os.path.exists(tracking_folder):
+            track_files = [f for f in os.listdir(tracking_folder) if f.endswith('.pkl')]
+            
+            # 如果有多个跟踪结果文件，选择第一个
+            if track_files:
+                track_path = os.path.join(tracking_folder, track_files[0])
+                path_couples.append((det_path, track_path, clip_name))
+            else:
+                print(f"tracking_folder is empty: {tracking_folder}")
+        else:
+            print(f"tracking_folder does't exist: {tracking_folder}")
+    
+    img_list = []
+    for det_path, track_path, clip_name in path_couples:
+        img_list += plot_in_image(det_path, track_path)
     generate_video(img_list, save_path="demo.mp4")
+
+
+if __name__ == '__main__':
+    dir_path = '/home/mogo/data/data/train_hy_4d_road_7_20250208_lx'
+    clip_name = '20250208071022' # 20250209070018
+    # vis_single_clip(dir_path, clip_name)
+    vis_folder_clips(dir_path)
+

@@ -19,7 +19,7 @@ MODEL:
 
         TRACK_AGE:
             BIRTH_AGE: 1
-            DEATH_AGE: -1
+            DEATH_AGE: 3
 
         DATA_ASSOCIATION:
             # CLASS_NAME: ['Vehicle', 'Pedestrian', 'Cyclist']

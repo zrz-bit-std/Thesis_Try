@@ -166,31 +166,32 @@ class TrackManager():
         if not da_stage and 'num_points' not in det_data.keys():
             det_data['num_points'] = np.zeros_like(det_data['score'])
 
-        matched, track_unmatch, det_unmatch, matched_stage = \
-            self.modules_dicts['data_association_module'](det_data, track_data)
+        if 'boxes_global' in det_data:
+            matched, track_unmatch, det_unmatch, matched_stage = \
+                self.modules_dicts['data_association_module'](det_data, track_data)
 
-        det_boxes = det_data['boxes_global']
-        det_name = det_data['name']
-        for match_idx, match in enumerate(matched):
-            tk_idx, det_idx = match
-            tracks[tk_idx].update(
-                det_boxes[det_idx],
-                det_name[det_idx],
-                det_data['score'][det_idx],
-                det_data['num_points'][det_idx] if not da_stage else 0,
-                two_stage=matched_stage[match_idx]
-            )
+            det_boxes = det_data['boxes_global']
+            det_name = det_data['name']
+            for match_idx, match in enumerate(matched):
+                tk_idx, det_idx = match
+                tracks[tk_idx].update(
+                    det_boxes[det_idx],
+                    det_name[det_idx],
+                    det_data['score'][det_idx],
+                    det_data['num_points'][det_idx] if not da_stage else 0,
+                    two_stage=matched_stage[match_idx]
+                )
 
-        for _, det_idx in enumerate(det_unmatch):
-            tracks.append(self.modules_dicts['filter_module'](
-                bbox=det_boxes[det_idx],
-                name=det_name[det_idx], 
-                score=det_data['score'][det_idx],
-                frame_id=frame_id,
-                track_id=track_id_count, 
-                num_points=det_data['num_points'][det_idx] if not da_stage else 0,
-            ))
-            track_id_count += 1
+            for _, det_idx in enumerate(det_unmatch):
+                tracks.append(self.modules_dicts['filter_module'](
+                    bbox=det_boxes[det_idx],
+                    name=det_name[det_idx], 
+                    score=det_data['score'][det_idx],
+                    frame_id=frame_id,
+                    track_id=track_id_count, 
+                    num_points=det_data['num_points'][det_idx] if not da_stage else 0,
+                ))
+                track_id_count += 1
 
         if self.modules_dicts['track_merge_config']['enable']:
             tracks = self.overlap_track_merge(tracks)
@@ -226,17 +227,17 @@ class TrackManager():
         da_stage = (self.modules_dicts['data_association_config'].stage.NAME == 'one_stage')
         if not da_stage and 'num_points' not in det_data.keys():
             det_data['num_points'] = np.zeros_like(det_data['score'])
+        if 'boxes_global' in det_data:
+            matched, track_unmatch, det_unmatch = \
+                self.modules_dicts['data_association_module'].only_two_stage(det_data, track_data)
 
-        matched, track_unmatch, det_unmatch = \
-            self.modules_dicts['data_association_module'].only_two_stage(det_data, track_data)
-
-        det_boxes = det_data['boxes_global'][:, :9]
-        det_name = det_data['name']
-        for match_idx, match in enumerate(matched):
-            trk_idx, det_idx = match
-            if trk_idx >= len(tracks): continue
-            tracks[trk_idx].update(det_boxes[det_idx], det_name[det_idx], det_data['score'][det_idx],
-                                      det_data['num_points'][det_idx] if not da_stage else 0, two_stage=True)
+            det_boxes = det_data['boxes_global'][:, :9]
+            det_name = det_data['name']
+            for match_idx, match in enumerate(matched):
+                trk_idx, det_idx = match
+                if trk_idx >= len(tracks): continue
+                tracks[trk_idx].update(det_boxes[det_idx], det_name[det_idx], det_data['score'][det_idx],
+                                        det_data['num_points'][det_idx] if not da_stage else 0, two_stage=True)
 
         if self.modules_dicts['track_merge_config']['enable']:
             tracks = self.overlap_track_merge(tracks)

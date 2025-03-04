@@ -43,7 +43,7 @@ class DataProcessor(object):
         if data_dict is None:
             return partial(self.heading_process, config=config)
 
-        if data_dict.get('boxes_lidar', None) is not None:
+        if data_dict.get('boxes_lidar', None) is not None and data_dict["boxes_lidar"].size>0:
             heading = data_dict["boxes_lidar"][:, 6]
             data_dict["boxes_lidar"][:, 6] = yaw_filter(heading)
         return data_dict
@@ -52,7 +52,7 @@ class DataProcessor(object):
         if data_dict is None:
             return partial(self.points_in_box, config=config)
 
-        if data_dict.get('boxes_lidar', None) is not None:
+        if data_dict.get('boxes_lidar', None) is not None and data_dict["boxes_lidar"].size>0:
             seq_name = data_dict['sequence_name']
             if 'segment-' not in seq_name:
                 seq_name = 'segment-' + seq_name 
@@ -86,9 +86,9 @@ class DataProcessor(object):
         if data_dict is None:
             return partial(self.transform_to_global, config=config)
         
-        if data_dict.get('pose', None) is not None:
+        boxes_lidar = data_dict["boxes_lidar"]
+        if data_dict.get('pose', None) is not None and boxes_lidar.size > 0:
             pose = data_dict["pose"]
-            boxes_lidar = data_dict["boxes_lidar"]
 
             boxes_global = transform_boxes3d(boxes_lidar, pose)
             data_dict["boxes_global"] = boxes_global
@@ -109,7 +109,7 @@ class DataProcessor(object):
             return partial(self.overlap_box_filter, config=config)
         
         remove_data_dict = {}
-        if data_dict.get('boxes_lidar', None) is not None:
+        if data_dict.get('boxes_lidar', None) is not None and data_dict["boxes_lidar"].size > 0:
             boxes_lidar = data_dict["boxes_lidar"]
             names = data_dict["name"]
             scores = data_dict["score"]
