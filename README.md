@@ -43,7 +43,7 @@
 - 3. 执行推理：
   - 3.1 7号路口推理 下载BEVFusion的镜像，并执行 ，注意模型和config 是配置好的，只需要更改 --dataset_root 的路径即可。执行完成后会生成 /data1/turbo_data/4D_label_dataset/models_res/bevpro/train_hy_4d_road_7_20250209_lx/model_pred 的路径
     ```
-    torchpack dist-run -np 1 python tools/visualize/get_infer_res.py configs/camera+lidar+fisheye/res50_DepthLSS+pillar_Intersection_WRH_0213_debug.yaml --checkpoint /data1/turbo_data/wangruihao/code/BEVFUSION/save_model/20250213/epoch_18.pth --bbox-score 0.35 --dataset_root /data1/turbo_data/4D_label_dataset/models_res/bevpro/train_hy_4d_road_7_20250209_lx/
+    torchpack dist-run -np 1 python tools/visualize/get_infer_res.py configs/camera+lidar+fisheye/res50_DepthLSS+pillar_Intersection_WRH_0213_debug.yaml --checkpoint /data1/turbo_data/zhangchengyue/code/BEV/work/BEVFUSION/runs/ft1200_0213/epoch_20.pth --bbox-score 0.35 --dataset_root /data1/turbo_data/4D_label_dataset/models_res/bevpro/train_hy_4d_road_7_20250209_lx/
 
     ```
   - 3.2 推理结果进行拆分，并合成跟踪所需要的pkl ：执行 parse_data/parse_data_for_bevpro/make_data_for_track.py （注意修改main函数中的地址）拆分完成后会生成 /data1/turbo_data/4D_label_dataset/models_res/offline_tracked/train_hy_4d_road_7_20250209_lx 的地址

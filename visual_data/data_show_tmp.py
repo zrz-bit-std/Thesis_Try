@@ -138,7 +138,7 @@ def get_pick_data(sub_t):
     sub_bev_pro_dir = os.path.join(bev_pro_dir,sub_t)
     sub_merged_dir = os.path.join(merged_dir,sub_t)
     test_json_path = os.path.join(sub_bev_pro_dir,'scences','test.json')
-    save_path = os.path.join(sub_label_dir,'selected')
+    save_path = os.path.join(sub_label_dir,'selected_tmp')
     os.makedirs(save_path,exist_ok=True)
 
     with open(test_json_path) as f:
@@ -150,7 +150,7 @@ def get_pick_data(sub_t):
         # clip_tracked_dir = os.path.join(sub_tracked_dir,clip_name,'splited')
         clip_merged_dir = os.path.join(sub_merged_dir,clip_name)
         frame_list = os.listdir(clip_merged_dir)
-        for frame_name in tqdm(frame_list):
+        for frame_name in tqdm(frame_list[::30]):
             # frame_tracted_name = os.path.join(clip_tracked_dir,frame_name)
             frame_merged_name = os.path.join(clip_merged_dir,frame_name)
             # boxes_label_tracked = []
@@ -204,7 +204,8 @@ def get_pick_data(sub_t):
                 image = cv2.imread(os.path.join(clip_origin_dir,image_name,frame_name.replace('txt','jpg')))
                 camera_matrix = np.array(cam2img_fisheye[image_name])[:3,:3]
                 camera_extrinsic = np.array(lidar2cam_fisheye[image_name])
-                camera_distort_param = np.array(distort_fisheye[image_name])
+                # camera_distort_param = np.array(distort_fisheye[image_name])
+                camera_distort_param = np.array([1.0926628389307196e-01, -6.5713320780575097e-04, 8.4866561354316559e-03, -4.2045330300667406e-03])
                 for label in boxes_label:
                     class_name_label,h,w,l,x,y,z,yaw,confidence = label
                     # yaw = -1*math.pi/2.0 - math.radians(yaw)
@@ -261,4 +262,4 @@ def get_pick_data(sub_t):
             
 
 if __name__ == '__main__':
-    get_pick_data('train_hy_4d_road_7_20250210_lx')
+    get_pick_data('train_hy_4d_road_7_20250212_lx')

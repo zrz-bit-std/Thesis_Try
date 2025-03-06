@@ -125,5 +125,5 @@ def make_data_for_track(sub_t):
 
 
 if __name__ == '__main__':
-    split_clip_for_merged('train_hy_4d_road_7_20250210_lx')
+    split_clip_for_merged('train_hy_4d_road_7_20250212_lx')
     # make_data_for_track('train_hy_4d_road_7_20250209_lx')

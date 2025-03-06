@@ -241,11 +241,10 @@ def get_pick_data(sub_t):
             distort_fisheye = test_json[0]['distort_fisheye']
             lidar2cam = test_json[0]['lidar2cam']
             cam2img = test_json[0]['cam2img']
-            
-            
+                        
             image_res_list = []  
             for image_name in image_pinhole_list:
-                if image_name == 'camera_0_0':
+                if image_name == 'camera_0_0': # wangruihao
                     image_res_list.append(np.zeros((800,800,3),np.uint8))
                     continue
                 image = cv2.imread(os.path.join(clip_origin_dir,image_name,frame_name.replace('txt','jpg')))
@@ -263,6 +262,7 @@ def get_pick_data(sub_t):
             image_res_list = []  
             for image_name in image_fisheye_list:
                 image = cv2.imread(os.path.join(clip_origin_dir,image_name,frame_name.replace('txt','jpg')))
+                # cv2.circle(image, center, radius, color, thickness=None, lineType=None, shift=None)
                 camera_matrix = np.array(cam2img_fisheye[image_name])[:3,:3]
                 camera_extrinsic = np.array(lidar2cam_fisheye[image_name])
                 camera_distort_param = np.array(distort_fisheye[image_name])
