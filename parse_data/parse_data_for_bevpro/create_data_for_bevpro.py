@@ -17,7 +17,7 @@ def get_fisheye_param_fisheye_7():
         [0.0, 0.0, 0.0, 1.0]
     ])
     undist = np.array([1.1891781083111905e-01, -3.8331731142404291e-02,  #k1, k2
-                5.6868161989457315e-02, -2.4351293556834262e-02])  #k3, k4
+                5.6868161989457315e-02, -2.4351293556834262e-02])  #k3, k4 # 错误的json 系数
     camera_0_8_ex = np.linalg.inv(np.array([ -7.4411897129214200e-02, -9.9239089026138250e-01,
                             9.8097861810800685e-02, -4.6080716655589640e+01,
                             -9.9722269616376902e-01, 7.4358859134819044e-02,
@@ -113,7 +113,8 @@ def create_data(sub_t):
 
             ## camera
             # shutil.copy(os.path.join(base_dir,'camera_0_0',base_name_+'.jpg'),os.path.join(bev_pro_lidar_camera_0_0,base_name_+'.jpg'))
-            if not os.path.exists(os.path.join(bev_pro_lidar_camera_3_8,base_name_+'.jpg')):
+            if not os.path.exists(os.path.join(bev_pro_lidar_camera_3_8,base_name_+'.jpg')): # 
+                # shutil.copy(os.path.join(base_dir,'camera_0_0',base_name_+'.jpg'),os.path.join(bev_pro_lidar_camera_0_0,base_name_+'.jpg'))  # wangruihao
                 shutil.copy(os.path.join(base_dir,'camera_1_0',base_name_+'.jpg'),os.path.join(bev_pro_lidar_camera_1_0,base_name_+'.jpg'))
                 shutil.copy(os.path.join(base_dir,'camera_2_0',base_name_+'.jpg'),os.path.join(bev_pro_lidar_camera_2_0,base_name_+'.jpg'))
                 shutil.copy(os.path.join(base_dir,'camera_3_0',base_name_+'.jpg'),os.path.join(bev_pro_lidar_camera_3_0,base_name_+'.jpg'))
@@ -151,7 +152,7 @@ def create_train_data(sub_t):
                                         'camera_2_8': 'camera_2_8/' + time_name + '.jpg', 
                                         'camera_3_8': 'camera_3_8/' + time_name + '.jpg'}
             
-            frame['cam_imgs'] = {'camera_0_0': 'camera_1_0/' + time_name + '.jpg', 
+            frame['cam_imgs'] = {'camera_0_0': 'camera_1_0/' + time_name + '.jpg', # wangruihao
                                         'camera_1_0': 'camera_1_0/' + time_name + '.jpg', 
                                         'camera_2_0': 'camera_2_0/' + time_name + '.jpg', 
                                         'camera_3_0': 'camera_3_0/' + time_name + '.jpg'}
@@ -162,13 +163,13 @@ def create_train_data(sub_t):
             samples_new.append(frame)
             
         cam2img_fisheye = {
-            'camera_0_8':in_param,
+            'camera_0_8':in_param, 
             'camera_1_8':in_param,
             'camera_2_8':in_param,
             'camera_3_8':in_param,
         }
         lidar2cam_fisheye = {
-            'camera_0_8':ex_param_0,
+            'camera_0_8':ex_param_0, # wangruihao 
             'camera_1_8':ex_param_1,
             'camera_2_8':ex_param_2,
             'camera_3_8':ex_param_3,
