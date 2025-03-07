@@ -1,9 +1,0 @@
-README.md
-setup.py
-detzero_track/__init__.py
-detzero_track/version.py
-detzero_track.egg-info/PKG-INFO
-detzero_track.egg-info/SOURCES.txt
-detzero_track.egg-info/dependency_links.txt
-detzero_track.egg-info/requires.txt
-detzero_track.egg-info/top_level.txt
