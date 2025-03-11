@@ -264,11 +264,12 @@ def get_pick_data(sub_t):
                 image = cv2.imread(os.path.join(clip_origin_dir,image_name,frame_name.replace('txt','jpg')))
                 # cv2.circle(image, center, radius, color, thickness=None, lineType=None, shift=None)
                 w_,h_,_ = image.shape
-                circle_radius = int(w_*0.48)
+                circle_radius = int(w_*0.47)
                 cv2.circle(image, (w_//2,h_//2), circle_radius, [255,0,0], 2)
                 camera_matrix = np.array(cam2img_fisheye[image_name])[:3,:3]
                 camera_extrinsic = np.array(lidar2cam_fisheye[image_name])
-                camera_distort_param = np.array(distort_fisheye[image_name])
+                # camera_distort_param = np.array(distort_fisheye[image_name])
+                camera_distort_param = np.array([1.0926628389307196e-01, -6.5713320780575097e-04, 8.4866561354316559e-03, -4.2045330300667406e-03])
                 for label in boxes_label:
                     class_name_label,h,w,l,x,y,z,yaw,confidence = label
                     # yaw = -1*math.pi/2.0 - math.radians(yaw)

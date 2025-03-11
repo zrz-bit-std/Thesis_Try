@@ -203,7 +203,7 @@ def get_pick_data(sub_t):
             for image_name in image_fisheye_list:
                 image = cv2.imread(os.path.join(clip_origin_dir,image_name,frame_name.replace('txt','jpg')))
                 w_,h_,_ = image.shape
-                circle_radius = int(w_*0.48)
+                circle_radius = int(w_*0.47)
                 cv2.circle(image, (w_//2,h_//2), circle_radius, [255,0,0], 2)
                 camera_matrix = np.array(cam2img_fisheye[image_name])[:3,:3]
                 camera_extrinsic = np.array(lidar2cam_fisheye[image_name])
