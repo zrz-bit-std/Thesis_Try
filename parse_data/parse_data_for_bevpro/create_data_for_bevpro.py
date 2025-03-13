@@ -7,7 +7,7 @@ from tqdm import tqdm
 import copy
 base_total_dir = '/data1/turbo_data/4D_label_dataset/origin/'
 save_dir = '/data1/turbo_data/4D_label_dataset/models_res/bevpro'
-example_data_path = '/data1/turbo_data/zhangchengyue/code/BEV/data/Intersection/test/qatest/2024-12-13-15-19-36_19/cpp_sync_png_fisheye_wrh/scences/test.json'
+example_data_path = '/data1/turbo_data/zhangchengyue/code/BEV/data/Intersection/test/qatest/2024-12-13-15-19-36_19/cpp_sync_png_fisheye_wrh/scences/test1.json'
 
 def get_fisheye_param_fisheye_7():
     intrinsic = np.array([
@@ -16,8 +16,9 @@ def get_fisheye_param_fisheye_7():
         [0.0, 0.0, 1.0, 0.0],
         [0.0, 0.0, 0.0, 1.0]
     ])
-    undist = np.array([1.1891781083111905e-01, -3.8331731142404291e-02,  #k1, k2
-                5.6868161989457315e-02, -2.4351293556834262e-02])  #k3, k4 # 错误的json 系数
+    # undist = np.array([1.1891781083111905e-01, -3.8331731142404291e-02,  #k1, k2
+    #             5.6868161989457315e-02, -2.4351293556834262e-02])  #k3, k4 # 错误的json 系数
+    undist = np.array([1.0926628389307196e-01, -6.5713320780575097e-04, 8.4866561354316559e-03, -4.2045330300667406e-03])
     camera_0_8_ex = np.linalg.inv(np.array([ -7.4411897129214200e-02, -9.9239089026138250e-01,
                             9.8097861810800685e-02, -4.6080716655589640e+01,
                             -9.9722269616376902e-01, 7.4358859134819044e-02,
@@ -114,7 +115,7 @@ def create_data(sub_t):
             ## camera
             # shutil.copy(os.path.join(base_dir,'camera_0_0',base_name_+'.jpg'),os.path.join(bev_pro_lidar_camera_0_0,base_name_+'.jpg'))
             if not os.path.exists(os.path.join(bev_pro_lidar_camera_3_8,base_name_+'.jpg')): # 
-                # shutil.copy(os.path.join(base_dir,'camera_0_0',base_name_+'.jpg'),os.path.join(bev_pro_lidar_camera_0_0,base_name_+'.jpg'))  # wangruihao
+                shutil.copy(os.path.join(base_dir,'camera_0_0',base_name_+'.jpg'),os.path.join(bev_pro_lidar_camera_0_0,base_name_+'.jpg'))  # wangruihao
                 shutil.copy(os.path.join(base_dir,'camera_1_0',base_name_+'.jpg'),os.path.join(bev_pro_lidar_camera_1_0,base_name_+'.jpg'))
                 shutil.copy(os.path.join(base_dir,'camera_2_0',base_name_+'.jpg'),os.path.join(bev_pro_lidar_camera_2_0,base_name_+'.jpg'))
                 shutil.copy(os.path.join(base_dir,'camera_3_0',base_name_+'.jpg'),os.path.join(bev_pro_lidar_camera_3_0,base_name_+'.jpg'))
@@ -152,7 +153,7 @@ def create_train_data(sub_t):
                                         'camera_2_8': 'camera_2_8/' + time_name + '.jpg', 
                                         'camera_3_8': 'camera_3_8/' + time_name + '.jpg'}
             
-            frame['cam_imgs'] = {'camera_0_0': 'camera_1_0/' + time_name + '.jpg', # wangruihao
+            frame['cam_imgs'] = {'camera_0_0': 'camera_0_0/' + time_name + '.jpg', # wangruihao
                                         'camera_1_0': 'camera_1_0/' + time_name + '.jpg', 
                                         'camera_2_0': 'camera_2_0/' + time_name + '.jpg', 
                                         'camera_3_0': 'camera_3_0/' + time_name + '.jpg'}
@@ -195,8 +196,8 @@ def create_train_data(sub_t):
 
 
 if __name__ == '__main__':
-    create_data('train_hy_4d_road_7_20250211_lx')
-    create_train_data('train_hy_4d_road_7_20250211_lx')
+    create_data('train_hy_4d_road_7_20250304_lx')
+    create_train_data('train_hy_4d_road_7_20250304_lx')
     '''
     /opt/conda/bin/python /data1/turbo_data/wangruihao/code/4D_label/parse_data/parse_data_for_bevpro/create_data_for_bevpro.py
     '''

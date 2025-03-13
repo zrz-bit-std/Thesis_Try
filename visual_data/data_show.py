@@ -244,9 +244,9 @@ def get_pick_data(sub_t):
                         
             image_res_list = []  
             for image_name in image_pinhole_list:
-                if image_name == 'camera_0_0': # wangruihao
-                    image_res_list.append(np.zeros((800,800,3),np.uint8))
-                    continue
+                # if image_name == 'camera_0_0': # wangruihao
+                #     image_res_list.append(np.zeros((800,800,3),np.uint8))
+                #     continue
                 image = cv2.imread(os.path.join(clip_origin_dir,image_name,frame_name.replace('txt','jpg')))
                 camera_matrix = np.array(cam2img[image_name])[:3,:3]
                 camera_extrinsic = np.array(lidar2cam[image_name])
