@@ -8,7 +8,7 @@ from easydict import EasyDict
 from detzero_utils.config_utils import cfg, cfg_from_yaml_file, log_cfg_info
 from detzero_utils.common_utils import create_logger, get_log_info
 import sys
-sys.path.append('/data1/turbo_data/wangruihao/code/4D_label/tracking')
+sys.path.append('/data1/turbo_data/wangruihao/code/auto_labeling/4D_label')
 from detzero_track.models import build_model, run_model
 from detzero_track.datasets import build_dataloader
 

@@ -125,7 +125,6 @@ def create_data(sub_t):
                 shutil.copy(os.path.join(base_dir,'camera_2_8',base_name_+'.jpg'),os.path.join(bev_pro_lidar_camera_2_8,base_name_+'.jpg'))
                 shutil.copy(os.path.join(base_dir,'camera_3_8',base_name_+'.jpg'),os.path.join(bev_pro_lidar_camera_3_8,base_name_+'.jpg'))
 
-
 def create_train_data(sub_t):
     # example_data_path = '/data1/turbo_data/zhangchengyue/code/BEV/data/Intersection/test/qatest/2024-12-13-15-19-36_19/cpp_sync_png_fisheye_wrh/scences/test.json'
     samples_total_path = os.path.join(save_dir,sub_t,'samples')

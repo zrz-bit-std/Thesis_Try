@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/data1/turbo_data/wangruihao/code/4D_label')
+sys.path.append('/data1/turbo_data/wangruihao/code/auto_labeling/4D_label')
 from parse_data.parse_data_for_bevpro import mogo_converter_wrh as mogo_converter
 
 

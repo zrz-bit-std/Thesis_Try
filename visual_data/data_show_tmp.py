@@ -9,9 +9,11 @@ from tqdm import tqdm
 import json
 import re
 import sys
-sys.path.append('/data1/turbo_data/wangruihao/code/4D_label')
+sys.path.append('/data1/turbo_data/wangruihao/code/auto_labeling/4D_label')
 from visual_data.utils.project_image import *
 from visual_data.utils.load_param import load_yaml
+from visual_data.utils.nms import nms_angle
+# from visual_data.utils.nms import nms_angle
 
 name_combile_list = [
         'car', #0
@@ -34,6 +36,21 @@ name_old_dict = {
         'rider': 3,
         'pedestrain':5,
         'pedestrian':5
+    }
+
+
+confidence_type = {
+        'car':0.8,
+        'bus':0.7,
+        'truck':0.99,
+        'bike':0.7,
+        'bicycle':0.7,
+        'person':0.7,
+        'motor':0.7,
+        'NotUsed':0.7,
+        'rider': 0.7,
+        'pedestrain':0.7,
+        'pedestrian':0.7
     }
 
 OBJECT_PALETTE_BEVFUSION = {
@@ -144,24 +161,27 @@ def get_pick_data(sub_t):
     with open(test_json_path) as f:
         test_json = json.load(f)
 
-    clip_list = os.listdir(sub_merged_dir)
+    clip_list = os.listdir(sub_tracked_dir)
     for clip_name in tqdm(clip_list):
         clip_origin_dir = os.path.join(sub_origin_dir,clip_name)
-        # clip_tracked_dir = os.path.join(sub_tracked_dir,clip_name,'splited')
+        clip_tracked_dir = os.path.join(sub_tracked_dir,clip_name,'splited')
         clip_merged_dir = os.path.join(sub_merged_dir,clip_name)
-        frame_list = os.listdir(clip_merged_dir)
+        frame_list = os.listdir(clip_tracked_dir)
         for frame_name in tqdm(frame_list[::30]):
-            # frame_tracted_name = os.path.join(clip_tracked_dir,frame_name)
+            frame_tracted_name = os.path.join(clip_tracked_dir,frame_name)
             frame_merged_name = os.path.join(clip_merged_dir,frame_name)
-            # boxes_label_tracked = []
-            # with open(frame_tracted_name,'r') as f:
-            #     for line_ in f.readlines():
-            #         content_list = line_.strip().split('\t')
-            #         # name_list.append(name_combile_dict[label_dict[content_list[0]]])
-            #         h,w,l,x,y,z,yaw,confidence = [float(i) for i in content_list[1:]] #c, h, w, l, new_center[0], new_center[1], new_center[2], yaw_new, confidence
-            #         yaw = math.radians(yaw)
-            #         label_name = name_combile_list[name_old_dict[content_list[0]]]
-            #         boxes_label_tracked.append([label_name,h,w,l,x,y,z,yaw,confidence])
+            boxes_label_tracked = []
+            with open(frame_tracted_name,'r') as f:
+                for line_ in f.readlines():
+                    content_list = line_.strip().split('\t')
+                    # name_list.append(name_combile_dict[label_dict[content_list[0]]])
+                    h,w,l,x,y,z,yaw,confidence = [float(i) for i in content_list[1:]] #c, h, w, l, new_center[0], new_center[1], new_center[2], yaw_new, confidence
+                    yaw = math.radians(yaw)
+                    label_name = name_combile_list[name_old_dict[content_list[0]]]
+                    boxes_label_tracked.append([label_name,h,w,l,x,y,z,yaw,confidence_type[label_name]])# cx, cy, l, w, r
+            nms_prepare_inputs = [[i_[4],i_[5],i_[3],i_[2],np.degrees(i_[-2]),i_[-1]] for i_ in boxes_label_tracked]
+            _,nms_idx = nms_angle(nms_prepare_inputs,iou_thres=0.2)
+            boxes_label_tracked_new  = [boxes_label_tracked[i] for i in nms_idx]
             boxes_label_merged = []
             with open(frame_merged_name,'r') as f:
                 for line_ in f.readlines():
@@ -171,10 +191,10 @@ def get_pick_data(sub_t):
                     yaw = math.radians(yaw)
                     label_name = name_combile_list[name_old_dict[content_list[0]]]
                     boxes_label_merged.append([label_name,h,w,l,x,y,z,yaw,confidence])
-            # if len(boxes_label_merged) == len(boxes_label_tracked):
-            #     continue
-
-            boxes_label = boxes_label_merged
+            if len(boxes_label_tracked_new) == len(boxes_label_tracked):
+                continue
+            # print('')
+            boxes_label = boxes_label_tracked
             lidar2cam_fisheye = test_json[0]['lidar2cam_fisheye']
             cam2img_fisheye = test_json[0]['cam2img_fisheye']
             distort_fisheye = test_json[0]['distort_fisheye']
