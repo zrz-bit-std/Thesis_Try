@@ -22,7 +22,7 @@ def rotate_points(points, yaw):
     ])
     return rotation_matrix @ points
 
-def project_3d_to_fisheye(points,image_shape,intrinsic_matrix, extrinsic_matrix, distortion_params):
+def project_3d_to_fisheye(points,image_shape,intrinsic_matrix, extrinsic_matrix, distortion_params, filter_z_camera=True, depth=None):
     # 将3D点坐标构建成齐次坐标形式
     x,y,z = points
     point_3d_homogeneous = np.array([[x], [y], [z], [1]])
@@ -33,8 +33,12 @@ def project_3d_to_fisheye(points,image_shape,intrinsic_matrix, extrinsic_matrix,
 
     # 计算归一化平面坐标（未考虑畸变）
     x_camera, y_camera, z_camera = point_camera_coords.flatten()[:3]
-    if z_camera < 0:
+    if filter_z_camera and z_camera < 0:
         return None,None,False
+    if depth is not None and z_camera < depth:
+        return None, None, False
+
+    
     normalized_x = x_camera / z_camera
     normalized_y = y_camera / z_camera
 
@@ -127,15 +131,15 @@ def draw_box_on_fisheye(shape_center,yaw,image,inter_param,exter_param,distort,c
     for points in corners_3d_rotation_points.T:
         u,v,vali = project_3d_to_fisheye(points,image_shape,inter_param, exter_param, distort)
         if u is None and v is None:
-            return image
+            return image, None
         if vali:
             valid_flag.append(1)
         corners_2d.append([u,v])
     if len(valid_flag) < 1:
-        return image
+        return image, None
     corners_2d = np.array(corners_2d)
     image = draw_3d_box(image, corners_2d.astype(int),color=color)
-    return image
+    return image, corners_2d
 
 def draw_box_on_pinhole(shape_center,yaw,image,inter_param,exter_param,distort=None,color = [255,0,0]):
     w, l,h, x, y, z = shape_center
@@ -159,15 +163,15 @@ def draw_box_on_pinhole(shape_center,yaw,image,inter_param,exter_param,distort=N
     for points in corners_3d_rotation_points.T:
         u,v,vali = project_3d_to_pinhole(points,image_shape,inter_param, exter_param)
         if u is None and u is None:
-            return image 
+            return image, None
         if vali:
             valid_flag.append(1)
         corners_2d.append([u,v])
     if len(valid_flag) < 1:
-        return image
+        return image, None
     corners_2d = np.array(corners_2d)
     image = draw_3d_box(image, corners_2d.astype(int),color=color)
-    return image
+    return image, corners_2d
 
 def draw_3d_box(image, corners_2d, color=(0, 255, 0)):
     """

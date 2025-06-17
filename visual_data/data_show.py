@@ -9,11 +9,12 @@ from tqdm import tqdm
 import json
 import re
 import sys
-sys.path.append('/data1/turbo_data/wangruihao/code/auto_labeling/4D_label')
+# sys.path.append('/data1/turbo_data/wangruihao/code/auto_labeling/4D_label')
 from visual_data.utils.project_image import *
 from visual_data.utils.load_param import load_yaml
 from visual_data.utils.nms import nms_angle
 
+import argparse
 
 
 OBJECT_PALETTE_BEVFUSION = {
@@ -23,6 +24,7 @@ OBJECT_PALETTE_BEVFUSION = {
     "rider":        (255, 255, 0),      #黄色
     "bicycle":      (255, 0, 255),      #洋红
     "person":       (0, 0, 255),        #蓝色
+    "motorcycle":   (255, 105, 180),    # hot pink
     "NotUsed":      (160, 32, 240),     #紫色
 }
 OBJECT_PALETTE_FISHYE_DETECT = {
@@ -32,45 +34,86 @@ OBJECT_PALETTE_FISHYE_DETECT = {
     "rider":        (255, 255, 0),      #黄色
     "bicycle":      (255, 0, 255),      #洋红
     "person":       (0, 0, 255),        #蓝色
+    "motorcycle":   (255, 105, 180),    # hot pink
     "motor":      (160, 32, 240),     #紫色
 }
 
+# name_combile_list = [
+#     'car', #0
+#     'bus', #1
+#     'truck', #2
+#     'rider', #3
+#     'bicycle', #4
+#     'person', #5
+#     'NotUsed' #6
+    # ]
+# name_old_dict = {
+#     'car':0,
+#     'bus':1,
+#     'truck':2,
+#     'bike':4,
+#     'bicycle':4,
+#     'person':5,
+#     'motor':4,
+#     'NotUsed':6,
+#     'rider': 3,
+#     'pedestrain':5,
+#     'pedestrian':5
+# }
+
+# confidence_type = {
+#         'car':0.8,
+#         'bus':0.7,
+#         'truck':0.99,
+#         'bike':0.7,
+#         'bicycle':0.7,
+#         'person':0.7,
+#         'motor':0.7,
+#         'NotUsed':0.7,
+#         'rider': 0.7,
+#         'pedestrain':0.7,
+#         'pedestrian':0.7
+#     }
+
+
 name_combile_list = [
     'car', #0
-    'bus', #1
-    'truck', #2
+    'truck', # 1   
+    'bus', # 2
     'rider', #3
-    'bicycle', #4
-    'person', #5
-    'NotUsed' #6
-    ]
-name_old_dict = {
+    'bicycle', # 4
+    'person', # 5
+    'motorcycle', # 6
+    'NotUsed' # 7
+]
+name_old_dict = {  # TODO:修改类别！！！！！！
     'car':0,
-    'bus':1,
-    'truck':2,
+    'truck':1,
+    'bus':2,
     'bike':4,
     'bicycle':4,
     'person':5,
-    'motor':4,
-    'NotUsed':6,
+    'motor':6,
+    'motorcycle':6,
+    'NotUsed':7,
     'rider': 3,
     'pedestrain':5,
     'pedestrian':5
 }
-
 confidence_type = {
-        'car':0.8,
-        'bus':0.7,
-        'truck':0.99,
-        'bike':0.7,
-        'bicycle':0.7,
-        'person':0.7,
-        'motor':0.7,
-        'NotUsed':0.7,
-        'rider': 0.7,
-        'pedestrain':0.7,
-        'pedestrian':0.7
-    }
+    'car':0.8,
+    'bus':0.7,
+    'truck':0.99,
+    'bike':0.7,
+    'bicycle':0.7,
+    'person':0.7,
+    'motor':0.7,
+    'motorcycle':0.7,
+    'NotUsed':0.7,
+    'rider': 0.7,
+    'pedestrain':0.7,
+    'pedestrian':0.7
+}
 
 
 def get_palette(size):
@@ -195,14 +238,14 @@ def get_label(label_file_path):
 def get_image_param(fpath):
     return None
 
-origin_dir = '/data1/turbo_data/4D_label_dataset/origin'
-label_dir = '/data1/turbo_data/4D_label_dataset/labels'
-merged_dir = '/data1/turbo_data/4D_label_dataset/models_res/merged'
-bev_pro_dir = '/data1/turbo_data/4D_label_dataset/models_res/bevpro/' #train_hy_4d_road_7_20250208_lx/scences'
-tracked_dir = '/data1/turbo_data/4D_label_dataset/models_res/offline_tracked'
+# origin_dir = '/data1/turbo_data/4D_label_dataset/origin'
+# label_dir = '/data1/turbo_data/4D_label_dataset/labels'
+# merged_dir = '/data1/turbo_data/4D_label_dataset/models_res/merged'
+# bev_pro_dir = '/data1/turbo_data/4D_label_dataset/models_res/bevpro/' #train_hy_4d_road_7_20250208_lx/scences'
+# tracked_dir = '/data1/turbo_data/4D_label_dataset/models_res/offline_tracked'
 
 
-def get_pick_data(sub_t):
+def get_pick_data(origin_dir, label_dir, tracked_dir, bev_pro_dir, merged_dir, sub_t):
     image_save_size = (800,800)
     color_bar = get_palette((1600,350))
     image_pinhole_list = ['camera_0_0','camera_1_0','camera_2_0','camera_3_0']
@@ -286,8 +329,8 @@ def get_pick_data(sub_t):
                 cv2.circle(image, (w_//2,h_//2), circle_radius, [255,0,0], 2)
                 camera_matrix = np.array(cam2img_fisheye[image_name])[:3,:3]
                 camera_extrinsic = np.array(lidar2cam_fisheye[image_name])
-                # camera_distort_param = np.array(distort_fisheye[image_name])
-                camera_distort_param = np.array([1.0926628389307196e-01, -6.5713320780575097e-04, 8.4866561354316559e-03, -4.2045330300667406e-03])
+                camera_distort_param = np.array(distort_fisheye[image_name])
+                # camera_distort_param = np.array([1.0926628389307196e-01, -6.5713320780575097e-04, 8.4866561354316559e-03, -4.2045330300667406e-03])
                 for label in boxes_label:
                     class_name_label,h,w,l,x,y,z,yaw,confidence = label
                     # yaw = -1*math.pi/2.0 - math.radians(yaw)
@@ -301,4 +344,27 @@ def get_pick_data(sub_t):
             cv2.imwrite(save_image_name,image_concated)
 
 if __name__ == '__main__':
-    get_pick_data('train_hy_4d_road_7_20250209_lx')
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--origin_dir", type=str, required=True)
+    parser.add_argument("--label_dir", type=str, required=True)
+    parser.add_argument("--merged_dir", type=str, required=True)
+    parser.add_argument("--bev_pro_dir", type=str, required=True)
+    parser.add_argument("--tracked_dir", type=str, required=True)
+    parser.add_argument("--dataset_name", type=str, required=True)
+
+    args = parser.parse_args()
+    get_pick_data(
+        args.origin_dir,
+        args.label_dir,
+        args.tracked_dir,
+        args.bev_pro_dir,
+        args.merged_dir,
+        args.dataset_name,
+    )
+    
+    # get_pick_data('train_hy_4d_road_7_20250209_lx')
+    # origin_dir = '/data1/turbo_data/4D_label_dataset/origin'
+    # label_dir = '/data1/turbo_data/4D_label_dataset/labels'
+    # merged_dir = '/data1/turbo_data/4D_label_dataset/models_res/merged'
+    # bev_pro_dir = '/data1/turbo_data/4D_label_dataset/models_res/bevpro/' #train_hy_4d_road_7_20250208_lx/scences'
+    # tracked_dir = '/data1/turbo_data/4D_label_dataset/models_res/offline_tracked'
