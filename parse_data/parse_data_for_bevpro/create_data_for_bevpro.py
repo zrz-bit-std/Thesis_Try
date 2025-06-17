@@ -5,9 +5,13 @@ import json
 import shutil
 from tqdm import tqdm
 import copy
-base_total_dir = '/data1/turbo_data/4D_label_dataset/origin/'
-save_dir = '/data1/turbo_data/4D_label_dataset/models_res/bevpro'
-example_data_path = '/data1/turbo_data/zhangchengyue/code/BEV/data/Intersection/test/qatest/2024-12-13-15-19-36_19/cpp_sync_png_fisheye_wrh/scences/test1.json'
+import argparse
+
+from BEVFUSION.tools.data_process.generat_train import worker
+
+# base_total_dir = '/data1/turbo_data/4D_label_dataset/origin/'
+# save_dir = '/data1/turbo_data/4D_label_dataset/models_res/bevpro'
+# example_data_path = '/data1/turbo_data/zhangchengyue/code/BEV/data/Intersection/test/qatest/2024-12-13-15-19-36_19/cpp_sync_png_fisheye_wrh/scences/test1.json'
 
 def get_fisheye_param_fisheye_7():
     intrinsic = np.array([
@@ -54,7 +58,7 @@ def get_lidar_path(lidar_lidar_path):
     points = [line.strip().split() for line in open(lidar_lidar_path, 'r').readlines()[line_start:]]
     return np.array(points, dtype=np.float32)
 
-def create_data(sub_t):
+def create_data(base_total_dir, save_dir, sub_t):
     bev_pro_sub_dir = os.path.join(save_dir,sub_t)
     os.makedirs(bev_pro_sub_dir,exist_ok=True)
     ########################################################
@@ -96,7 +100,7 @@ def create_data(sub_t):
         lidar_path_list = ['lidar_0_12','lidar_1_12','lidar_2_12','lidar_3_12']
         lidar_path_dir_0 = os.path.join(base_dir,lidar_path_list[0])
         base_name_path_list = os.listdir(lidar_path_dir_0)
-        for base_name in base_name_path_list:
+        for i, base_name in enumerate(base_name_path_list):
             ## lidar
             base_name_ = base_name.split('.p')[0]
             if not os.path.exists(os.path.join(bev_pro_lidar_path,base_name_+'.pcd.bin')):
@@ -109,7 +113,7 @@ def create_data(sub_t):
                 points_2 = get_lidar_path(lidar_lidar_path_2)#[line.strip().split() for line in open(lidar_lidar_path_2, 'r').readlines()[line_start:]]
                 points_3 = get_lidar_path(lidar_lidar_path_3)#[line.strip().split() for line in open(lidar_lidar_path_3, 'r').readlines()[line_start:]]
                 points_toal = np.concatenate([points_0,points_1,points_2,points_3],axis=0)
-                with open(os.path.join(bev_pro_lidar_path,base_name_+'.pcd.bin'), 'wb') as fp:
+                with open(os.path.join(bev_pro_lidar_path,base_name_+'.pcd.bin'), 'wb') as fp:  # 注意坐标系适配！！！！不同路口的坐标系不一样
                     fp.write(points_toal.tobytes())
 
             ## camera
@@ -125,7 +129,7 @@ def create_data(sub_t):
                 shutil.copy(os.path.join(base_dir,'camera_2_8',base_name_+'.jpg'),os.path.join(bev_pro_lidar_camera_2_8,base_name_+'.jpg'))
                 shutil.copy(os.path.join(base_dir,'camera_3_8',base_name_+'.jpg'),os.path.join(bev_pro_lidar_camera_3_8,base_name_+'.jpg'))
 
-def create_train_data(sub_t):
+def create_train_data(save_dir, sub_t):
     # example_data_path = '/data1/turbo_data/zhangchengyue/code/BEV/data/Intersection/test/qatest/2024-12-13-15-19-36_19/cpp_sync_png_fisheye_wrh/scences/test.json'
     samples_total_path = os.path.join(save_dir,sub_t,'samples')
     scences_path = os.path.join(save_dir,sub_t,'scences')
@@ -195,9 +199,20 @@ def create_train_data(sub_t):
 
 
 if __name__ == '__main__':
-    create_data('train_hy_4d_road_7_20250304_lx')
-    create_train_data('train_hy_4d_road_7_20250304_lx')
-    '''
-    /opt/conda/bin/python /data1/turbo_data/wangruihao/code/4D_label/parse_data/parse_data_for_bevpro/create_data_for_bevpro.py
-    '''
+    # create_data('train_hy_4d_road_7_20250304_lx')
+    # create_train_data('train_hy_4d_road_7_20250304_lx')
+    # '''
+    # /opt/conda/bin/python /data1/turbo_data/wangruihao/code/4D_label/parse_data/parse_data_for_bevpro/create_data_for_bevpro.py
+    # '''
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--data_root', type=str, default="/data1/turbo_data/huben/data/test_4D_label/origin/")
+    parser.add_argument('--save_dir', type=str, default="/data1/turbo_data/huben/data/test_4D_label/model_res/bevpro")
+    parser.add_argument('--dataset_name', type=str, required=True)
+    parser.add_argument('--debug', action='store_true')
+    
+    args = parser.parse_args()
+
+    create_data(args.data_root, args.save_dir, args.dataset_name)
+    create_train_data(args.save_dir, args.dataset_name)
         

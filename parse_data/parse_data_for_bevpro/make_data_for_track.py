@@ -1,3 +1,4 @@
+import argparse
 import pickle
 import os
 import numpy as np
@@ -5,10 +6,11 @@ import math
 import shutil
 from tqdm import tqdm
 
-save_dir = '/data1/turbo_data/4D_label_dataset/models_res/merged' #train_hy_4d_road_7_20250208_lx'
-orign_dir = '/data1/turbo_data/4D_label_dataset/origin'
-merged_dir = '/data1/turbo_data/4D_label_dataset/models_res/bevpro' # 临时
-track_dir= '/data1/turbo_data/4D_label_dataset/models_res/offline_tracked'
+# save_dir = '/data1/turbo_data/4D_label_dataset/models_res/merged' #train_hy_4d_road_7_20250208_lx'
+# orign_dir = '/data1/turbo_data/4D_label_dataset/origin'
+# merged_dir = '/data1/turbo_data/4D_label_dataset/models_res/bevpro' # 临时
+# track_dir= '/data1/turbo_data/4D_label_dataset/models_res/offline_tracked'
+
 
 def remakedir(folder):
     #高频代码
@@ -16,33 +18,46 @@ def remakedir(folder):
         shutil.rmtree(folder)
     os.makedirs(folder)
 
-def split_clip_for_merged(sub_t):
+
+def get_timestamps(clip_dir):
+    camera_names = [
+        name for name in os.listdir(clip_dir) if name.startswith("camera")
+    ]
+    assert len(camera_names) > 0
+    img_dir = os.path.join(clip_dir, camera_names[0])
+    timestamps = [
+        name.split(".jpg")[0] for name in os.listdir(img_dir)
+    ]
+    return timestamps
+
+
+def split_clip_for_merged(save_dir, origin_dir, det_dir, sub_t):
     sub_t_dir = os.path.join(save_dir,sub_t)
     # os.makedirs(sub_t_dir,exist_ok=True)
     remakedir(sub_t_dir)
-    orgin_sub_t = os.path.join(orign_dir,sub_t)
+    orgin_sub_t = os.path.join(origin_dir,sub_t)
     clip_list = os.listdir(orgin_sub_t)
-    model_sub_t = os.path.join(merged_dir,sub_t,'model_pred') #wangruihao
+    model_sub_t = os.path.join(det_dir, sub_t, 'model_pred')
     model_txt_set = set([i.split('.t')[0] for i in os.listdir(model_sub_t)])
     for clip_name in tqdm(clip_list):
         if 'txt' in clip_name:
             continue
-        # os.makedirs(clip_save_dir,exist_ok=True)
-        orgin_clip_dir = os.path.join(orgin_sub_t,clip_name,'camera_0_8')
-        orgin_file_list = os.listdir(orgin_clip_dir)
+        timestamps_str = get_timestamps(os.path.join(orgin_sub_t, clip_name))
         count = 0
-        for file_name in orgin_file_list:
-            base_name = file_name.split('.jp')[0]
-            if base_name in model_txt_set:
+        for ts in timestamps_str:
+            if ts in model_txt_set:
                 count += 1
-        if count < len(orgin_file_list):
+        if count < len(timestamps_str):
             continue
-        clip_save_dir = os.path.join(sub_t_dir,clip_name)
-        remakedir(clip_save_dir)
-        for file_name in orgin_file_list:
-            base_name = file_name.split('.jp')[0]
-            if not os.path.exists(os.path.join(clip_save_dir,base_name+'.txt')):
-                shutil.copy(os.path.join(model_sub_t,base_name+'.txt'), os.path.join(clip_save_dir,base_name+'.txt'))
+        clip_save_dir = os.path.join(sub_t_dir, clip_name)
+        # remakedir(clip_save_dir)
+        os.makedirs(clip_save_dir, exist_ok=True)
+        for ts in timestamps_str:
+            if not os.path.exists(os.path.join(clip_save_dir, f"{ts}.txt")):
+                shutil.copy(
+                    os.path.join(model_sub_t, f"{ts}.txt"),
+                    os.path.join(clip_save_dir, f"{ts}.txt"),
+                )
 
 def get_track_data(res_dir,save_pkl_path,sequence_name):
     # res = '/data1/turbo_data/wangruihao/data/4D_label/test/2024-12-13-15-19-36_19_cpp_sync_png_fisheye_wrh/model_res/merge_res'
@@ -53,28 +68,56 @@ def get_track_data(res_dir,save_pkl_path,sequence_name):
                     [0., 1., 0., 0.],
                     [0., 0., 1., 0.],
                     [0., 0., 0., 1.]])
-    name_combile_dict = [
+    # name_combile_dict = [
+    #     'car', #0
+    #     'bus', #1
+    #     'truck', #2
+    #     'rider', #3
+    #     'bicycle', #4
+    #     'person', #5
+    #     'NotUsed' #6
+    #     ]
+    # label_dict = {  # TODO:修改类别！！！！！！
+    #     'car':0,
+    #     'bus':1,
+    #     'truck':2,
+    #     'bike':4,
+    #     'bicycle':4,
+    #     'person':5,
+    #     'motor':4,
+    #     'motorcycle': 4,
+    #     'NotUsed':6,
+    #     'rider': 3,
+    #     'pedestrain':5,
+    #     'pedestrian':5
+    # }
+
+    # TODO:临时7类 !!!!
+    name_combile_dict = [  # 对齐模型训练顺序！！！
         'car', #0
-        'bus', #1
-        'truck', #2
+        'truck', # 1   
+        'bus', # 2
         'rider', #3
-        'bicycle', #4
-        'person', #5
-        'NotUsed' #6
+        'bicycle', # 4
+        'person', # 5
+        'motorcycle', # 6
+        'NotUsed' # 7
         ]
-    label_dict = {
+    label_dict = {  # TODO:修改类别！！！！！！
         'car':0,
-        'bus':1,
-        'truck':2,
+        'truck':1,
+        'bus':2,
         'bike':4,
         'bicycle':4,
         'person':5,
-        'motor':4,
-        'NotUsed':6,
+        'motor':6,
+        'motorcycle':6,
+        'NotUsed':7,
         'rider': 3,
         'pedestrain':5,
         'pedestrian':5
     }
+
     list_for_pickle = []
     frame_id = 0
     for item in res_list:
@@ -107,7 +150,7 @@ def get_track_data(res_dir,save_pkl_path,sequence_name):
 
 
 
-def make_data_for_track(sub_t):
+def make_data_for_track(save_dir, track_dir, sub_t):
     sub_t_dir = os.path.join(save_dir,sub_t)
     track_sub_t_dir = os.path.join(track_dir,sub_t)
     os.makedirs(track_sub_t_dir,exist_ok=True)
@@ -125,5 +168,24 @@ def make_data_for_track(sub_t):
 
 
 if __name__ == '__main__':
-    split_clip_for_merged('train_hy_4d_road_7_20250212_lx')
-    # make_data_for_track('train_hy_4d_road_7_20250209_lx')
+    # split_clip_for_merged('train_hy_4d_road_7_20250212_lx')
+    # # make_data_for_track('train_hy_4d_road_7_20250209_lx')
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--save_dir', type=str, required=True)
+    parser.add_argument('--origin_dir', type=str, required=True)
+    parser.add_argument('--det_dir', type=str, required=True)
+    parser.add_argument('--track_dir', type=str, required=True)
+    parser.add_argument('--dataset_name', type=str, required=True)
+    args = parser.parse_args()
+
+    split_clip_for_merged(
+        args.save_dir, args.origin_dir, args.det_dir, args.dataset_name
+    )
+    make_data_for_track(args.save_dir, args.track_dir, args.dataset_name)
+
+    # save_dir = '/data1/turbo_data/huben/data/test_4D_label/model_res/merged' #train_hy_4d_road_7_20250208_lx'
+    # orign_dir = '/data1/turbo_data/huben/data/test_4D_label/origin'
+    # det_dir = '/data1/turbo_data/huben/data/test_4D_label/model_res/bevpro'
+    # # merged_dir = '/data1/turbo_data/4D_label_dataset/models_res/bevpro' # 临时
+    # track_dir= '/data1/turbo_data/huben/data/test_4D_label/model_res/offline_tracked'

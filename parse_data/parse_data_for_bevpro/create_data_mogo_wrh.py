@@ -1,7 +1,6 @@
-import sys
-sys.path.append('/data1/turbo_data/wangruihao/code/auto_labeling/4D_label')
-from parse_data.parse_data_for_bevpro import mogo_converter_wrh as mogo_converter
+import argparse
 
+from BEVFUSION.tools.data_converter import mogo_converter_wrh as mogo_converter
 
 def mogo_data_prep(
     root_path,
@@ -31,12 +30,15 @@ def mogo_data_prep(
         )
 
 if __name__ == "__main__":
-    import os
-    save_dir = '/data1/turbo_data/4D_label_dataset/models_res/bevpro'
-    sub_t = 'train_hy_4d_road_7_20250211_lx'
-    data_root = os.path.join(save_dir,sub_t)
-    mogo_data_prep(root_path = data_root, 
-                    info_prefix = "mogo", 
-                    version ="1.0",
-                    load_augmented=None,
-                    use_fisheye = True)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--data_root', default='/data1/turbo_data/RALG/data/3.0_pro/Intersection/version/v4_fisheye/',type=str)
+    parser.add_argument('--use_fisheye', action='store_true', help="whether use fisheye")
+    args = parser.parse_args()
+
+    mogo_data_prep(
+        root_path=args.data_root, 
+        info_prefix="mogo", 
+        version="1.0",
+        load_augmented=None,
+        use_fisheye=args.use_fisheye,  # 路口需要鱼眼
+    )
