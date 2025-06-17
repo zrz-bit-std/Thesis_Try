@@ -1,3 +1,4 @@
+import argparse
 import time
 import torch
 import argparse
@@ -8,17 +9,12 @@ from easydict import EasyDict
 from detzero_utils.config_utils import cfg, cfg_from_yaml_file, log_cfg_info
 from detzero_utils.common_utils import create_logger, get_log_info
 import sys
-sys.path.append('/data1/turbo_data/wangruihao/code/auto_labeling/4D_label')
 from detzero_track.models import build_model, run_model
 from detzero_track.datasets import build_dataloader
 
-track_dir  = '/data1/turbo_data/4D_label_dataset/models_res/offline_tracked'
-
-def get_tracking_res(data_root_path):
-    # args, cfg = parse_config()
+def get_tracking_res(cfg_file, data_root_path):
     data_path = os.path.join(data_root_path,'track.pkl')
     split = 'test'
-    cfg_file = "/data1/turbo_data/wangruihao/code/4D_label/tracking/tools/cfgs/tk_model_cfgs/waymo_detzero_track_mogo_241216.yaml"
     workers = 1
     batch_size = 8
     save_log = False
@@ -64,17 +60,27 @@ def get_tracking_res(data_root_path):
     logger.info(get_log_info('DetZero Tracking module Finished!'))
 
 
-def get_tracking_all(sub_t):
+def get_tracking_all(track_dir, sub_t, cfg_file):
     sub_track_dir = os.path.join(track_dir,sub_t)
     clip_list = os.listdir(sub_track_dir)
     for clip_name in clip_list:
         # try:
         clip_track_dir = os.path.join(sub_track_dir,clip_name)
-        get_tracking_res(clip_track_dir)
+        get_tracking_res(cfg_file, clip_track_dir)
         # except:
         #     print('*'*100,clip_track_dir)
         #     continue
 
 if __name__ == '__main__':
-    get_tracking_all('train_hy_4d_road_7_20250209_lx')
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--track_dir", type=str, required=True)
+    parser.add_argument("--dataset_name", type=str, required=True)
+    parser.add_argument("--cfg_file", type=str, default="")
+    args = parser.parse_args()
+
+    get_tracking_all(args.track_dir, args.dataset_name, args.cfg_file)
+
+    # cfg_file = "/data1/turbo_data/wangruihao/code/4D_label/tracking/tools/cfgs/tk_model_cfgs/waymo_detzero_track_mogo_241216.yaml"
+    # track_dir  = '/data1/turbo_data/4D_label_dataset/models_res/offline_tracked'
+    # get_tracking_all('train_hy_4d_road_7_20250209_lx')
 

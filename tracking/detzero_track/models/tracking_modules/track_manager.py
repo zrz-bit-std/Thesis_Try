@@ -128,6 +128,9 @@ class TrackManager():
                     items[k] = np.array(v)
 
             for idx, frm_id in enumerate(frame_list[::-1]):
+                # TODO: check是否有影响!!!
+                if frm_id not in frm_tracks:
+                    continue
                 frm_tk_data, reverse_tracks = self.reverse_tracking_module(
                     frm_id, data_dict[frm_id], frm_tracks[frm_id], reverse_tracks
                 )

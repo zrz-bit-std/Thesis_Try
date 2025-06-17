@@ -1,8 +1,10 @@
 DATASET: 'WaymoTrackDataset'
-DATA_PATH: '/data1/turbo_data/wangruihao/code/4D_label/tracking/results' #save path
+# DATA_PATH: '/data1/turbo_data/wangruihao/code/4D_label/tracking/results' #save path
+DATA_PATH: './tracking/results' #save path
 PROCESSED_DATA_TAG: 'waymo_processed_data'
 
-CLASS_NAME: ['car', 'bus', 'truck', 'bike', 'bicycle', 'person', 'motor','rider','NotUsed']
+# CLASS_NAME: ['car', 'bus', 'truck', 'bike', 'bicycle', 'person', 'motor','rider','NotUsed']
+CLASS_NAME: ['car', 'truck', 'bus', 'rider', 'bicycle', 'person', 'motorcycle','NotUsed']
 
 
 DATA_PROCESSOR:
@@ -14,15 +16,25 @@ DATA_PROCESSOR:
 
     - NAME: overlap_box_filter
       METHOD: max_score
+      # CLASS_THRESHOLD: {
+      #     'car': 0.4,
+      #     'bus': 0.4,
+      #     'person': 0.4,
+      #     'truck': 0.4,
+      #     'bike': 0.25,
+      #     'bicycle': 0.25,
+      #     'motor': 0.25,
+      #     'rider': 0.25,
+      #     'NotUsed': 0.45,
+      # }
       CLASS_THRESHOLD: {
           'car': 0.4,
-          'bus': 0.4,
-          'person': 0.4,
           'truck': 0.4,
-          'bike': 0.25,
-          'bicycle': 0.25,
-          'motor': 0.25,
+          'bus': 0.4,
           'rider': 0.25,
+          'bicycle': 0.25,
+          'person': 0.4,
+          'motorcycle': 0.25,
           'NotUsed': 0.45,
       }
 

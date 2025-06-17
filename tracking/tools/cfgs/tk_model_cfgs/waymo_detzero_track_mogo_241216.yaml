@@ -1,5 +1,6 @@
 DATA_CONFIG:
-    _BASE_CONFIG_: /data1/turbo_data/wangruihao/code/4D_label/tracking/tools/cfgs/tk_dataset_cfgs/waymo_dataset_mogo_20241216.yaml
+    # _BASE_CONFIG_: /data1/turbo_data/wangruihao/code/4D_label/tracking/tools/cfgs/tk_dataset_cfgs/waymo_dataset_mogo_20241216.yaml
+    _BASE_CONFIG_: /data1/turbo_data/huben/projects/4D_label/tracking/tools/cfgs/tk_dataset_cfgs/waymo_dataset_mogo_20241216.yaml
 
 
 MODEL:
@@ -19,11 +20,13 @@ MODEL:
 
         TRACK_AGE:
             BIRTH_AGE: 1
-            DEATH_AGE: 3
+            # DEATH_AGE: 3
+            DEATH_AGE: -1 #????
 
         DATA_ASSOCIATION:
             # CLASS_NAME: ['Vehicle', 'Pedestrian', 'Cyclist']
-            CLASS_NAME: ['car', 'bus', 'truck', 'bike', 'bicycle', 'person', 'motor', 'rider','NotUsed']
+            # CLASS_NAME: ['car', 'bus', 'truck', 'bike', 'bicycle', 'person', 'motor', 'rider','NotUsed']
+            CLASS_NAME: ['car', 'truck', 'bus', 'rider', 'bicycle', 'person', 'motorcycle','NotUsed']
 
             DISTINGUISH_CLASS: True
             DISTANCE_METHOD: 'IoUBEV'
@@ -36,26 +39,32 @@ MODEL:
                     # DIST_THRESHOLD: 
                     #     [0.2, 0.1, 0.1]
                     DIST_THRESHOLD: 
-                        [0.2, 0.1, 0.1, 0.2, 0.2, 0.1, 0.1,0.1, 0.1] #第一次匹配iou阈值
+                        # [0.2, 0.1, 0.1, 0.2, 0.2, 0.1, 0.1,0.1, 0.1] #第一次匹配iou阈值
+                        [0.2, 0.1, 0.1, 0.2, 0.2, 0.1, 0.1,0.1] #第一次匹配iou阈值
 
                 SECOND_STAGE:
                     SCORE_THRESHOLD:
                         # [0.1, 0.1, 0.1]
-                        [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1,0.1,0.1]
+                        # [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1,0.1,0.1]
+                        [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1,0.1]
                     POINT_THRESHOLD:
                         # [3, 1, 1]
                         # [0, 0, 0]
-                        [0, 0, 0, 0, 0, 0, 0,0,0]
+                        # [0, 0, 0, 0, 0, 0, 0,0,0]
+                        [0, 0, 0, 0, 0, 0, 0,0]
                     DIST_THRESHOLD:
                         # [0.3, 0.15, 0.15]
-                        [0.3, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15,0.15, 0.15] #第二次匹配阈值
+                        # [0.3, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15,0.15, 0.15] #第二次匹配阈值
+                        [0.3, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15,0.15] #第二次匹配阈值
 
         TRACK_MERGE:
             ENABLE: True
             # CLASS_NAME: ['Vehicle', 'Pedestrian', 'Cyclist']
             # CLASS_THRESHOLD: [0.5, 0.4, 0.4]
-            CLASS_NAME: ['car', 'bus', 'truck', 'bike', 'bicycle', 'person','motor','rider', 'NotUsed']
-            CLASS_THRESHOLD: [0.3, 0.3, 0.3, 0.35, 0.2, 0.25, 0.25, 0.25,0.25]
+            # CLASS_NAME: ['car', 'bus', 'truck', 'bike', 'bicycle', 'person','motor','rider', 'NotUsed']
+            CLASS_NAME: ['car', 'truck', 'bus', 'rider', 'bicycle', 'person', 'motorcycle','NotUsed']
+            # CLASS_THRESHOLD: [0.3, 0.3, 0.3, 0.35, 0.2, 0.25, 0.25, 0.25,0.25]
+            CLASS_THRESHOLD: [0.3, 0.3, 0.3, 0.35, 0.2, 0.25, 0.25, 0.25]
             # CLASS_THRESHOLD: [0.5] #track merge阈值
 
 
@@ -101,14 +110,24 @@ REFINING:
     #     'Pedestrian': 0.1, 
     #     'Cyclist': 0.1
     # }
+    # IOU_THRESHOLDS: {
+    #     'car': 0.3,
+    #     'bus': 0.3,
+    #     'person': 0.2,
+    #     'truck': 0.3,
+    #     'bike': 0.25,
+    #     'bicycle': 0.25,
+    #     'motor': 0.25,
+    #     'rider':0.25,
+    #     'NotUsed': 0.25,
+    # }
     IOU_THRESHOLDS: {
         'car': 0.3,
-        'bus': 0.3,
-        'person': 0.2,
         'truck': 0.3,
-        'bike': 0.25,
-        'bicycle': 0.25,
-        'motor': 0.25,
+        'bus': 0.3,
         'rider':0.25,
+        'bicycle': 0.25,
+        'person': 0.2,
+        'motorcycle': 0.25,
         'NotUsed': 0.25,
     }
