@@ -33,6 +33,12 @@
 
 ``` 
 
+### 环境依赖
+4D整体pipeline，依赖两个代码仓库：BevCalib(标定参数)、BEVFUSION(检测模型)
+- 1. 在4D_label工作目录下，git clone git@gitlab.zhidaoauto.com:dingchunqiu/BevCalib.git; 然后进入BevCalib目录，切换到特定分支，git checkout percept_transform
+- 2. 在4D_label工作目录下，git clone git@gitlab.zhidaoauto.com:rss/perception_engine/BEVFUSION.git; 然后进入BEVFUSION目录，切换特定分支，git checkout master_wangruihao_4d_data, 按该仓库的readme进行编译安装；
+
+
 ### Running
 - 1. 数据采集 & 上传： 由 @ 由朱嘉伟 采集，数据存放路径为：/data1/turbo_data/4D_label_dataset/origin
   
