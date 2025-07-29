@@ -52,4 +52,20 @@ pcr_boundary_ground_z = {
             "right": 1.5945911647935138 - delta,
         }
     },
+    "sh_3": {
+        "intersection": {
+            "top": -0.012661049019607854 - delta,
+            "bottom": -0.06733928793103448 - delta,
+            "left": -0.1035808623853211 - delta,
+            "right": 0.19710866187050358 - delta,
+        }
+    },
+    "sh_4": {
+        "intersection": {
+            "top": 0 - delta,  # TODO: 使用新数据更新！！
+            "bottom": 0 - delta,  # TODO: 使用新数据更新！！
+            "left": -0.12553515217391306 - delta,
+            "right": -0.0011420262008733707 - delta,
+        }
+    },
 }

@@ -64,3 +64,15 @@
 - 5. 生成可视化地址：
   - 根据跟踪结果和原始数据地址，生成可视化demo： 执行 visual_data/data_show.py （（注意修改main函数中的地址） 执行完成后就会生成 /data1/turbo_data/4D_label_dataset/labels/train_hy_4d_road_7_20250209_lx/selected 的地址，
 - 6. 结果进行筛选 
+
+
+### 数据批量生产
+- 3D单帧数据，针对单帧采集数据(因采集数据量的问题，暂时也走单帧生产路线，最终需要切换到时序生产链路)
+  ```
+  bash scripts/batch_dataset_4D_label_one_frame.sh
+  ```
+
+- 4D时序数据，使用时序采集数据
+  ```
+  bash scripts/batch_dataset_4D_label.sh
+  ```

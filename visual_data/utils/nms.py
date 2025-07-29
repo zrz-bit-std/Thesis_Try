@@ -381,7 +381,7 @@ def mixed_nms(boxes, label_names, iou_thresh=0.5, dist_thresh=1.0):
     """_summary_
 
     Args:
-        boxes (ndarray): (n, 8), ordered (x, y, z, w, l, h, yaw, score)
+        boxes (ndarray): (n, 8), ordered (x, y, z, l, w, h, yaw, score)
         label_names (list): (n, ), bbox label names corresponds to boxes.
         iou_thresh (float, optional): iou threshold. Defaults to 0.5.
 
