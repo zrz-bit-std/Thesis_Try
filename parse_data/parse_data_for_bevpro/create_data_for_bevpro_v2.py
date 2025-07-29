@@ -118,7 +118,7 @@ def create_data(
     }
     group_data_per_ts = []
     for clip_name in os.listdir(sub_base_total_dir):
-        if "txt" in clip_name:
+        if "txt" in clip_name or "result_json" in clip_name or "train_" in clip_name:
             continue
         clip_dir = os.path.join(sub_base_total_dir, clip_name)
         

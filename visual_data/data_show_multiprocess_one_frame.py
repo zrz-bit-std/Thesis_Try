@@ -299,6 +299,7 @@ def draw_pcr_on_cam(
     camera_name,
     color=(255, 0, 0),
 ):
+    # if road_id in pcr_boundary_ground_z:
     if road_id in pcr_boundary_ground_z and mode in pcr_boundary_ground_z[road_id]:
         points = get_dense_boundary_points(pcr, mode, road_id)
         pcr_corners = []
@@ -356,8 +357,8 @@ def draw_vehicle_num(boxes_label, color_bar):
 
 def worker(args):
     (
-        clip_tracked_dir,
-        clip_merged_dir,
+        # clip_tracked_dir,
+        # clip_merged_dir,
         frame_name,
         save_path,
         save_path_big_objects,
@@ -372,10 +373,15 @@ def worker(args):
         mode,
         use_fisheye,
         extra_show_big_objects,
+        model_pred_root,
     ) = args
 
-    frame_tracted_name = os.path.join(clip_tracked_dir,frame_name)
-    frame_merged_name = os.path.join(clip_merged_dir,frame_name)
+    # frame_tracked_name = os.path.join(clip_tracked_dir,frame_name)
+    # frame_merged_name = os.path.join(clip_merged_dir,frame_name)
+
+    frame_tracked_name = os.path.join(model_pred_root, "model_pred", frame_name)
+    assert os.path.exists(frame_tracked_name)
+
     save_image_name = os.path.join(save_path, frame_name.replace('.txt','.jpg'))
 
     pcr_x_min, pcr_y_min, _, pcr_x_max, pcr_y_max, _ = pcr
@@ -385,15 +391,16 @@ def worker(args):
         save_image_name_big_objects = os.path.join(
             save_path_big_objects, frame_name.replace('.txt','.jpg')
         )
-    if not os.path.exists(save_image_name) or True:
+    # if not os.path.exists(save_image_name) or True:
+    if True:
         boxes_label_tracked = []
         boxes_label_tracked_raw = []
         vehicle_and_rider_person_num = 0
-        with open(frame_tracted_name,'r') as f:
+        with open(frame_tracked_name,'r') as f:
             for line_ in f.readlines():
                 content_list = line_.strip().split('\t')
                 # name_list.append(name_combile_dict[label_dict[content_list[0]]])
-                is_deg = True
+                is_deg = True  # TODO: hard code !!!
                 if len(content_list) > 9:
                     content_list = content_list[1:]
                     is_deg = False
@@ -420,10 +427,11 @@ def worker(args):
         boxes_label_tracked_new_raw = [boxes_label_tracked_raw[i] for i in nms_idx]
 
         # TODO: 保存nms之后的跟踪结果 !!!
-        nms_frame_tracted_name = frame_tracted_name.replace("/splited/", "/splited_nms/")
-        if not os.path.exists(nms_frame_tracted_name):
-            os.makedirs(os.path.dirname(nms_frame_tracted_name), exist_ok=True)
-            with open(nms_frame_tracted_name, "w") as f:
+        # nms_frame_tracked_name = frame_tracked_name.replace("/splited/", "/splited_nms/")
+        nms_frame_tracked_name = frame_tracked_name.replace("/model_pred/", "/model_pred_nms/")
+        if not os.path.exists(nms_frame_tracked_name):
+            os.makedirs(os.path.dirname(nms_frame_tracked_name), exist_ok=True)
+            with open(nms_frame_tracked_name, "w") as f:
                 for cur_nms_id, cur_nms_data in enumerate(boxes_label_tracked_new_raw):
                     # write object id to delete error detected !!!
                     cur_nms_data.insert(0, cur_nms_id)
@@ -471,6 +479,7 @@ def worker(args):
                 if mode == "intersection" and (x < pcr_x_min or x > pcr_x_max or y < pcr_y_min or y > pcr_y_max):  # 支持路段
                         continue
 
+                # yaw = -1*math.pi/2.0 - math.radians(yaw)
                 image, corner_2d = draw_box_on_pinhole((w,l,h,x,y,z),yaw,image,camera_matrix,camera_extrinsic,color=OBJECT_PALETTE_FISHYE_DETECT[class_name_label][::-1])
                 # TODO: draw object id on image
                 if corner_2d is not None:
@@ -528,7 +537,12 @@ def worker(args):
                 image = cv2.imread(os.path.join(clip_origin_dir,image_name,frame_name.replace('txt','jpg')))
                 image = cv2.resize(image, (1024, 1024))
                 image_big_objects = image.copy()
-
+                
+                # # cv2.circle(image, center, radius, color, thickness=None, lineType=None, shift=None)
+                # w_,h_,_ = image.shape
+                # circle_radius = int(w_*0.47)
+                # cv2.circle(image, (w_//2,h_//2), circle_radius, [255,0,0], 2)
+                
                 camera_matrix = np.array(cam2img_fisheye[image_name])[:3,:3]
                 camera_extrinsic = np.array(lidar2cam_fisheye[image_name])
                 camera_distort_param = np.array(distort_fisheye[image_name])
@@ -538,6 +552,7 @@ def worker(args):
                     if mode == "intersection" and (x < pcr_x_min or x > pcr_x_max or y < pcr_y_min or y > pcr_y_max):
                         continue
 
+                    # yaw = -1*math.pi/2.0 - math.radians(yaw)
                     image, corners_2d = draw_box_on_fisheye((w,l,h,x,y,z),yaw,image,camera_matrix,camera_extrinsic,distort=camera_distort_param,color=OBJECT_PALETTE_FISHYE_DETECT[class_name_label][::-1])
                     if corners_2d is not None:
                         # draw_object_id(image, obj_id, corners_2d)
@@ -590,6 +605,7 @@ def worker(args):
                 if extra_show_big_objects:
                     image_big_objects = cv2.resize(image_big_objects, image_save_size)
                     image_res_big_obj_list.append(image_big_objects)
+            # return_image_fisheye = np.concatenate((image_res_list[0],image_res_list[1],image_res_list[2],image_res_list[3]),axis=1)
             
             # TODO: 临时处理sh_6丁字路口，没有S2数据
             if road_id == "sh_6":
@@ -615,9 +631,9 @@ def worker(args):
 def get_pick_data_mp(
     origin_dir,
     label_dir,
-    tracked_dir,
+    # tracked_dir,
     bev_pro_dir,
-    merged_dir,
+    # merged_dir,
     sub_t,
     pnum,
     pcr,
@@ -626,6 +642,7 @@ def get_pick_data_mp(
     use_fisheye,
     pole,
     extra_show_big_objects,
+    is_ensamble=False,
 ):
     if mode == "intersection":
         image_save_size = (800,800)
@@ -655,10 +672,13 @@ def get_pick_data_mp(
 
     sub_origin_dir = os.path.join(origin_dir,sub_t)
     sub_label_dir = os.path.join(label_dir,sub_t)
-    sub_tracked_dir = os.path.join(tracked_dir,sub_t)
+    # sub_tracked_dir = os.path.join(tracked_dir,sub_t)
     sub_bev_pro_dir = os.path.join(bev_pro_dir,sub_t)
-    sub_merged_dir = os.path.join(merged_dir,sub_t)
+    # sub_merged_dir = os.path.join(merged_dir,sub_t)
     test_json_path = os.path.join(sub_bev_pro_dir,'scences','test.json')
+    if is_ensamble:
+        test_json_path = test_json_path.replace("/ensemble", "/bevpro")
+
     save_path = os.path.join(sub_label_dir,'selected')
     os.makedirs(save_path, exist_ok=True)
     save_path_big_objects = None
@@ -666,25 +686,38 @@ def get_pick_data_mp(
         save_path_big_objects = os.path.join(sub_label_dir,'selected_big_objects')
         os.makedirs(save_path_big_objects, exist_ok=True)
 
+    model_pred_root = sub_bev_pro_dir
 
-    with open(test_json_path) as f:
+    with open(test_json_path, "r") as f:
         test_json = json.load(f)
 
-    clip_list = os.listdir(sub_tracked_dir)
+    # clip_list = os.listdir(sub_tracked_dir)
+    clip_list = os.listdir(sub_origin_dir)
     datas = []
     for clip_name in tqdm(clip_list):
+        if "txt" in clip_name or "result_json" in clip_name or "train_" in clip_name:
+            continue
         clip_origin_dir = os.path.join(sub_origin_dir,clip_name)
-        clip_tracked_dir = os.path.join(sub_tracked_dir,clip_name,'splited')
-        clip_tracked_dir_filtered = os.path.join(sub_tracked_dir, clip_name, 'splited_nms_filtered')
-        if os.path.exists(clip_tracked_dir_filtered):
-            clip_tracked_dir = clip_tracked_dir_filtered
-        clip_merged_dir = os.path.join(sub_merged_dir,clip_name)
-        frame_list = os.listdir(clip_tracked_dir)
+        # clip_tracked_dir = os.path.join(sub_tracked_dir,clip_name,'splited')
+        # clip_tracked_dir_filtered = os.path.join(sub_tracked_dir, clip_name, 'splited_nms_filtered')
+        # if os.path.exists(clip_tracked_dir_filtered):
+        #     clip_tracked_dir = clip_tracked_dir_filtered
+        # clip_merged_dir = os.path.join(sub_merged_dir,clip_name)
+        # frame_list = os.listdir(clip_tracked_dir)
+        
+        # 与之前的splited中的.txt命名一致！！！！
+        cam_sensors = [name for name in os.listdir(clip_origin_dir) if "camera" in name]
+        assert len(cam_sensors) > 0
+        frame_list = [
+            name.replace(".jpg", ".txt")
+            for name in os.listdir(os.path.join(clip_origin_dir, cam_sensors[0]))
+        ]
+        
         for frame_name in tqdm(frame_list):
             datas.append(
                 [
-                    clip_tracked_dir,
-                    clip_merged_dir,
+                    # clip_tracked_dir,
+                    # clip_merged_dir,
                     frame_name,
                     save_path,
                     save_path_big_objects,
@@ -699,6 +732,7 @@ def get_pick_data_mp(
                     mode,
                     use_fisheye,
                     extra_show_big_objects,
+                    model_pred_root,
                 ]
             )
 
@@ -712,9 +746,9 @@ if __name__ == '__main__':
     parser.add_argument('--road', type=str, required=True)
     parser.add_argument("--origin_dir", type=str, required=True)
     parser.add_argument("--label_dir", type=str, required=True)
-    parser.add_argument("--merged_dir", type=str, required=True)
-    parser.add_argument("--bev_pro_dir", type=str, required=True)
-    parser.add_argument("--tracked_dir", type=str, required=True)
+    # parser.add_argument("--merged_dir", type=str, required=True)
+    parser.add_argument("--bev_pro_dir", type=str, required=True)  # xxx/bevpro
+    # parser.add_argument("--tracked_dir", type=str, required=True)
     parser.add_argument("--dataset_name", type=str, required=True)
     parser.add_argument('--pnum', type=int, default=30)
     parser.add_argument(
@@ -725,6 +759,7 @@ if __name__ == '__main__':
         help="collect only one mode lidar data.",
     )
     parser.add_argument('--use_fisheye', action='store_true')
+    parser.add_argument('--is_ensamble', action='store_true')
     parser.add_argument(
         '--pole',
         type=str,
@@ -743,25 +778,14 @@ if __name__ == '__main__':
 
     print(f"Start Visualize data ...")
     start_time = time.time()
-    # # 单进程：耗时~145.8s
-    # get_pick_data(
-    #     args.origin_dir,
-    #     args.label_dir,
-    #     args.tracked_dir,
-    #     args.bev_pro_dir,
-    #     args.merged_dir,
-    #     args.dataset_name,
-    # )
-
-    # 多进程：10个进程耗时~24.6s/第二次耗时16.6s, 20个进程32.5s/第二次还是32.3s，可能是模型在训练！！！貌似10个进程性能更好！！！
 
     # TODO: 当前路段模式不适用鱼眼
     get_pick_data_mp(
         args.origin_dir,
         args.label_dir,
-        args.tracked_dir,
+        # args.tracked_dir,
         args.bev_pro_dir,
-        args.merged_dir,
+        # args.merged_dir,
         args.dataset_name,
         args.pnum,
         pcr,
@@ -770,6 +794,7 @@ if __name__ == '__main__':
         args.use_fisheye,
         args.pole,
         args.extra_show_big_objects,
+        args.is_ensamble,
     )
     print(f"=============== Visualize data cost: {time.time() - start_time}s.")
 
