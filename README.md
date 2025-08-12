@@ -76,3 +76,33 @@
   ```
   bash scripts/batch_dataset_4D_label.sh
   ```
+
+### 准备半自动清洗数据到标注平台
+- 4D清洗数据返回后，挑选出大车(car/truck/bus)通过数据，送标人工标注进行小目标（rider/pedestrian/bicycle/motorcycle)标注, 
+- **注意**：运行脚本时，需要修改相应的数据、保存数据路径，避免数据覆盖！！！
+  ```
+  bash scripts/prepare_semilabel_to_anno_platform.sh
+  ```
+
+### 准备bevlite数据格式
+- 半自动标注数据转bevlite数据格式：[待半自动标注完成后，参见BEVFUSION pkl数据生产线，先从cos桶下载数据，然后生成pkl数据]，然后使用如下脚本，例如：
+  - **注意**：运行脚本时，需要修改相应的数据、保存数据路径，避免数据覆盖！！！
+  ```
+  # 下载cos桶数据至本地目录，例如：将上海6号路口单帧半自动标注数据下载至，/data1/turbo_data/RALG/data/3.0_pro/4d/semi_autolabel/Intersection/label/shanghai_road_6/p2_one_frame
+  
+  bash scripts/prepare_data_for_bevlite_from_semiautolabel.sh
+  ```
+- 全自动标注数据转bevlite数据格式：待清洗数据返回后（主要返回清理数据对应的json文件），json文件放入送筛可视化数据的同级目录（如下所示），例如： /data1/turbo_data/4D_label_dataset_one_frame/Intersection/labels/train_sh_3d_road_6_20250725_5_one_frame/raw_anno_info/，
+
+  |-- raw_anno_info
+
+  |-- selected
+
+  |-- useful.txt
+
+  |-- useful_vehicle.txt
+    - **注意**：运行脚本时，需要修改相应的数据、保存数据路径，避免数据覆盖！！！
+
+  ```
+  bash scripts/prepare_data_for_bevlite.sh
+  ```
