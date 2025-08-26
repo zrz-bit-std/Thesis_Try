@@ -109,21 +109,73 @@ def project_3d_to_2d(points_3d, center_coord,camera_matrix, camera_extrinsic,ima
     valid_bbox_idx = valid_point_idx.sum(axis=-1) >= 1
     return points_2d,center_in_image,valid_bbox_idx
 
-def draw_box_on_fisheye(shape_center,yaw,image,inter_param,exter_param,distort,color = [255,0,0]):
+def draw_box_on_fisheye(
+    shape_center,
+    yaw,
+    image,
+    inter_param,
+    exter_param,
+    distort,color = [255,0,0],
+    segments = 10,
+):
     w, l,h, x, y, z = shape_center
-        # 构建3D框的8个顶点坐标（在物体坐标系下，原点在物体中心）
+    # 构建3D框的8个顶点坐标（在物体坐标系下，原点在物体中心）
     corners_3d_obj = np.array([
         [-l / 2, -w / 2,-h / 2],
-        [l / 2,-w / 2, -h / 2],
+        [l / 2, -w / 2, -h / 2],
         [l / 2, w / 2, -h / 2],
-        [-l / 2, w / 2, -h / 2],
+        [-l / 2, w / 2, -h / 2],   # 底面4顶点
         [-l / 2, -w / 2, h / 2],
         [l / 2, -w / 2, h / 2],
         [l / 2, w / 2, h / 2],
-        [-l / 2, w / 2, h / 2]
+        [-l / 2, w / 2, h / 2],    # 顶面4顶点
     ])
+    edge_indices = [
+        (0, 1), (1, 2), (2, 3), (3, 0),  # 底面
+        (4, 5), (5, 6), (6, 7), (7, 4),  # 顶面
+        (0, 4), (1, 5), (2, 6), (3, 7),  # 侧面
+    ]
+    head_edge_indices = [
+        (1, 5), (2, 6), (1, 2), (5, 6)
+    ]
+    for (i, j) in edge_indices:
+        pt1 = corners_3d_obj[i]
+        pt2 = corners_3d_obj[j]
+
+        # 插值
+        inter_points_3d = []
+        for s in range(segments+1):
+            ratio = s / segments
+            cur_point = pt1 + ratio * (pt2 - pt1)
+            inter_points_3d.append(cur_point)
+
+        inter_points_3d = np.array(inter_points_3d)
+        inter_points_3d_rotation = (
+            np.array([[x, y, z]]).T + rotate_points(inter_points_3d.T, yaw)
+        )  # (n, 3)
+        inter_corners_2d = []
+        image_shape = image.shape
+        valid_flag = []
+        for points in  inter_points_3d_rotation.T:
+            u, v, valid = project_3d_to_fisheye(
+                points, image_shape,inter_param, exter_param, distort
+            )
+            if valid:
+                inter_corners_2d.append([u, v])
+                valid_flag.append(1)
+        inter_corners_2d = np.array(inter_corners_2d)
+        for k in range(len(inter_corners_2d) - 1):
+            pt1 = tuple(map(int, inter_corners_2d[k]))
+            pt2 = tuple(map(int, inter_corners_2d[k+1]))
+            if (i, j) in head_edge_indices:
+                # 头部边加粗
+                cv2.line(image, pt1, pt2, (255, 255, 255), thickness=4)
+            else:
+                cv2.line(image, pt1, pt2, color, thickness=2)
+
+    # 获取8个顶点
     # center_coord = np.array([[x,y,z,1]])
-    corners_3d_obj_roation = rotate_points(corners_3d_obj.T, yaw)
+    corners_3d_obj_roation = rotate_points(corners_3d_obj.T, yaw)  # (n, 3)
     corners_3d_rotation_points = np.array([[x, y, z]]).T + corners_3d_obj_roation
     corners_2d = []
     image_shape = image.shape
@@ -138,8 +190,8 @@ def draw_box_on_fisheye(shape_center,yaw,image,inter_param,exter_param,distort,c
     if len(valid_flag) < 1:
         return image, None
     corners_2d = np.array(corners_2d)
-    image = draw_3d_box(image, corners_2d.astype(int),color=color)
     return image, corners_2d
+
 
 def draw_box_on_pinhole(shape_center,yaw,image,inter_param,exter_param,distort=None,color = [255,0,0]):
     w, l,h, x, y, z = shape_center
