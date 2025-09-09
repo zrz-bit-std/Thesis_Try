@@ -376,10 +376,10 @@ def main():
     args = parser.parse_args()
     
     # 合并drop和track结果
-    # merge_drop_and_track(args.droped, args.track, args.merged)
+    merge_drop_and_track(args.droped, args.track, args.merged)
     
     # 生成pkl文件
-    generate_tracking_pkl(args.merged)
+    # generate_tracking_pkl(args.merged)
 
 if __name__ == "__main__":
     main()

@@ -110,15 +110,15 @@ IFS='_' read -r part1 location part3 part4 road_id part6 part7 <<< "$data_name"
 # # # # # =====================================
 # # # # ======== Step 6: 生成drop_box=======
 
-# python ./visual_data/drop_box.py \
-#   --pred ${dst_dir}/merged/${data_name} \
-#   --track ${dst_dir}/offline_tracked/${data_name} \
-#   --droped ${dst_dir}/droped/${data_name}
+python ./visual_data/drop_box.py \
+  --pred ${dst_dir}/merged/${data_name} \
+  --track ${dst_dir}/offline_tracked/${data_name} \
+  --droped ${dst_dir}/offline_tracked/${data_name}
 
 # # # # =====================================
 # # # ======== Step 7: 合并drop_box与tracking结果=======
 # python ./visual_data/merge_drop_track.py \
-#   --droped ${dst_dir}/droped/${data_name} \
+#   --droped ${dst_dir}/offline_tracked/${data_name} \
 #   --track ${dst_dir}/offline_tracked/${data_name} \
 #   --merged ${dst_dir}/merged_drop_track/${data_name}
 

@@ -242,7 +242,17 @@ def main():
         # 确定输出文件路径，保持与pred文件相同的目录结构
         # 获取pred文件相对于pred_root的路径
         relative_path = pred_file.relative_to(pred_root)
-        drop_file = drop_root / relative_path
+        # 将路径拆分并在第一级目录后插入"droped"
+        path_parts = relative_path.parts
+        if len(path_parts) > 1:
+            # 在第一级目录后插入"droped"
+            new_path_parts = (path_parts[0], "droped") + path_parts[1:]
+            drop_relative_path = Path(*new_path_parts)
+        else:
+            # 如果只有一级路径，在前面添加"droped"
+            drop_relative_path = Path("droped") / relative_path
+        
+        drop_file = drop_root / drop_relative_path
         
         # 确保输出目录存在
         drop_file.parent.mkdir(parents=True, exist_ok=True)
@@ -280,7 +290,7 @@ def main():
                     
                     yaw_deg = np.degrees(box[6])
                     f.write(f"{original_label} {box[5]} {box[3]} {box[4]} {box[0]} {box[1]} {box[2]} {yaw_deg} {box[7]}\n")
-            print(f"File {stem}: pred_boxes={len(pred_boxes)}, track_boxes={len(track_boxes)}, unmatched_boxes={len(unmatched_boxes)}")
+            # print(f"File {stem}: pred_boxes={len(pred_boxes)}, track_boxes={len(track_boxes)}, unmatched_boxes={len(unmatched_boxes)}")
         elif drop_file.exists():
             # 如果没有未匹配的框，但drop文件已存在，则删除它
             drop_file.unlink()
