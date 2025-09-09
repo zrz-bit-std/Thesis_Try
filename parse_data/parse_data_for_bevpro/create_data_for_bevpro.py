@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 import os
 # import open3d as o3d
 import json
@@ -6,7 +7,7 @@ import shutil
 from tqdm import tqdm
 import copy
 import argparse
-
+sys.path.append('/data1/turbo_data/lishuaiyin/4D_label')
 from BEVFUSION.tools.data_process.generat_train import worker
 
 # base_total_dir = '/data1/turbo_data/4D_label_dataset/origin/'
@@ -130,7 +131,7 @@ def create_data(base_total_dir, save_dir, sub_t):
                 shutil.copy(os.path.join(base_dir,'camera_3_8',base_name_+'.jpg'),os.path.join(bev_pro_lidar_camera_3_8,base_name_+'.jpg'))
 
 def create_train_data(save_dir, sub_t):
-    # example_data_path = '/data1/turbo_data/zhangchengyue/code/BEV/data/Intersection/test/qatest/2024-12-13-15-19-36_19/cpp_sync_png_fisheye_wrh/scences/test.json'
+    example_data_path = '/rss/zhangchengyue/code/BEV/data/Intersection/test/qatest/2024-12-13-15-19-36_19/cpp_sync_png_fisheye_wrh/scences/test.json'
     samples_total_path = os.path.join(save_dir,sub_t,'samples')
     scences_path = os.path.join(save_dir,sub_t,'scences')
     os.makedirs(scences_path,exist_ok=True)

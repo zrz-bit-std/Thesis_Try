@@ -46,7 +46,7 @@ class WaymoTrackDataset(DatasetTemplate):
         self.track_module_path['detection'] = self.det_path
 
         # set the path of ground-truth infos
-        self.gt_path = os.path.join(self.root_path, 'waymo_infos_%s.pkl' % self.split)
+        # self.gt_path = os.path.join(self.root_path, 'waymo_infos_%s.pkl' % self.split) # debug no use gt_path
 
     def init_infos(self):
         with open(self.track_module_path['detection'], 'rb') as f:

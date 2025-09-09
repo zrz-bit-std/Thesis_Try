@@ -9,7 +9,7 @@ from tqdm import tqdm
 import json
 import re
 import sys
-# sys.path.append('/data1/turbo_data/wangruihao/code/auto_labeling/4D_label')
+sys.path.append('/data1/turbo_data/lishuaiyin/4D_label')
 from visual_data.utils.project_image import *
 from visual_data.utils.load_param import load_yaml
 from visual_data.utils.nms import nms_angle
@@ -251,7 +251,7 @@ def get_pick_data(origin_dir, label_dir, tracked_dir, bev_pro_dir, merged_dir, s
     image_pinhole_list = ['camera_0_0','camera_1_0','camera_2_0','camera_3_0']
     image_fisheye_list = ['camera_0_8','camera_1_8','camera_2_8','camera_3_8']
 
-    sub_origin_dir = os.path.join(origin_dir,sub_t)
+    sub_origin_dir = os.path.join(origin_dir,sub_t,'original_data')
     sub_label_dir = os.path.join(label_dir,sub_t)
     sub_tracked_dir = os.path.join(tracked_dir,sub_t)
     sub_bev_pro_dir = os.path.join(bev_pro_dir,sub_t)
@@ -305,9 +305,9 @@ def get_pick_data(origin_dir, label_dir, tracked_dir, bev_pro_dir, merged_dir, s
                         
             image_res_list = []  
             for image_name in image_pinhole_list:
-                # if image_name == 'camera_0_0': # wangruihao
-                #     image_res_list.append(np.zeros((800,800,3),np.uint8))
-                #     continue
+                if image_name == 'camera_2_0':#  or image_name == 'camera_3_0' : # wangruihao
+                    image_res_list.append(np.zeros((800,800,3),np.uint8))
+                    continue
                 image = cv2.imread(os.path.join(clip_origin_dir,image_name,frame_name.replace('txt','jpg')))
                 camera_matrix = np.array(cam2img[image_name])[:3,:3]
                 camera_extrinsic = np.array(lidar2cam[image_name])
@@ -322,6 +322,9 @@ def get_pick_data(origin_dir, label_dir, tracked_dir, bev_pro_dir, merged_dir, s
 
             image_res_list = []  
             for image_name in image_fisheye_list:
+                if image_name == 'camera_2_8':
+                    image_res_list.append(np.zeros((800,800,3),np.uint8))
+                    continue
                 image = cv2.imread(os.path.join(clip_origin_dir,image_name,frame_name.replace('txt','jpg')))
                 # cv2.circle(image, center, radius, color, thickness=None, lineType=None, shift=None)
                 w_,h_,_ = image.shape

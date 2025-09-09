@@ -129,11 +129,13 @@ class TrackManager():
 
             for idx, frm_id in enumerate(frame_list[::-1]):
                 # TODO: check是否有影响!!!
-                if frm_id not in frm_tracks:
+                if frm_id not in frm_tracks.keys():
                     continue
                 frm_tk_data, reverse_tracks = self.reverse_tracking_module(
                     frm_id, data_dict[frm_id], frm_tracks[frm_id], reverse_tracks
                 )
+                print(f"reverse_tracking_module returned {len(frm_tk_data)} tracks")
+
                 for key, val in frm_tk_data.items():
                     for sub_key, sub_val in val.items():
                         tk_result[key][sub_key] = np.insert(
@@ -142,7 +144,15 @@ class TrackManager():
                     tk_result[key]['pose'] = np.insert(
                             tk_result[key]['pose'], 0, data_dict[frm_id]['pose'], axis=0
                         )
-
+        if self.modules_dicts['reverse_tracking_config'].enable:
+            total_tracks = len(tk_result)
+            total_detections = sum([len(v['sample_idx']) for v in tk_result.values()])
+            print(f"With reverse tracking: {total_tracks} tracks, {total_detections} detections")
+        else:
+            total_tracks = len(tk_result)
+            total_detections = sum([len(v['sample_idx']) for v in tk_result.values()])
+            print(f"Without reverse tracking: {total_tracks} tracks, {total_detections} detections")
+                
         return tk_result
 
     def predict_tracks(self, frm_id, tracks):
@@ -220,6 +230,9 @@ class TrackManager():
         return track_output_data, tracks, track_id_count
 
     def reverse_tracking_module(self, frame_id, det_data, trk_data, tracks):
+        print(f"reverse_tracking_module called with frame_id: {frame_id}")
+        print(f"trk_data keys: {list(trk_data.keys())}")
+        print(f"trk_data['start']: {trk_data['start']}")
         track_data = self.predict_tracks(frame_id, tracks)
         trk_mask = ~ trk_data['start'].astype(np.bool)
 
@@ -233,6 +246,8 @@ class TrackManager():
         if 'boxes_global' in det_data:
             matched, track_unmatch, det_unmatch = \
                 self.modules_dicts['data_association_module'].only_two_stage(det_data, track_data)
+            
+            print(f"Matches found: {len(matched)}, Unmatched tracks: {len(track_unmatch)}, Unmatched detections: {len(det_unmatch)}")
 
             det_boxes = det_data['boxes_global'][:, :9]
             det_name = det_data['name']
@@ -249,9 +264,12 @@ class TrackManager():
         for track in tracks:
             track_output_data.update(copy.deepcopy(track.info()))
 
+        # 检查新添加的轨迹
+        new_tracks_count = 0
         for obj_idx, obj_id in enumerate(trk_data['obj_ids']):
             if trk_data['start'][obj_idx] == 0:
                 continue
+            new_tracks_count += 1
             tracks.append(self.modules_dicts['filter_module'](
                 bbox=trk_data['boxes_global'][obj_idx][:7], 
                 name=trk_data['name'][obj_idx],
@@ -260,7 +278,7 @@ class TrackManager():
                 track_id=trk_data['obj_ids'][obj_idx],
                 num_points=trk_data['num_points'][obj_idx],
                 delta_t=-0.1))
-        
+        print(f"New tracks added: {new_tracks_count}")
         return track_output_data, tracks
 
     def overlap_track_merge(self, tracks):

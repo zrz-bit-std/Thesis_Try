@@ -35,7 +35,7 @@ def split_clip_for_merged(save_dir, origin_dir, det_dir, sub_t):
     sub_t_dir = os.path.join(save_dir,sub_t)
     # os.makedirs(sub_t_dir,exist_ok=True)
     remakedir(sub_t_dir)
-    orgin_sub_t = os.path.join(origin_dir,sub_t)
+    orgin_sub_t = os.path.join(origin_dir,sub_t,'original_data')
     clip_list = os.listdir(orgin_sub_t)
     model_sub_t = os.path.join(det_dir, sub_t, 'model_pred')
     model_txt_set = set([i.split('.t')[0] for i in os.listdir(model_sub_t)])

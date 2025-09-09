@@ -47,7 +47,7 @@ def get_tracking_res(cfg_file, data_root_path):
     )
     cfg_tmp.update({'cls_num':7})
     model = build_model(cfg_tmp.MODEL, logger)
-    print("model:{}".format(model))
+    
     run_model(
         model=model, 
         dataloader=dataloader,

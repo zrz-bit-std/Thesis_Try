@@ -19,9 +19,9 @@ MODEL:
             DELTA_T: 0.1
 
         TRACK_AGE:
-            BIRTH_AGE: 1
-            # DEATH_AGE: 3
-            DEATH_AGE: -1 #????
+            BIRTH_AGE: 3
+            DEATH_AGE: 10
+            # DEATH_AGE: -1 #????
 
         DATA_ASSOCIATION:
             # CLASS_NAME: ['Vehicle', 'Pedestrian', 'Cyclist']

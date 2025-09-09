@@ -92,7 +92,8 @@ class KalmanFilter(BaseKalmanFilter):
         temp_x = copy.deepcopy(self.x)
         if self.name in vehicle_names:
             speed_norm = np.linalg.norm(temp_x[self.z_dim:])
-            if speed_norm <= np.max(self.size)/2.:
+            # if speed_norm <= np.max(self.size)/2.: ## 
+            if speed_norm <= 0.5: ## 
                 temp_x[self.z_dim:] = 0.
 
         self.x = self.F @ temp_x

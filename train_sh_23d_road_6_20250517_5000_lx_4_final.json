@@ -1,0 +1,1034 @@
+{
+    "1747456754.599990": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456754.599990.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456754.599990.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456754.599990.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456754.599990.txt"
+    },
+    "1747456759.799993": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456759.799993.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456759.799993.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456759.799993.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456759.799993.txt"
+    },
+    "1747456748.499994": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456748.499994.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456748.499994.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456748.499994.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456748.499994.txt"
+    },
+    "1747456755.999993": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456755.999993.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456755.999993.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456755.999993.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456755.999993.txt"
+    },
+    "1747456747.799992": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456747.799992.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456747.799992.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456747.799992.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456747.799992.txt"
+    },
+    "1747456752.099995": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456752.099995.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456752.099995.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456752.099995.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456752.099995.txt"
+    },
+    "1747456747.699990": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456747.699990.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456747.699990.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456747.699990.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456747.699990.txt"
+    },
+    "1747456756.499999": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456756.499999.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456756.499999.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456756.499999.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456756.499999.txt"
+    },
+    "1747456756.599991": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456756.599991.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456756.599991.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456756.599991.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456756.599991.txt"
+    },
+    "1747456758.099998": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456758.099998.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456758.099998.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456758.099998.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456758.099998.txt"
+    },
+    "1747456760.199992": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456760.199992.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456760.199992.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456760.199992.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456760.199992.txt"
+    },
+    "1747456759.999990": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456759.999990.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456759.999990.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456759.999990.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456759.999990.txt"
+    },
+    "1747456756.699992": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456756.699992.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456756.699992.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456756.699992.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456756.699992.txt"
+    },
+    "1747456751.499996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456751.499996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456751.499996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456751.499996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456751.499996.txt"
+    },
+    "1747456749.099997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456749.099997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456749.099997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456749.099997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456749.099997.txt"
+    },
+    "1747456748.299992": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456748.299992.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456748.299992.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456748.299992.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456748.299992.txt"
+    },
+    "1747456745.900000": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456745.900000.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456745.900000.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456745.900000.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456745.900000.txt"
+    },
+    "1747456745.100000": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456745.100000.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456745.100000.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456745.100000.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456745.100000.txt"
+    },
+    "1747456760.899994": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456760.899994.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456760.899994.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456760.899994.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456760.899994.txt"
+    },
+    "1747456749.599993": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456749.599993.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456749.599993.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456749.599993.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456749.599993.txt"
+    },
+    "1747456759.099996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456759.099996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456759.099996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456759.099996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456759.099996.txt"
+    },
+    "1747456743.899995": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456743.899995.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456743.899995.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456743.899995.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456743.899995.txt"
+    },
+    "1747456758.200000": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456758.200000.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456758.200000.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456758.200000.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456758.200000.txt"
+    },
+    "1747456748.099998": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456748.099998.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456748.099998.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456748.099998.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456748.099998.txt"
+    },
+    "1747456748.199995": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456748.199995.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456748.199995.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456748.199995.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456748.199995.txt"
+    },
+    "1747456752.499997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456752.499997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456752.499997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456752.499997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456752.499997.txt"
+    },
+    "1747456760.799996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456760.799996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456760.799996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456760.799996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456760.799996.txt"
+    },
+    "1747456757.499996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456757.499996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456757.499996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456757.499996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456757.499996.txt"
+    },
+    "1747456757.199999": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456757.199999.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456757.199999.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456757.199999.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456757.199999.txt"
+    },
+    "1747456756.799995": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456756.799995.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456756.799995.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456756.799995.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456756.799995.txt"
+    },
+    "1747456755.599989": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456755.599989.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456755.599989.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456755.599989.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456755.599989.txt"
+    },
+    "1747456747.499993": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456747.499993.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456747.499993.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456747.499993.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456747.499993.txt"
+    },
+    "1747456756.099997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456756.099997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456756.099997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456756.099997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456756.099997.txt"
+    },
+    "1747456758.300001": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456758.300001.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456758.300001.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456758.300001.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456758.300001.txt"
+    },
+    "1747456757.799994": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456757.799994.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456757.799994.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456757.799994.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456757.799994.txt"
+    },
+    "1747456747.099998": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456747.099998.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456747.099998.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456747.099998.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456747.099998.txt"
+    },
+    "1747456760.599995": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456760.599995.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456760.599995.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456760.599995.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456760.599995.txt"
+    },
+    "1747456756.899999": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456756.899999.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456756.899999.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456756.899999.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456756.899999.txt"
+    },
+    "1747456753.299999": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456753.299999.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456753.299999.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456753.299999.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456753.299999.txt"
+    },
+    "1747456745.000000": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456745.000000.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456745.000000.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456745.000000.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456745.000000.txt"
+    },
+    "1747456744.799994": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456744.799994.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456744.799994.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456744.799994.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456744.799994.txt"
+    },
+    "1747456757.399999": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456757.399999.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456757.399999.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456757.399999.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456757.399999.txt"
+    },
+    "1747456746.199996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456746.199996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456746.199996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456746.199996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456746.199996.txt"
+    },
+    "1747456753.999995": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456753.999995.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456753.999995.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456753.999995.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456753.999995.txt"
+    },
+    "1747456751.199996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456751.199996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456751.199996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456751.199996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456751.199996.txt"
+    },
+    "1747456746.499992": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456746.499992.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456746.499992.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456746.499992.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456746.499992.txt"
+    },
+    "1747456751.299997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456751.299997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456751.299997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456751.299997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456751.299997.txt"
+    },
+    "1747456751.999996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456751.999996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456751.999996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456751.999996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456751.999996.txt"
+    },
+    "1747456745.499992": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456745.499992.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456745.499992.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456745.499992.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456745.499992.txt"
+    },
+    "1747456760.699993": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456760.699993.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456760.699993.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456760.699993.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456760.699993.txt"
+    },
+    "1747456744.300004": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456744.300004.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456744.300004.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456744.300004.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456744.300004.txt"
+    },
+    "1747456745.799990": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456745.799990.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456745.799990.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456745.799990.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456745.799990.txt"
+    },
+    "1747456756.999996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456756.999996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456756.999996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456756.999996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456756.999996.txt"
+    },
+    "1747456752.799993": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456752.799993.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456752.799993.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456752.799993.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456752.799993.txt"
+    },
+    "1747456749.299999": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456749.299999.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456749.299999.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456749.299999.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456749.299999.txt"
+    },
+    "1747456750.900000": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456750.900000.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456750.900000.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456750.900000.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456750.900000.txt"
+    },
+    "1747456747.999996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456747.999996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456747.999996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456747.999996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456747.999996.txt"
+    },
+    "1747456747.899999": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456747.899999.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456747.899999.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456747.899999.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456747.899999.txt"
+    },
+    "1747456753.899994": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456753.899994.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456753.899994.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456753.899994.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456753.899994.txt"
+    },
+    "1747456758.700001": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456758.700001.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456758.700001.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456758.700001.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456758.700001.txt"
+    },
+    "1747456751.899996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456751.899996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456751.899996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456751.899996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456751.899996.txt"
+    },
+    "1747456750.000000": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456750.000000.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456750.000000.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456750.000000.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456750.000000.txt"
+    },
+    "1747456749.499996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456749.499996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456749.499996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456749.499996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456749.499996.txt"
+    },
+    "1747456746.399995": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456746.399995.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456746.399995.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456746.399995.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456746.399995.txt"
+    },
+    "1747456760.299992": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456760.299992.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456760.299992.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456760.299992.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456760.299992.txt"
+    },
+    "1747456759.299997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456759.299997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456759.299997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456759.299997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456759.299997.txt"
+    },
+    "1747456756.300001": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456756.300001.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456756.300001.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456756.300001.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456756.300001.txt"
+    },
+    "1747456759.199996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456759.199996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456759.199996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456759.199996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456759.199996.txt"
+    },
+    "1747456755.899996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456755.899996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456755.899996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456755.899996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456755.899996.txt"
+    },
+    "1747456750.699992": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456750.699992.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456750.699992.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456750.699992.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456750.699992.txt"
+    },
+    "1747456744.599995": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456744.599995.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456744.599995.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456744.599995.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456744.599995.txt"
+    },
+    "1747456752.400000": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456752.400000.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456752.400000.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456752.400000.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456752.400000.txt"
+    },
+    "1747456757.300002": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456757.300002.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456757.300002.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456757.300002.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456757.300002.txt"
+    },
+    "1747456760.099991": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456760.099991.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456760.099991.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456760.099991.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456760.099991.txt"
+    },
+    "1747456752.199999": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456752.199999.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456752.199999.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456752.199999.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456752.199999.txt"
+    },
+    "1747456753.200000": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456753.200000.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456753.200000.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456753.200000.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456753.200000.txt"
+    },
+    "1747456754.099995": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456754.099995.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456754.099995.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456754.099995.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456754.099995.txt"
+    },
+    "1747456754.399996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456754.399996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456754.399996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456754.399996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456754.399996.txt"
+    },
+    "1747456750.999999": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456750.999999.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456750.999999.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456750.999999.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456750.999999.txt"
+    },
+    "1747456744.000000": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456744.000000.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456744.000000.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456744.000000.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456744.000000.txt"
+    },
+    "1747456755.099995": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456755.099995.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456755.099995.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456755.099995.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456755.099995.txt"
+    },
+    "1747456758.600000": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456758.600000.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456758.600000.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456758.600000.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456758.600000.txt"
+    },
+    "1747456747.199997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456747.199997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456747.199997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456747.199997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456747.199997.txt"
+    },
+    "1747456751.699992": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456751.699992.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456751.699992.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456751.699992.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456751.699992.txt"
+    },
+    "1747456744.200003": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456744.200003.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456744.200003.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456744.200003.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456744.200003.txt"
+    },
+    "1747456755.799989": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456755.799989.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456755.799989.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456755.799989.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456755.799989.txt"
+    },
+    "1747456759.899990": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456759.899990.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456759.899990.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456759.899990.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456759.899990.txt"
+    },
+    "1747456745.299997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456745.299997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456745.299997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456745.299997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456745.299997.txt"
+    },
+    "1747456744.099998": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456744.099998.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456744.099998.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456744.099998.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456744.099998.txt"
+    },
+    "1747456750.499992": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456750.499992.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456750.499992.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456750.499992.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456750.499992.txt"
+    },
+    "1747456744.499996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456744.499996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456744.499996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456744.499996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456744.499996.txt"
+    },
+    "1747456747.299991": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456747.299991.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456747.299991.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456747.299991.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456747.299991.txt"
+    },
+    "1747456757.899998": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456757.899998.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456757.899998.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456757.899998.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456757.899998.txt"
+    },
+    "1747456754.299996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456754.299996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456754.299996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456754.299996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456754.299996.txt"
+    },
+    "1747456752.899997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456752.899997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456752.899997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456752.899997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456752.899997.txt"
+    },
+    "1747456746.599991": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456746.599991.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456746.599991.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456746.599991.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456746.599991.txt"
+    },
+    "1747456751.400000": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456751.400000.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456751.400000.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456751.400000.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456751.400000.txt"
+    },
+    "1747456746.799995": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456746.799995.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456746.799995.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456746.799995.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456746.799995.txt"
+    },
+    "1747456746.099998": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456746.099998.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456746.099998.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456746.099998.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456746.099998.txt"
+    },
+    "1747456755.499997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456755.499997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456755.499997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456755.499997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456755.499997.txt"
+    },
+    "1747456750.399997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456750.399997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456750.399997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456750.399997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456750.399997.txt"
+    },
+    "1747456753.799989": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456753.799989.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456753.799989.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456753.799989.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456753.799989.txt"
+    },
+    "1747456759.699998": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456759.699998.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456759.699998.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456759.699998.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456759.699998.txt"
+    },
+    "1747456750.099998": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456750.099998.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456750.099998.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456750.099998.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456750.099998.txt"
+    },
+    "1747456748.799994": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456748.799994.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456748.799994.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456748.799994.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456748.799994.txt"
+    },
+    "1747456749.400003": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456749.400003.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456749.400003.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456749.400003.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456749.400003.txt"
+    },
+    "1747456748.999996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456748.999996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456748.999996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456748.999996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456748.999996.txt"
+    },
+    "1747456744.899995": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456744.899995.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456744.899995.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456744.899995.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456744.899995.txt"
+    },
+    "1747456753.599992": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456753.599992.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456753.599992.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456753.599992.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456753.599992.txt"
+    },
+    "1747456749.900001": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456749.900001.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456749.900001.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456749.900001.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456749.900001.txt"
+    },
+    "1747456748.899997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456748.899997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456748.899997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456748.899997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456748.899997.txt"
+    },
+    "1747456755.299997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456755.299997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456755.299997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456755.299997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456755.299997.txt"
+    },
+    "1747456756.399999": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456756.399999.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456756.399999.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456756.399999.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456756.399999.txt"
+    },
+    "1747456753.399996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456753.399996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456753.399996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456753.399996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456753.399996.txt"
+    },
+    "1747456754.499996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456754.499996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456754.499996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456754.499996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456754.499996.txt"
+    },
+    "1747456760.499996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456760.499996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456760.499996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456760.499996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456760.499996.txt"
+    },
+    "1747456759.599995": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456759.599995.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456759.599995.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456759.599995.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456759.599995.txt"
+    },
+    "1747456754.799990": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456754.799990.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456754.799990.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456754.799990.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456754.799990.txt"
+    },
+    "1747456754.999997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456754.999997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456754.999997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456754.999997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456754.999997.txt"
+    },
+    "1747456751.599991": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456751.599991.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456751.599991.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456751.599991.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456751.599991.txt"
+    },
+    "1747456757.699993": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456757.699993.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456757.699993.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456757.699993.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456757.699993.txt"
+    },
+    "1747456748.599989": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456748.599989.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456748.599989.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456748.599989.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456748.599989.txt"
+    },
+    "1747456759.499994": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456759.499994.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456759.499994.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456759.499994.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456759.499994.txt"
+    },
+    "1747456746.299993": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456746.299993.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456746.299993.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456746.299993.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456746.299993.txt"
+    },
+    "1747456747.399995": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456747.399995.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456747.399995.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456747.399995.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456747.399995.txt"
+    },
+    "1747456752.299998": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456752.299998.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456752.299998.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456752.299998.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456752.299998.txt"
+    },
+    "1747456753.499992": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456753.499992.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456753.499992.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456753.499992.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456753.499992.txt"
+    },
+    "1747456752.999996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456752.999996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456752.999996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456752.999996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456752.999996.txt"
+    },
+    "1747456759.399998": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456759.399998.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456759.399998.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456759.399998.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456759.399998.txt"
+    },
+    "1747456760.399994": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456760.399994.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456760.399994.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456760.399994.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456760.399994.txt"
+    },
+    "1747456752.599990": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456752.599990.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456752.599990.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456752.599990.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456752.599990.txt"
+    },
+    "1747456758.799994": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456758.799994.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456758.799994.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456758.799994.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456758.799994.txt"
+    },
+    "1747456758.499998": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456758.499998.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456758.499998.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456758.499998.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456758.499998.txt"
+    },
+    "1747456754.899994": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456754.899994.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456754.899994.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456754.899994.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456754.899994.txt"
+    },
+    "1747456745.999998": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456745.999998.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456745.999998.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456745.999998.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456745.999998.txt"
+    },
+    "1747456750.300003": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456750.300003.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456750.300003.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456750.300003.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456750.300003.txt"
+    },
+    "1747456748.699991": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456748.699991.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456748.699991.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456748.699991.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456748.699991.txt"
+    },
+    "1747456755.199996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456755.199996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456755.199996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456755.199996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456755.199996.txt"
+    },
+    "1747456756.200001": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456756.200001.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456756.200001.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456756.200001.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456756.200001.txt"
+    },
+    "1747456746.899997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456746.899997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456746.899997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456746.899997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456746.899997.txt"
+    },
+    "1747456758.000000": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456758.000000.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456758.000000.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456758.000000.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456758.000000.txt"
+    },
+    "1747456753.099998": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456753.099998.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456753.099998.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456753.099998.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456753.099998.txt"
+    },
+    "1747456749.699993": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456749.699993.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456749.699993.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456749.699993.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456749.699993.txt"
+    },
+    "1747456754.199993": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456754.199993.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456754.199993.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456754.199993.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456754.199993.txt"
+    },
+    "1747456744.400003": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456744.400003.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456744.400003.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456744.400003.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456744.400003.txt"
+    },
+    "1747456746.699994": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456746.699994.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456746.699994.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456746.699994.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456746.699994.txt"
+    },
+    "1747456757.099995": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456757.099995.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456757.099995.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456757.099995.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456757.099995.txt"
+    },
+    "1747456751.099997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456751.099997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456751.099997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456751.099997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456751.099997.txt"
+    },
+    "1747456744.699998": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456744.699998.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456744.699998.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456744.699998.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456744.699998.txt"
+    },
+    "1747456748.399996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456748.399996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456748.399996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456748.399996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456748.399996.txt"
+    },
+    "1747456749.799995": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456749.799995.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456749.799995.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456749.799995.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456749.799995.txt"
+    },
+    "1747456745.699990": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456745.699990.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456745.699990.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456745.699990.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456745.699990.txt"
+    },
+    "1747456750.599990": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456750.599990.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456750.599990.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456750.599990.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456750.599990.txt"
+    },
+    "1747456751.799991": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456751.799991.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456751.799991.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456751.799991.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456751.799991.txt"
+    },
+    "1747456746.999999": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456746.999999.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456746.999999.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456746.999999.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456746.999999.txt"
+    },
+    "1747456753.699991": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456753.699991.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456753.699991.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456753.699991.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456753.699991.txt"
+    },
+    "1747456758.899997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456758.899997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456758.899997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456758.899997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456758.899997.txt"
+    },
+    "1747456749.199997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456749.199997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456749.199997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456749.199997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456749.199997.txt"
+    },
+    "1747456745.399997": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456745.399997.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456745.399997.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456745.399997.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456745.399997.txt"
+    },
+    "1747456752.699992": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456752.699992.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456752.699992.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456752.699992.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456752.699992.txt"
+    },
+    "1747456750.200001": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456750.200001.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456750.200001.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456750.200001.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456750.200001.txt"
+    },
+    "1747456745.199998": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456745.199998.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456745.199998.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456745.199998.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456745.199998.txt"
+    },
+    "1747456755.699991": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456755.699991.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456755.699991.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456755.699991.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456755.699991.txt"
+    },
+    "1747456757.599992": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456757.599992.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456757.599992.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456757.599992.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456757.599992.txt"
+    },
+    "1747456758.399998": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456758.399998.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456758.399998.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456758.399998.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456758.399998.txt"
+    },
+    "1747456745.599991": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456745.599991.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456745.599991.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456745.599991.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456745.599991.txt"
+    },
+    "1747456760.999996": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456760.999996.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456760.999996.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456760.999996.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456760.999996.txt"
+    },
+    "1747456750.799994": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456750.799994.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456750.799994.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456750.799994.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456750.799994.txt"
+    },
+    "1747456758.999994": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456758.999994.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456758.999994.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456758.999994.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456758.999994.txt"
+    },
+    "1747456755.399999": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456755.399999.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456755.399999.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456755.399999.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456755.399999.txt"
+    },
+    "1747456754.699989": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456754.699989.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456754.699989.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456754.699989.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456754.699989.txt"
+    },
+    "1747456747.599991": {
+        "pred": "/rss/lishuaiyin/4D_label/dataset_track/train_sh_23d_road_6_20250517_5000_lx_4/model_pred/1747456747.599991.txt",
+        "gt": "/rss/lishuaiyin/4D_label/results/train_sh_23d_road_6_20250517_5000_lx_4/result/20250517123903/result_json/1747456747.599991.json",
+        "track": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/splited_final/1747456747.599991.txt",
+        "drop": "/rss/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_23d_road_6_20250517_5000_lx_4/20250517123903/droped_final/1747456747.599991.txt"
+    }
+}

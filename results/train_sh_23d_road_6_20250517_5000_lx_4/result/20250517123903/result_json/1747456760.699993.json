@@ -1,0 +1,1689 @@
+{
+ "data": {
+  "3d_url": "1747456760.699993.pcd"
+ },
+ "nCloud": 119308,
+ "result": {
+  "data": [
+   {
+    "3Dcenter": {
+     "x": 3.376638,
+     "y": -2.990033,
+     "z": 1.999998
+    },
+    "3Dsize": {
+     "width": 2.030222,
+     "length": 4.213044,
+     "height": 1.599997,
+     "alpha": 0.666431,
+     "rx": 0,
+     "ry": 0,
+     "rz": 0.666431
+    },
+    "group": "0",
+    "ObjectID": 1,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 129,
+    "Pseudo_3D_larger_than_60cm": 1,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -6.941717,
+     "y": -5.790185,
+     "z": 1.965275
+    },
+    "3Dsize": {
+     "width": 1.579999,
+     "length": 4.52,
+     "height": 1.53,
+     "alpha": 0.351158,
+     "rx": 0,
+     "ry": 0,
+     "rz": 0.351158
+    },
+    "group": "0",
+    "ObjectID": 2,
+    "label": "5000",
+    "sublabel": "5003",
+    "pointnum": 82,
+    "Pseudo_3D_larger_than_60cm": 1,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -17.409859,
+     "y": -4.78698,
+     "z": 1.928464
+    },
+    "3Dsize": {
+     "width": 1.993896,
+     "length": 4.8,
+     "height": 1.496928,
+     "alpha": -0.063874,
+     "rx": 0,
+     "ry": 0,
+     "rz": -0.063874
+    },
+    "group": "0",
+    "ObjectID": 3,
+    "label": "5000",
+    "sublabel": "5003",
+    "pointnum": 9,
+    "Pseudo_3D_larger_than_60cm": 1,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -29.03936,
+     "y": -3.775418,
+     "z": 1.92
+    },
+    "3Dsize": {
+     "width": 2.029997,
+     "length": 4.49642,
+     "height": 1.599999,
+     "alpha": -0.165326,
+     "rx": 0,
+     "ry": 0,
+     "rz": -0.165326
+    },
+    "group": "0",
+    "ObjectID": 4,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 23,
+    "Pseudo_3D_larger_than_60cm": 1,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -17.152452,
+     "y": -14.927512,
+     "z": 1.856277
+    },
+    "3Dsize": {
+     "width": 0.720204,
+     "length": 1.444247,
+     "height": 1.599998,
+     "alpha": 2.162595,
+     "rx": 0.003862,
+     "ry": -0.007008,
+     "rz": 2.162595
+    },
+    "group": "0",
+    "ObjectID": 5,
+    "label": "4000",
+    "sublabel": "4002",
+    "pointnum": 10,
+    "Pseudo_3D_larger_than_60cm": 1,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 5.875014,
+     "y": 37.919549,
+     "z": 1.400093
+    },
+    "3Dsize": {
+     "width": 1.762964,
+     "length": 4.83266,
+     "height": 1.400184,
+     "alpha": -1.683331,
+     "rx": 0,
+     "ry": 0,
+     "rz": -1.683331
+    },
+    "group": "0",
+    "ObjectID": 6,
+    "label": "5000",
+    "sublabel": "5003",
+    "pointnum": 119,
+    "Pseudo_3D_larger_than_60cm": 1,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 3.199683,
+     "y": 39.119175,
+     "z": 1.516035
+    },
+    "3Dsize": {
+     "width": 1.943414,
+     "length": 5.03864,
+     "height": 1.792078,
+     "alpha": -1.689239,
+     "rx": 0,
+     "ry": 0,
+     "rz": -1.689239
+    },
+    "group": "0",
+    "ObjectID": 7,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 133,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 3.945251,
+     "y": 45.5691,
+     "z": 1.535
+    },
+    "3Dsize": {
+     "width": 2.029997,
+     "length": 4.499999,
+     "height": 1.79,
+     "alpha": -1.690511,
+     "rx": -1e-06,
+     "ry": 0,
+     "rz": -1.690511
+    },
+    "group": "0",
+    "ObjectID": 8,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 18,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 7.03683,
+     "y": 46.184692,
+     "z": 1.504637
+    },
+    "3Dsize": {
+     "width": 1.794188,
+     "length": 4.671823,
+     "height": 1.569278,
+     "alpha": 4.593523,
+     "rx": 0,
+     "ry": 0,
+     "rz": 4.593523
+    },
+    "group": "0",
+    "ObjectID": 9,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 5.041528,
+     "y": 53.950791,
+     "z": 1.478679
+    },
+    "3Dsize": {
+     "width": 2.029998,
+     "length": 4.5,
+     "height": 1.642637,
+     "alpha": -1.688814,
+     "rx": 0,
+     "ry": 0,
+     "rz": -1.688814
+    },
+    "group": "0",
+    "ObjectID": 10,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 8.488755,
+     "y": 52.819962,
+     "z": 2.047224
+    },
+    "3Dsize": {
+     "width": 2.551721,
+     "length": 8.782,
+     "height": 2.854494,
+     "alpha": 4.593523,
+     "rx": 0,
+     "ry": 0,
+     "rz": 4.593523
+    },
+    "group": "0",
+    "ObjectID": 11,
+    "label": "6000",
+    "sublabel": "6003",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 5.753326,
+     "y": 61.734078,
+     "z": 1.425
+    },
+    "3Dsize": {
+     "width": 1.89,
+     "length": 4.799999,
+     "height": 1.529999,
+     "alpha": 4.612462,
+     "rx": 0,
+     "ry": 0,
+     "rz": 4.612462
+    },
+    "group": "0",
+    "ObjectID": 12,
+    "label": "5000",
+    "sublabel": "5003",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 6.191863,
+     "y": 69.020532,
+     "z": 1.496935
+    },
+    "3Dsize": {
+     "width": 2.029997,
+     "length": 4.603171,
+     "height": 1.713876,
+     "alpha": -1.647148,
+     "rx": 0,
+     "ry": 0,
+     "rz": -1.647148
+    },
+    "group": "0",
+    "ObjectID": 13,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 6.738239,
+     "y": 76.87224,
+     "z": 2.044998
+    },
+    "3Dsize": {
+     "width": 3.218139,
+     "length": 7.323048,
+     "height": 2.85,
+     "alpha": -1.630724,
+     "rx": 0,
+     "ry": 0,
+     "rz": -1.630724
+    },
+    "group": "0",
+    "ObjectID": 14,
+    "label": "6000",
+    "sublabel": "6003",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 11.94677,
+     "y": 87.163432,
+     "z": 1.924999
+    },
+    "3Dsize": {
+     "width": 3.22,
+     "length": 7.32,
+     "height": 2.85,
+     "alpha": 4.623826,
+     "rx": 0,
+     "ry": 0,
+     "rz": 4.623826
+    },
+    "group": "0",
+    "ObjectID": 15,
+    "label": "6000",
+    "sublabel": "6003",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 8.799846,
+     "y": -40.225746,
+     "z": 2.225
+    },
+    "3Dsize": {
+     "width": 2.054522,
+     "length": 4.799996,
+     "height": 1.53,
+     "alpha": 1.581792,
+     "rx": 0,
+     "ry": 0,
+     "rz": 1.581792
+    },
+    "group": "0",
+    "ObjectID": 16,
+    "label": "5000",
+    "sublabel": "5003",
+    "pointnum": 9,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 11.960255,
+     "y": -39.128847,
+     "z": 2.144999
+    },
+    "3Dsize": {
+     "width": 2.049998,
+     "length": 4.8,
+     "height": 1.53,
+     "alpha": 1.575489,
+     "rx": 0,
+     "ry": 0,
+     "rz": 1.575489
+    },
+    "group": "0",
+    "ObjectID": 17,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 23,
+    "Pseudo_3D_larger_than_60cm": 1,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 16.385281,
+     "y": -27.42029,
+     "z": 2.04
+    },
+    "3Dsize": {
+     "width": 1.878481,
+     "length": 4.079999,
+     "height": 1.599999,
+     "alpha": 0.692705,
+     "rx": 0,
+     "ry": 0,
+     "rz": 0.692705
+    },
+    "group": "0",
+    "ObjectID": 18,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 68,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 21.882418,
+     "y": -5.323022,
+     "z": 2.035
+    },
+    "3Dsize": {
+     "width": 2.029998,
+     "length": 4.5,
+     "height": 1.79,
+     "alpha": 1.49419,
+     "rx": 0,
+     "ry": 0,
+     "rz": 1.49419
+    },
+    "group": "0",
+    "ObjectID": 19,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 55,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 22.376223,
+     "y": 0.643622,
+     "z": 1.867404
+    },
+    "3Dsize": {
+     "width": 1.889996,
+     "length": 4.574676,
+     "height": 1.45481,
+     "alpha": 1.489129,
+     "rx": 0,
+     "ry": 0,
+     "rz": 1.489129
+    },
+    "group": "0",
+    "ObjectID": 20,
+    "label": "5000",
+    "sublabel": "5003",
+    "pointnum": 33,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 22.552206,
+     "y": 5.636187,
+     "z": 1.794999
+    },
+    "3Dsize": {
+     "width": 2.029997,
+     "length": 4.5,
+     "height": 1.79,
+     "alpha": 1.489129,
+     "rx": 0,
+     "ry": 0,
+     "rz": 1.489129
+    },
+    "group": "0",
+    "ObjectID": 21,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 27.599313,
+     "y": 23.374903,
+     "z": 1.555
+    },
+    "3Dsize": {
+     "width": 2.029998,
+     "length": 4.499999,
+     "height": 1.79,
+     "alpha": 0.750917,
+     "rx": 0,
+     "ry": 0,
+     "rz": 0.750917
+    },
+    "group": "0",
+    "ObjectID": 22,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 39,
+    "Pseudo_3D_larger_than_60cm": 1,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 28.992331,
+     "y": 29.069931,
+     "z": 1.915
+    },
+    "3Dsize": {
+     "width": 2.029998,
+     "length": 4.5,
+     "height": 1.79,
+     "alpha": -2.871312,
+     "rx": 0,
+     "ry": 0,
+     "rz": -2.871312
+    },
+    "group": "0",
+    "ObjectID": 23,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 119,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 30.76623,
+     "y": 36.166238,
+     "z": 1.804999
+    },
+    "3Dsize": {
+     "width": 1.889999,
+     "length": 4.57,
+     "height": 1.45,
+     "alpha": 0.63519,
+     "rx": 0,
+     "ry": 0,
+     "rz": 0.63519
+    },
+    "group": "0",
+    "ObjectID": 24,
+    "label": "5000",
+    "sublabel": "5003",
+    "pointnum": 48,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -3.007456,
+     "y": 84.641113,
+     "z": 1.279998
+    },
+    "3Dsize": {
+     "width": 0.88,
+     "length": 1.97,
+     "height": 1.599999,
+     "alpha": 4.668375,
+     "rx": 0,
+     "ry": 0,
+     "rz": 4.668375
+    },
+    "group": "0",
+    "ObjectID": 26,
+    "label": "4000",
+    "sublabel": "4002",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 24.015369,
+     "y": -23.226372,
+     "z": 1.584999
+    },
+    "3Dsize": {
+     "width": 0.389998,
+     "length": 0.4,
+     "height": 0.69,
+     "alpha": 3.069482,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.069482
+    },
+    "group": "0",
+    "ObjectID": 36,
+    "label": "9000",
+    "sublabel": "9001",
+    "pointnum": 1,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 25.641708,
+     "y": -23.663887,
+     "z": 1.702761
+    },
+    "3Dsize": {
+     "width": 0.39,
+     "length": 0.399995,
+     "height": 0.69,
+     "alpha": 3.130088,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.130088
+    },
+    "group": "0",
+    "ObjectID": 35,
+    "label": "9000",
+    "sublabel": "9001",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 23.494804,
+     "y": -6.597028,
+     "z": 1.523441
+    },
+    "3Dsize": {
+     "width": 32.58,
+     "length": 0.499988,
+     "height": 0.75,
+     "alpha": 3.091755,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.091755
+    },
+    "group": "1",
+    "ObjectID": 34,
+    "label": "9000",
+    "sublabel": "9001",
+    "pointnum": 9,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 17.13319,
+     "y": 6.093045,
+     "z": 1.245
+    },
+    "3Dsize": {
+     "width": 0.389998,
+     "length": 0.399995,
+     "height": 0.69,
+     "alpha": 3.149027,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.149027
+    },
+    "group": "0",
+    "ObjectID": 52,
+    "label": "9000",
+    "sublabel": "9001",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 17.146326,
+     "y": 6.724834,
+     "z": 1.205
+    },
+    "3Dsize": {
+     "width": 0.39,
+     "length": 0.4,
+     "height": 0.69,
+     "alpha": 3.114937,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.114937
+    },
+    "group": "0",
+    "ObjectID": 53,
+    "label": "9000",
+    "sublabel": "9001",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 15.169239,
+     "y": -20.194688,
+     "z": 1.564318
+    },
+    "3Dsize": {
+     "width": 0.388627,
+     "length": 0.399996,
+     "height": 0.688635,
+     "alpha": 3.159657,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.159657
+    },
+    "group": "0",
+    "ObjectID": 32,
+    "label": "9000",
+    "sublabel": "9001",
+    "pointnum": 2,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 15.121477,
+     "y": -19.530581,
+     "z": 1.524998
+    },
+    "3Dsize": {
+     "width": 0.4,
+     "length": 0.4,
+     "height": 0.69,
+     "alpha": 3.205391,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.205391
+    },
+    "group": "0",
+    "ObjectID": 33,
+    "label": "9000",
+    "sublabel": "9001",
+    "pointnum": 1,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 17.817689,
+     "y": 16.529858,
+     "z": 0.940123
+    },
+    "3Dsize": {
+     "width": 0.39,
+     "length": 0.4,
+     "height": 0.69,
+     "alpha": 3.072573,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.072573
+    },
+    "group": "0",
+    "ObjectID": 54,
+    "label": "9000",
+    "sublabel": "9001",
+    "pointnum": 1,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 17.844181,
+     "y": 17.21278,
+     "z": 0.924998
+    },
+    "3Dsize": {
+     "width": 0.389997,
+     "length": 0.399995,
+     "height": 0.69,
+     "alpha": 3.121815,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.121815
+    },
+    "group": "0",
+    "ObjectID": 55,
+    "label": "9000",
+    "sublabel": "9001",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 24.535557,
+     "y": -43.450913,
+     "z": 2.328929
+    },
+    "3Dsize": {
+     "width": 18.750944,
+     "length": 1.784736,
+     "height": 1.142126,
+     "alpha": 3.128367,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.128367
+    },
+    "group": "1",
+    "ObjectID": 56,
+    "label": "3000",
+    "sublabel": "3002",
+    "pointnum": 12,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 14.537032,
+     "y": 18.85873,
+     "z": 1.584574
+    },
+    "3Dsize": {
+     "width": 2.029998,
+     "length": 4.499999,
+     "height": 1.79,
+     "alpha": 1.350614,
+     "rx": 0,
+     "ry": 0,
+     "rz": 1.350614
+    },
+    "group": "0",
+    "ObjectID": 57,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 37,
+    "Pseudo_3D_larger_than_60cm": 1,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 17.317105,
+     "y": 41.244324,
+     "z": 1.470347
+    },
+    "3Dsize": {
+     "width": 2.029998,
+     "length": 4.5,
+     "height": 1.700711,
+     "alpha": 1.428976,
+     "rx": 0,
+     "ry": 0,
+     "rz": 1.428976
+    },
+    "group": "0",
+    "ObjectID": 58,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -82.0432,
+     "y": 12.469678,
+     "z": 2.004426
+    },
+    "3Dsize": {
+     "width": 1.99,
+     "length": 4.8,
+     "height": 1.5,
+     "alpha": 2.995038,
+     "rx": 0,
+     "ry": 0,
+     "rz": 2.995038
+    },
+    "group": "0",
+    "ObjectID": 59,
+    "label": "5000",
+    "sublabel": "5003",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -61.725836,
+     "y": -5.983087,
+     "z": 1.474987
+    },
+    "3Dsize": {
+     "width": 2.254338,
+     "length": 6.157788,
+     "height": 1.654432,
+     "alpha": -0.14469,
+     "rx": 0,
+     "ry": 0,
+     "rz": -0.14469
+    },
+    "group": "0",
+    "ObjectID": 60,
+    "label": "6000",
+    "sublabel": "6001",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -65.378219,
+     "y": -16.125336,
+     "z": 1.879999
+    },
+    "3Dsize": {
+     "width": 0.831896,
+     "length": 0.66038,
+     "height": 1.6,
+     "alpha": 4.520648,
+     "rx": 0,
+     "ry": 0,
+     "rz": 4.520648
+    },
+    "group": "0",
+    "ObjectID": 61,
+    "label": "1000",
+    "sublabel": "1001",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -21.98679,
+     "y": 5.276776,
+     "z": 1.799846
+    },
+    "3Dsize": {
+     "width": 2.029997,
+     "length": 4.499999,
+     "height": 1.519738,
+     "alpha": -3.081205,
+     "rx": 0,
+     "ry": 0,
+     "rz": -3.081205
+    },
+    "group": "0",
+    "ObjectID": 62,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 11,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -21.586068,
+     "y": 13.796815,
+     "z": 1.359999
+    },
+    "3Dsize": {
+     "width": 0.879999,
+     "length": 1.97,
+     "height": 1.6,
+     "alpha": 4.173872,
+     "rx": 0,
+     "ry": 0,
+     "rz": 4.173872
+    },
+    "group": "0",
+    "ObjectID": 63,
+    "label": "4000",
+    "sublabel": "4002",
+    "pointnum": 14,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -24.317762,
+     "y": 11.335905,
+     "z": 1.36
+    },
+    "3Dsize": {
+     "width": 0.88,
+     "length": 1.969999,
+     "height": 1.6,
+     "alpha": -1.169011,
+     "rx": 0,
+     "ry": 0,
+     "rz": -1.169011
+    },
+    "group": "0",
+    "ObjectID": 64,
+    "label": "4000",
+    "sublabel": "4002",
+    "pointnum": 1,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -25.551793,
+     "y": 11.832896,
+     "z": 1.3
+    },
+    "3Dsize": {
+     "width": 0.88,
+     "length": 1.97,
+     "height": 1.6,
+     "alpha": -1.160561,
+     "rx": 0,
+     "ry": 0,
+     "rz": -1.160561
+    },
+    "group": "0",
+    "ObjectID": 65,
+    "label": "4000",
+    "sublabel": "4002",
+    "pointnum": 5,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -6.629746,
+     "y": 40.693229,
+     "z": 1.659998
+    },
+    "3Dsize": {
+     "width": 0.588022,
+     "length": 1.472391,
+     "height": 1.599997,
+     "alpha": -1.690423,
+     "rx": 0,
+     "ry": 0,
+     "rz": -1.690423
+    },
+    "group": "0",
+    "ObjectID": 66,
+    "label": "4000",
+    "sublabel": "4002",
+    "pointnum": 11,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -9.52502,
+     "y": 48.85261,
+     "z": 1.644999
+    },
+    "3Dsize": {
+     "width": 2.181578,
+     "length": 4.799999,
+     "height": 1.529999,
+     "alpha": -1.751285,
+     "rx": 0,
+     "ry": 0,
+     "rz": -1.751285
+    },
+    "group": "0",
+    "ObjectID": 67,
+    "label": "5000",
+    "sublabel": "5003",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 32.325938,
+     "y": 89.334074,
+     "z": 2.288006
+    },
+    "3Dsize": {
+     "width": 2.18,
+     "length": 4.799999,
+     "height": 1.53,
+     "alpha": 1.467369,
+     "rx": 0,
+     "ry": 0,
+     "rz": 1.467369
+    },
+    "group": "0",
+    "ObjectID": 68,
+    "label": "5000",
+    "sublabel": "5003",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 32.830821,
+     "y": 43.478024,
+     "z": 1.864998
+    },
+    "3Dsize": {
+     "width": 1.89,
+     "length": 4.57,
+     "height": 1.45,
+     "alpha": 1.505247,
+     "rx": 0,
+     "ry": 0,
+     "rz": 1.505247
+    },
+    "group": "0",
+    "ObjectID": 69,
+    "label": "5000",
+    "sublabel": "5003",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 16.314601,
+     "y": -6.765759,
+     "z": 1.350255
+    },
+    "3Dsize": {
+     "width": 25.070414,
+     "length": 0.499995,
+     "height": 0.75,
+     "alpha": 3.076399,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.076399
+    },
+    "group": 0,
+    "ObjectID": 70,
+    "label": "8000",
+    "sublabel": "8002",
+    "pointnum": 8,
+    "Pseudo_3D_larger_than_60cm": "",
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 14.674907,
+     "y": -32.916923,
+     "z": 1.504999
+    },
+    "3Dsize": {
+     "width": 0.2,
+     "length": 0.199999,
+     "height": 0.69,
+     "alpha": 3.12646,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.12646
+    },
+    "group": 0,
+    "ObjectID": 71,
+    "label": "8000",
+    "sublabel": "8002",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": "",
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 15.60439,
+     "y": -32.906148,
+     "z": 1.705
+    },
+    "3Dsize": {
+     "width": 0.2,
+     "length": 0.2,
+     "height": 0.689999,
+     "alpha": -3.133531,
+     "rx": 0,
+     "ry": 0,
+     "rz": -3.133531
+    },
+    "group": 0,
+    "ObjectID": 72,
+    "label": "8000",
+    "sublabel": "8002",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": "",
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 16.668885,
+     "y": -32.97296,
+     "z": 1.805
+    },
+    "3Dsize": {
+     "width": 0.199999,
+     "length": 0.2,
+     "height": 0.69,
+     "alpha": 3.138609,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.138609
+    },
+    "group": 0,
+    "ObjectID": 73,
+    "label": "8000",
+    "sublabel": "8002",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": "",
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 9.271816,
+     "y": -48.275426,
+     "z": 1.545
+    },
+    "3Dsize": {
+     "width": 2.500874,
+     "length": 4.67,
+     "height": 1.53,
+     "alpha": 1.595281,
+     "rx": 0,
+     "ry": 0,
+     "rz": 1.595281
+    },
+    "group": "0",
+    "ObjectID": 74,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 9.890389,
+     "y": -74.458783,
+     "z": 1.484998
+    },
+    "3Dsize": {
+     "width": 2.346664,
+     "length": 5.620192,
+     "height": 1.53,
+     "alpha": 1.664311,
+     "rx": 0,
+     "ry": 0,
+     "rz": 1.664311
+    },
+    "group": "0",
+    "ObjectID": 75,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -24.209754,
+     "y": -57.525151,
+     "z": 1.839998
+    },
+    "3Dsize": {
+     "width": 0.829999,
+     "length": 0.659999,
+     "height": 1.6,
+     "alpha": 1.63248,
+     "rx": 0,
+     "ry": 0,
+     "rz": 1.63248
+    },
+    "group": "0",
+    "ObjectID": 76,
+    "label": "1000",
+    "sublabel": "1001",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -49.973541,
+     "y": -15.4224,
+     "z": 1.767763
+    },
+    "3Dsize": {
+     "width": 0.88,
+     "length": 1.97,
+     "height": 1.6,
+     "alpha": 6.175588,
+     "rx": 0,
+     "ry": 0,
+     "rz": 6.175588
+    },
+    "group": "0",
+    "ObjectID": 78,
+    "label": "4000",
+    "sublabel": "4001",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 3.015249,
+     "y": -35.322547,
+     "z": 2.448161
+    },
+    "3Dsize": {
+     "width": 0.775949,
+     "length": 0.659999,
+     "height": 1.599999,
+     "alpha": 3.096948,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.096948
+    },
+    "group": "0",
+    "ObjectID": 79,
+    "label": "1000",
+    "sublabel": "1003",
+    "pointnum": 11,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 22.101598,
+     "y": -37.223888,
+     "z": 2.324998
+    },
+    "3Dsize": {
+     "width": 0.88,
+     "length": 1.969999,
+     "height": 1.41,
+     "alpha": 3.108311,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.108311
+    },
+    "group": "0",
+    "ObjectID": 80,
+    "label": "3000",
+    "sublabel": "3002",
+    "pointnum": 3,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 36.624046,
+     "y": -35.548317,
+     "z": 1.265
+    },
+    "3Dsize": {
+     "width": 1.89,
+     "length": 4.57,
+     "height": 1.449999,
+     "alpha": 3.091176,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.091176
+    },
+    "group": "0",
+    "ObjectID": 81,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 35.139862,
+     "y": -30.96802,
+     "z": 1.04773
+    },
+    "3Dsize": {
+     "width": 0.651743,
+     "length": 0.613915,
+     "height": 1.704526,
+     "alpha": 6.232769,
+     "rx": 0,
+     "ry": 0,
+     "rz": 6.232769
+    },
+    "group": "0",
+    "ObjectID": 82,
+    "label": "1000",
+    "sublabel": "1003",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 18.601443,
+     "y": 25.155011,
+     "z": 1.014996
+    },
+    "3Dsize": {
+     "width": 13.899168,
+     "length": 0.499999,
+     "height": 0.75,
+     "alpha": 3.058951,
+     "rx": 0,
+     "ry": 0,
+     "rz": 3.058951
+    },
+    "group": 0,
+    "ObjectID": 83,
+    "label": "8000",
+    "sublabel": "8002",
+    "pointnum": 2,
+    "Pseudo_3D_larger_than_60cm": "",
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": 4.01044,
+     "y": 91.625715,
+     "z": 1.534999
+    },
+    "3Dsize": {
+     "width": 2.029997,
+     "length": 4.599999,
+     "height": 1.71,
+     "alpha": 4.64186,
+     "rx": 0,
+     "ry": 0,
+     "rz": 4.64186
+    },
+    "group": "0",
+    "ObjectID": 84,
+    "label": "5000",
+    "sublabel": "5004",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -65.159024,
+     "y": -17.446447,
+     "z": 1.55265
+    },
+    "3Dsize": {
+     "width": 0.739999,
+     "length": 0.69,
+     "height": 1.1453,
+     "alpha": -3.132915,
+     "rx": 0,
+     "ry": 0,
+     "rz": -3.132915
+    },
+    "group": "0",
+    "ObjectID": 86,
+    "label": "1000",
+    "sublabel": "1002",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -59.988274,
+     "y": 25.40311,
+     "z": 1.34753
+    },
+    "3Dsize": {
+     "width": 0.726227,
+     "length": 0.66,
+     "height": 1.664936,
+     "alpha": 2.993976,
+     "rx": 0,
+     "ry": 0,
+     "rz": 2.993976
+    },
+    "group": "0",
+    "ObjectID": 88,
+    "label": "1000",
+    "sublabel": "1001",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -9.294677,
+     "y": 77.453177,
+     "z": 1.479996
+    },
+    "3Dsize": {
+     "width": 0.829999,
+     "length": 0.66,
+     "height": 1.6,
+     "alpha": -1.627998,
+     "rx": 0,
+     "ry": 0,
+     "rz": -1.627998
+    },
+    "group": "0",
+    "ObjectID": 89,
+    "label": "1000",
+    "sublabel": "1001",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -26.503112,
+     "y": -61.468548,
+     "z": 1.820767
+    },
+    "3Dsize": {
+     "width": 0.829999,
+     "length": 0.66,
+     "height": 1.599999,
+     "alpha": 4.780158,
+     "rx": 0,
+     "ry": 0,
+     "rz": 4.780158
+    },
+    "group": "0",
+    "ObjectID": 90,
+    "label": "1000",
+    "sublabel": "1001",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -26.148181,
+     "y": -63.311709,
+     "z": 1.859999
+    },
+    "3Dsize": {
+     "width": 0.83,
+     "length": 0.66,
+     "height": 1.6,
+     "alpha": 4.77637,
+     "rx": 0,
+     "ry": 0,
+     "rz": 4.77637
+    },
+    "group": "0",
+    "ObjectID": 91,
+    "label": "1000",
+    "sublabel": "1001",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -67.5897,
+     "y": -17.661826,
+     "z": 1.34235
+    },
+    "3Dsize": {
+     "width": 0.740002,
+     "length": 2.089896,
+     "height": 1.044738,
+     "alpha": -0.086022,
+     "rx": 0,
+     "ry": 0,
+     "rz": -0.086022
+    },
+    "group": "0",
+    "ObjectID": 92,
+    "label": "4000",
+    "sublabel": "4002",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -40.269515,
+     "y": -19.154859,
+     "z": 1.863083
+    },
+    "3Dsize": {
+     "width": 0.618915,
+     "length": 1.683319,
+     "height": 1.166176,
+     "alpha": 1.584579,
+     "rx": 0,
+     "ry": 0,
+     "rz": 1.584579
+    },
+    "group": "0",
+    "ObjectID": 93,
+    "label": "3000",
+    "sublabel": "3001",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -8.785557,
+     "y": 34.313184,
+     "z": 1.525999
+    },
+    "3Dsize": {
+     "width": 0.565711,
+     "length": 1.531304,
+     "height": 1.212019,
+     "alpha": -2.63998,
+     "rx": 0,
+     "ry": 0,
+     "rz": -2.63998
+    },
+    "group": "0",
+    "ObjectID": 94,
+    "label": "3000",
+    "sublabel": "3002",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -46.581038,
+     "y": 12.460221,
+     "z": 0.749998
+    },
+    "3Dsize": {
+     "width": 1.99,
+     "length": 4.799999,
+     "height": 1.5,
+     "alpha": 2.970345,
+     "rx": 0,
+     "ry": 0,
+     "rz": 2.970345
+    },
+    "group": "0",
+    "ObjectID": 95,
+    "label": "5000",
+    "sublabel": "5003",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -15.66338,
+     "y": -34.242353,
+     "z": 2.135
+    },
+    "3Dsize": {
+     "width": 0.57,
+     "length": 1.429999,
+     "height": 0.99,
+     "alpha": 6.100193,
+     "rx": 0,
+     "ry": 0,
+     "rz": 6.100193
+    },
+    "group": "0",
+    "ObjectID": 96,
+    "label": "3000",
+    "sublabel": "3002",
+    "pointnum": 3,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   },
+   {
+    "3Dcenter": {
+     "x": -98.591693,
+     "y": -7.393695,
+     "z": 0.556299
+    },
+    "3Dsize": {
+     "width": 0.947332,
+     "length": 2.039024,
+     "height": 1.15263,
+     "alpha": 6.146558,
+     "rx": 0,
+     "ry": 0,
+     "rz": 6.146558
+    },
+    "group": "0",
+    "ObjectID": 97,
+    "label": "4000",
+    "sublabel": "4002",
+    "pointnum": 0,
+    "Pseudo_3D_larger_than_60cm": 0,
+    "is_excessive_layering": "False"
+   }
+  ]
+ }
+}

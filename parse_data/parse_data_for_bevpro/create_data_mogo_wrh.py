@@ -1,4 +1,6 @@
 import argparse
+import sys
+sys.path.append('/data1/turbo_data/lishuaiyin/4D_label')
 
 from BEVFUSION.tools.data_converter import mogo_converter_wrh as mogo_converter
 

@@ -4,6 +4,7 @@ from tqdm import tqdm
 from functools import partial
 
 from detzero_utils.common_utils import get_log_info, multi_processing
+from detzero_utils.yaw_utils import fix_yaw_discontinuities
 
 from .detzero_tracker import DetZeroTracker
 import shutil
@@ -41,8 +42,9 @@ def run_model(model, dataloader, dataset, workers, cfgs=None, logger=None):
             data_dict=data_dicts['detection'], 
             workers=workers
         )
-        track_data.update(dict(zip(seq_names, model_outputs)))
-
+        model_outputs_modify = fix_yaw_discontinuities(model_outputs)
+        track_data.update(dict(zip(seq_names, model_outputs_modify)))
+        # breakpoint()
         if dataset.assign_mode:
             input_data = list(zip(data_dicts['detection'], model_outputs, data_dicts['gt']))
             refine_outputs = multi_processing(assigner, input_data, workers)
@@ -50,6 +52,7 @@ def run_model(model, dataloader, dataset, workers, cfgs=None, logger=None):
         drop_data.update(dict(zip(seq_names, data_dicts['det_drop'])))
 
     track_path = dataset.get_track_path()
+    
     if os.path.exists(os.path.dirname(track_path)):
         shutil.rmtree(os.path.dirname(track_path))
     os.makedirs(os.path.dirname(track_path))

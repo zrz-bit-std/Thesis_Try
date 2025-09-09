@@ -24,3 +24,7 @@ tmp*
 
 BEVFUSION
 BevCalib
+dataset_track
+origin
+autogen
+vis_all

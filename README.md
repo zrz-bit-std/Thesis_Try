@@ -106,3 +106,112 @@
   ```
   bash scripts/prepare_data_for_bevlite.sh
   ```
+
+tips:如果报错某个模块未找到，则加上
+set -e
+export PYTHONPATH=$(pwd):$PYTHONPATH 
+会解决BEVFUSION模块找不到的错误。
+首先需要将工程分支切换到master_gen_4D_label分支。
+1.执行 create_data_for_bevpro_v2.py脚本，生成的samples文件夹和test.json文件没有camera_0_0和camera_3_0是因为/data1/turbo_data/lishuaiyin/4D_label/BEVFUSION/tools/data_process/sensor_modules.py脚本文件中"sh_5": {
+        "intersection": [
+            "camera_0_1",  # S0 camera顺向/逆向槽位命名反了
+            "camera_1_0",  
+            "camera_2_0",
+            "camera_3_1",  # S3 camera顺向/逆向槽位命名反了
+            "camera_0_8",
+            "camera_1_8",
+            "camera_2_8",
+            "camera_3_8",
+            "lidar_0_12",
+            "lidar_1_12",
+            "lidar_2_12",
+            "lidar_3_12",
+        ]
+    },确定的。
+
+2.执行/data1/turbo_data/lishuaiyin/4D_label/parse_data/parse_data_for_bevpro/create_data_mogo_wrh.py生成[text](dataset_track/train_sh_3d_road_5_20250524_5000_lx/mogo_infos_test.pkl)。
+
+3.执行
+torchpack dist-run -np 4 python ./BEVFUSION/tools/visualize/get_infer_res.py ${bev_config} \
+  --checkpoint ${ckpt_path} \
+  --bbox-score 0.3 \
+  --dataset_root ${dst_dir}/${data_name}
+其中torchpack dist-run -np 4，默认的只有4张卡，因此这儿需要改成4，最后执行生成的结果会保存在/data1/turbo_data/lishuaiyin/4D_label/dataset_track/train_sh_3d_road_5_20250524_5000_lx/model_pred，这是最后生成的检测结果。
+4.执行
+python ./parse_data/parse_data_for_bevpro/make_data_for_track.py \
+    --save_dir ${dst_dir}/merged \
+    --origin_dir ${src_dir} \
+    --det_dir ${dst_dir} \
+    --track_dir ${dst_dir}/offline_tracked \
+    --dataset_name ${data_name} \ 
+会生成merged文件夹和offline_tracked文件夹，merged文件夹是经过筛选和整理的模型推理结果集合，只包含完整且有效的推理数据片段。offline_tracked文件夹是为离线跟踪算法准备的输入数据目录，包含转换为跟踪算法所需格式的数据track.pkl。
+
+5.执行4D融合跟踪：
+python ./tracking/tools/run_track_20250224.py \
+  --track_dir ${dst_dir}/offline_tracked \
+  --dataset_name ${data_name} \
+  --cfg_file ${track_cfg} \
+
+会生成/data1/turbo_data/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_3d_road_5_20250524_5000_lx/20250524070526/tracking路径下的两个pkl文件。
+
+6.执行
+python ./tracking/utils_track/tracking_data_split.py \
+  --track_dir ${dst_dir}/offline_tracked \
+  --merged_dir ${dst_dir}/merged \
+  --dataset_name ${data_name} \
+
+tracking_data_split.py文件的主要作用是转化为txt形式的数据。最后的生成路径在/data1/turbo_data/lishuaiyin/4D_label/dataset_track/offline_tracked/train_sh_3d_road_5_20250524_5000_lx/20250524070526/splited下。
+
+7.执行
+python ./visual_data/data_show.py \
+  --origin_dir ${src_dir} \
+  --label_dir ${dst_dir}/labels \
+  --merged_dir ${dst_dir}/merged \
+  --bev_pro_dir ${dst_dir} \
+  --tracked_dir ${dst_dir}/offline_tracked  \
+  --dataset_name ${data_name} \
+
+最后会将跟踪结果可视化展示图片中。/data1/turbo_data/lishuaiyin/4D_label/dataset_track/labels/train_sh_3d_road_5_20250524_5000_lx/selected
+
+8.生成视频展示运行
+python ./visual_data/demo_track_lsy.py \
+  --sequence ${data_name} \
+
+可以将tracking的结果在点云bev视角下进行视频展示。
+tips其中的报错：
+ffmpeg version 4.3 Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 7.3.0 (crosstool-NG 1.23.0.449-a04d0)
+  configuration: --prefix=/opt/conda --cc=/opt/conda/conda-bld/ffmpeg_1597178665428/_build_env/bin/x86_64-conda_cos6-linux-gnu-cc --disable-doc --disable-openssl --enable-avresample --enable-gnutls --enable-hardcoded-tables --enable-libfreetype --enable-libopenh264 --enable-pic --enable-pthreads --enable-shared --disable-static --enable-version3 --enable-zlib --enable-libmp3lame
+  libavutil      56. 51.100 / 56. 51.100
+  libavcodec     58. 91.100 / 58. 91.100
+  libavformat    58. 45.100 / 58. 45.100
+  libavdevice    58. 10.100 / 58. 10.100
+  libavfilter     7. 85.100 /  7. 85.100
+  libavresample   4.  0.  0 /  4.  0.  0
+  libswscale      5.  7.100 /  5.  7.100
+  libswresample   3.  7.100 /  3.  7.100
+Unrecognized option 'preset'.
+Error splitting the argument list: Option not found
+安装ffmpeg的库版本。
+sudo apt-get update
+sudo apt-get install ffmpeg libx264-dev
+ cmd = [
+           "/usr/bin/ffmpeg",
+            "-f", "concat",
+            "-safe", "0",
+            "-i", "filelist.txt", 
+            # "-vf", "setpts=2.0*PTS",  ##
+            "-r", str(fps),
+            "-c:v", "libx264",          # 
+            "-preset", "slow",          # 
+            "-crf", "23",               # 
+            "-pix_fmt", "yuv420p",      # 
+            "-movflags", "+faststart",  # 
+            "-vf", "scale=iw:ih",       # 
+            "-y",
+            output_video                # 
+        ]
+验证ffmpeg是否支持libx264:
+/usr/bin/ffmpeg -encoders | grep libx264   若输出包含 libx264，则说明支持 -preset 参数，修改后即可正常运行。
+9.生成map指标：
+python metric_eval_track_lisy.py ,需要事前用create_json_map()函数生成json文件。
