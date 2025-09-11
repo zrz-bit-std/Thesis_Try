@@ -213,6 +213,21 @@ class MogoDataset_evalrefine(torch.utils.data.Dataset):
                 splited_files = sorted(os.listdir(splited_path))
                 tracking_res.extend([os.path.join(splited_path, f) for f in splited_files])
         
+        # 获取所有的droped文件
+        droped_root = "/rss/lishuaiyin/4D_label/dataset_track/droped/train_sh_3d_road_2_20250531_5000_lx"
+        droped_scene_paths = []
+        if os.path.exists(droped_root):
+            droped_scene_paths = sorted(os.listdir(droped_root))
+        droped_res = []
+        for droped_scene_path in droped_scene_paths:
+            droped_path = os.path.join(droped_root, droped_scene_path)
+            if os.path.exists(droped_path):
+                droped_files = sorted(os.listdir(droped_path))
+                droped_res.extend([os.path.join(droped_path, f) for f in droped_files])
+        
+        # 创建一个字典来存储droped文件，便于快速查找
+        droped_files_dict = {os.path.basename(f): f for f in droped_res}
+        
         # 对于gt，我们仍然使用原来的逻辑
         scenes = os.listdir(sequence_path)
         scenes_path = sorted([os.path.join(sequence_path, scene) for scene in scenes])
@@ -228,17 +243,31 @@ class MogoDataset_evalrefine(torch.utils.data.Dataset):
             # 假设文件名可以匹配
             filtered_tracking_res = []
             filtered_pred_res = []
+            filtered_droped_res = []  # 用于存储对应的droped文件
             
             for timestamp in timestamps:
                 # 在tracking_res中查找匹配的文件
                 matching_tracking = [tr for tr in tracking_res if os.path.basename(tr) == timestamp]
                 if matching_tracking:
                     filtered_tracking_res.append(matching_tracking[0])
+                else:
+                    # 如果没有找到tracking文件，添加一个空路径
+                    filtered_tracking_res.append(None)
                 
                 # 在pred_res中查找匹配的文件
                 matching_pred = [pr for pr in pred_res if os.path.basename(pr) == timestamp]
                 if matching_pred:
                     filtered_pred_res.append(matching_pred[0])
+                else:
+                    # 如果没有找到pred文件，添加一个空路径
+                    filtered_pred_res.append(None)
+                
+                # 在droped_files_dict中查找匹配的文件
+                if timestamp in droped_files_dict:
+                    filtered_droped_res.append(droped_files_dict[timestamp])
+                else:
+                    # 如果没有找到droped文件，添加None
+                    filtered_droped_res.append(None)
             
             # Check if lengths match
             if not (len(filtered_tracking_res) == len(filtered_pred_res) == len(gt_paths_sorted)):
@@ -251,9 +280,11 @@ class MogoDataset_evalrefine(torch.utils.data.Dataset):
             min_len = min(len(filtered_tracking_res), len(filtered_pred_res), len(gt_paths_sorted))
             trimmed_tracking_res = filtered_tracking_res[:min_len]
             trimmed_pred_res = filtered_pred_res[:min_len]
+            trimmed_droped_res = filtered_droped_res[:min_len]
             trimmed_gt_paths_sorted = gt_paths_sorted[:min_len]
             
-            self.parse_ann_info(trimmed_tracking_res, trimmed_pred_res, trimmed_gt_paths_sorted)
+            # 修改parse_ann_info调用，传入droped文件列表
+            self.parse_ann_info(trimmed_tracking_res, trimmed_pred_res, trimmed_gt_paths_sorted, trimmed_droped_res)
         if self.verbose:
             print(f"[IoU Eval] GT samples: {len(self.data_infos.keys())}")
     
@@ -349,7 +380,7 @@ class MogoDataset_evalrefine(torch.utils.data.Dataset):
         #     print(f"[IoU Eval] Filter by range: {total} -> {kept}")
         return eval_boxes
 
-    def parse_ann_info(self, tracking_res, pred_res, gt_paths):
+    def parse_ann_info(self, tracking_res, pred_res, gt_paths, droped_res=None):
         r"""
         Process the `instances` in data info to `ann_info`.
 
@@ -364,24 +395,44 @@ class MogoDataset_evalrefine(torch.utils.data.Dataset):
                 - gt_labels_3d (np.ndarray): Labels of ground truths.
                 - [class_name, h, w, l, x, y, z, yaw-degrees, score]
         """
+        if droped_res is None:
+            droped_res = [None] * len(tracking_res)
+            
         if self.verbose:
             print("[IoU Eval] Converting GT to EvalBoxes...")
 
         for i in tqdm(range(0, len(tracking_res), self.load_interval)):
             sample = {}
-            token = os.path.basename(tracking_res[i]).replace(".txt", "")
+            token = os.path.basename(tracking_res[i] or pred_res[i]).replace(".txt", "") if tracking_res[i] else os.path.basename(pred_res[i]).replace(".txt", "")
             sample["token"] = token
 
             # Load different types of bounding boxes
-            sample["tracking_bboxes"] = self.load_pred_txt(token, tracking_res[i], refine=False, pred=False)
-            sample["detection_bboxes"] = self.load_pred_txt(token, pred_res[i], refine=False, pred=True)
-            sample["gt_bboxes"] = self.load_gt_json(token, gt_paths[i])
+            sample["tracking_bboxes"] = self.load_pred_txt(token, tracking_res[i], refine=False, pred=False) if tracking_res[i] and os.path.exists(tracking_res[i]) else EvalBoxes()
+            
+            # 加载检测结果
+            sample["detection_bboxes"] = self.load_pred_txt(token, pred_res[i], refine=False, pred=True) if pred_res[i] and os.path.exists(pred_res[i]) else EvalBoxes()
+            
+            # 加载真值
+            sample["gt_bboxes"] = self.load_gt_json(token, gt_paths[i]) if os.path.exists(gt_paths[i]) else EvalBoxes()
+            
+            # 创建合并的跟踪+drop结果
+            sample["tracking_with_drop_bboxes"] = self.load_pred_txt(token, tracking_res[i], refine=False, pred=False) if tracking_res[i] and os.path.exists(tracking_res[i]) else EvalBoxes()
+            
+            # 如果有对应的droped文件，将其内容合并到tracking_with_drop_bboxes中
+            if droped_res[i] and os.path.exists(droped_res[i]):
+                droped_bboxes = self.load_pred_txt(token, droped_res[i], refine=False, pred=False)
+                # 合并tracking_bboxes和droped_bboxes
+                for droped_token in droped_bboxes.sample_tokens:
+                    if droped_token in sample["tracking_with_drop_bboxes"].boxes:
+                        sample["tracking_with_drop_bboxes"].boxes[droped_token].extend(droped_bboxes.boxes[droped_token])
+                    else:
+                        sample["tracking_with_drop_bboxes"].boxes[droped_token] = droped_bboxes.boxes[droped_token]
 
             self.data_infos[token] = sample
     def evaluate(
         self,
         eval_metric: str = "iou",  # 'iou' or 'center_distance'
-        eval_boxes_types: list = None,  # 可选 ["detection_bboxes", "tracking_bboxes"] 等
+        eval_boxes_types: list = None,  # 可选 ["detection_bboxes", "tracking_bboxes", "tracking_with_drop_bboxes"] 等
         **kwargs
     ):
         """
@@ -389,15 +440,16 @@ class MogoDataset_evalrefine(torch.utils.data.Dataset):
         支持的评估类型:
         - 'detection_bboxes': 检测结果框
         - 'tracking_bboxes': 跟踪结果框
+        - 'tracking_with_drop_bboxes': 跟踪结果框+drop框
         """
         metrics = {}
 
         # 默认评估所有支持的类型
         if eval_boxes_types is None:
-            eval_boxes_types = ["detection_bboxes", "tracking_bboxes"]
+            eval_boxes_types = ["detection_bboxes", "tracking_bboxes", "tracking_with_drop_bboxes"]
         
         # 确保 eval_boxes_types 中的类型都是支持的类型
-        supported_box_types = ["detection_bboxes", "tracking_bboxes"]
+        supported_box_types = ["detection_bboxes", "tracking_bboxes", "tracking_with_drop_bboxes"]
         for box_type in eval_boxes_types:
             if box_type not in supported_box_types:
                 raise ValueError(f"Unsupported box type: {box_type}. "
@@ -675,4 +727,4 @@ if __name__ == '__main__':
     dataset = MogoDataset_evalrefine(data_root=args.data_root, sequence=args.sequence, 
                                      classname2id=name2id_map, class_mapping=class_name2refine_name)
     
-    dataset.evaluate(eval_metric=args.metrics, eval_boxes_types=["detection_bboxes", "tracking_bboxes"])
+    dataset.evaluate(eval_metric=args.metrics, eval_boxes_types=["detection_bboxes", "tracking_bboxes","tracking_with_drop_bboxes"])

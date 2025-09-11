@@ -4,6 +4,7 @@ import numpy as np
 import argparse
 from tqdm import tqdm
 import json
+import shutil
 from class_mapping import class_mapping_7, class_name2refine_name, classname2id_7, classname2id_refine
 
 def rotate_corners(w, l, heading):
@@ -196,16 +197,36 @@ def find_unmatched_detections(pred_boxes, track_boxes, distance_threshold=1.0):
             
     return unmatched
 
+def clear_droped_files(drop_root):
+    """
+    清除droped文件夹下的所有txt文件
+    """
+    if not drop_root.exists():
+        return
+        
+    # 遍历drop_root目录及其子目录，查找所有droped文件夹
+    for droped_dir in drop_root.rglob("droped"):
+        if droped_dir.is_dir():
+            # 删除droped目录下的所有txt文件
+            for txt_file in droped_dir.glob("*.txt"):
+                txt_file.unlink()
+            print(f"Cleared txt files in {droped_dir}")
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--pred', type=str, required=True, help='预测文件目录')
     parser.add_argument('--track', type=str, required=True, help='跟踪结果目录')
     parser.add_argument('--droped', type=str, required=True, help='输出的droped目录')
+    parser.add_argument('--clear_droped', action='store_true', help='在生成新文件前清空droped目录下的txt文件')
     args = parser.parse_args()
     
     pred_root = Path(args.pred)
     track_root = Path(args.track)
     drop_root = Path(args.droped)
+    
+    # 如果指定--clear_droped参数，则清空droped目录下的txt文件
+    if args.clear_droped:
+        clear_droped_files(drop_root)
     
     # drop_root.mkdir(parents=True, exist_ok=True)
     
@@ -242,20 +263,30 @@ def main():
         # 确定输出文件路径，保持与pred文件相同的目录结构
         # 获取pred文件相对于pred_root的路径
         relative_path = pred_file.relative_to(pred_root)
-        # 将路径拆分并在第一级目录后插入"droped"
-        path_parts = relative_path.parts
-        if len(path_parts) > 1:
-            # 在第一级目录后插入"droped"
-            new_path_parts = (path_parts[0], "droped") + path_parts[1:]
-            drop_relative_path = Path(*new_path_parts)
+        
+        # 在路径的第一个目录名后插入"droped"
+        path_parts = list(relative_path.parts)
+        if len(path_parts) > 0:
+            path_parts.insert(1, "droped")
         else:
-            # 如果只有一级路径，在前面添加"droped"
-            drop_relative_path = Path("droped") / relative_path
+            path_parts = ["droped"]
+            
+        drop_relative_path = Path(*path_parts)
         
         drop_file = drop_root / drop_relative_path
         
         # 确保输出目录存在
         drop_file.parent.mkdir(parents=True, exist_ok=True)
+        
+        # 如果预测文件不存在，跳过
+        if not pred_file.exists():
+            print(f"Warning: Prediction file {pred_file} does not exist")
+            continue
+            
+        # 如果跟踪文件不存在，跳过
+        if not track_file.exists():
+            print(f"Warning: Track file {track_file} does not exist")
+            continue
         
         # 读取预测框和跟踪框
         pred_boxes = read_pred_txt(pred_file)
@@ -296,5 +327,4 @@ def main():
             drop_file.unlink()
 if __name__ == "__main__":
     main()
-
 

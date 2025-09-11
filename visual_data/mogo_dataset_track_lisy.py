@@ -214,13 +214,13 @@ class MogoDataset_evalrefine(torch.utils.data.Dataset):
                 tracking_res.extend([os.path.join(splited_path, f) for f in splited_files])
         
         # 获取所有的droped文件
-        droped_root = "/rss/lishuaiyin/4D_label/dataset_track/droped/train_sh_3d_road_2_20250531_5000_lx"
+        droped_root = tracking_root #"/rss/lishuaiyin/4D_label/dataset_track/droped/train_sh_3d_road_2_20250531_5000_lx"
         droped_scene_paths = []
         if os.path.exists(droped_root):
             droped_scene_paths = sorted(os.listdir(droped_root))
         droped_res = []
         for droped_scene_path in droped_scene_paths:
-            droped_path = os.path.join(droped_root, droped_scene_path)
+            droped_path = os.path.join(droped_root, droped_scene_path,'droped')
             if os.path.exists(droped_path):
                 droped_files = sorted(os.listdir(droped_path))
                 droped_res.extend([os.path.join(droped_path, f) for f in droped_files])

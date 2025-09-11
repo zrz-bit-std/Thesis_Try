@@ -86,7 +86,7 @@ IFS='_' read -r part1 location part3 part4 road_id part6 part7 <<< "$data_name"
 #   --track_dir ${dst_dir}/offline_tracked \
 #   --merged_dir ${dst_dir}/merged \
 #   --dataset_name ${data_name} \
-
+#   --file_pattern BiTrack
 # # =====================================
 # # ======== Step 4: 生成可视化结果=======
 # # =====================================
@@ -103,27 +103,24 @@ IFS='_' read -r part1 location part3 part4 road_id part6 part7 <<< "$data_name"
 # # # # ======== Step 5: 将跟踪结果可视化为视频=======
 # # # # =====================================
 # # # # echo "========== 🚩 Generate a bev mp4 demo =========="
-# # python ./visual_data/demo_track_pre_lsy.py \
-# #   --sequence ${data_name} \
+python ./visual_data/demo_track_pre_lsy.py \
+  --sequence ${data_name} \
 
 
 # # # # # =====================================
 # # # # ======== Step 6: 生成drop_box=======
 
-python ./visual_data/drop_box.py \
-  --pred ${dst_dir}/merged/${data_name} \
-  --track ${dst_dir}/offline_tracked/${data_name} \
-  --droped ${dst_dir}/offline_tracked/${data_name}
-
-# # # # =====================================
-# # # ======== Step 7: 合并drop_box与tracking结果=======
-# python ./visual_data/merge_drop_track.py \
-#   --droped ${dst_dir}/offline_tracked/${data_name} \
+# python ./visual_data/drop_box.py \
+#   --pred ${dst_dir}/merged/${data_name} \
 #   --track ${dst_dir}/offline_tracked/${data_name} \
-#   --merged ${dst_dir}/merged_drop_track/${data_name}
+#   --droped ${dst_dir}/offline_tracked/${data_name} \
+#   --clear_droped
+
+
 
 # # # =====================================
-# # # ======== Step 8: 生成评测指标=======
+# # # ======== Step 7: 生成评测指标=======
 # # # =====================================
 # # # echo "========== 🚩 Generate a metric  =========="
+
 # python ./visual_data/mogo_dataset_track_lisy.py
