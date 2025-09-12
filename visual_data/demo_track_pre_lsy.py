@@ -944,8 +944,8 @@ if __name__ == '__main__':
     # seq_res_on_bev(args.sequence, False)
     # detection_res_on_bev(args.sequence)
     combined_res_on_bev(args.sequence)
-    # visualize_yaw_changes(args.sequence)  # 生成每个目标的详细图表
-    # visualize_yaw_changes_summary(args.sequence)  # 生成汇总图表
+    visualize_yaw_changes(args.sequence)  # 生成每个目标的详细图表
+    visualize_yaw_changes_summary(args.sequence)  # 生成汇总图表
 
 
     

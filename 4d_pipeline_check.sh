@@ -3,8 +3,8 @@ set -e
 export PYTHONPATH=$(pwd):$PYTHONPATH
 
 # # ========== 环境变量 ==========
-data_name=train_sh_3d_road_2_20250531_5000_lx
-src_dir=/rss/RALG/data/3.0_pro/Inter+Road/label/shanghai_road_2/p2_lx
+data_name=train_sh_3d_road_6_20250517_5000_lx
+src_dir=/data1/turbo_data/RALG/data/3.0_pro/Inter+Road/label/shanghai_road_6/p4_lx
 dst_dir=/rss/lishuaiyin/4D_label/dataset_track
 bev_config=/rss/yuanqingwen/4D_label/BEVFUSION/configs/camera+lidar+fisheye/raw_bevfusion_plus_fisheye_4D_prelabel_v2_200x200m_lmy.yaml
 ckpt_path=/rss/liumengyuan/BEVFUSION/tmp_output/bevfusion_lmy_0723/epoch_19.pth
@@ -78,13 +78,13 @@ python ./tracking/tools/run_track_20250224.py \
   --dataset_name ${data_name} \
   --cfg_file ${track_cfg} \
 
-# # # # TODO：轨迹曲线拟合功能开发
+# # # TODO：轨迹曲线拟合功能开发
 
 
-# # # # echo "========== 🚩 Tracking result split =========="
+# # # echo "========== 🚩 Tracking result split =========="
 python ./tracking/utils_track/tracking_data_split.py \
   --track_dir ${dst_dir}/offline_tracked \
-  --merged_dir ${dst_dir}/merged \
+  --merged_dir /rss/zhangruizhe/scutwork/integrate_pipeline/dst_dir4test/merged/ \
   --dataset_name ${data_name} \
 
 

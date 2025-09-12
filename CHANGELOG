@@ -11,3 +11,6 @@
 1.优化droped_box.py代码，每次生成之前会清空文件。
 2.优化tracking_data_split.py代码，可以跑BiTrack生成的跟踪结果。
 3. 优化mogo_dataset_track_lisy.py代码，适应目前的doped的路径。
+
+2025-09-12:11:18 
+1.修复yaw角问题,将之前大于150的设定改为大于130度就进行旋转。另外角度不会出现大于360的数值。

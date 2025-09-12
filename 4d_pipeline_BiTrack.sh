@@ -73,43 +73,44 @@ IFS='_' read -r part1 location part3 part4 road_id part6 part7 <<< "$data_name"
 # cd ../utils
 # python setup.py develop
 # cd ../
-python ./tracking/tools/run_track_20250224.py \
-  --track_dir ${dst_dir}/offline_tracked \
-  --dataset_name ${data_name} \
-  --cfg_file ${track_cfg} \
+# python ./tracking/tools/run_track_20250224.py \
+#   --track_dir ${dst_dir}/offline_tracked \
+#   --dataset_name ${data_name} \
+#   --cfg_file ${track_cfg} \
 
-# # # # TODO：轨迹曲线拟合功能开发
+# # # # # TODO：轨迹曲线拟合功能开发
 
 
-# # # # echo "========== 🚩 Tracking result split =========="
+# # # # # echo "========== 🚩 Tracking result split =========="
 python ./tracking/utils_track/tracking_data_split.py \
   --track_dir ${dst_dir}/offline_tracked \
   --merged_dir ${dst_dir}/merged \
   --dataset_name ${data_name} \
-
-
-# # # # =====================================
-# # # # ======== Step 5: 将跟踪结果可视化为视频=======
-# # # # =====================================
-# # # # echo "========== 🚩 Generate a bev mp4 demo =========="
-python ./visual_data/demo_track_pre_lsy.py \
-  --sequence ${data_name} \
-
-
-# # # # # =====================================
-# # # # ======== Step 6: 生成drop_box=======
-
-# python ./visual_data/drop_box.py \
-#   --pred ${dst_dir}/merged/${data_name} \
-#   --track ${dst_dir}/offline_tracked/${data_name} \
-#   --droped ${dst_dir}/offline_tracked/${data_name} \
-#   --clear_droped
-
+  --file_pattern BiTrack
 
 
 # # # =====================================
-# # # ======== Step 7: 生成评测指标=======
+# # # ======== Step 5: 将跟踪结果可视化为视频=======
 # # # =====================================
-# # # echo "========== 🚩 Generate a metric  =========="
+# # # echo "========== 🚩 Generate a bev mp4 demo =========="
+# python ./visual_data/demo_track_pre_lsy.py \
+#   --sequence ${data_name} \
 
-# python ./visual_data/mogo_dataset_track_lisy.py
+
+# # # # =====================================
+# # # ======== Step 6: 生成drop_box=======
+
+python ./visual_data/drop_box.py \
+  --pred ${dst_dir}/merged/${data_name} \
+  --track ${dst_dir}/offline_tracked/${data_name} \
+  --droped ${dst_dir}/offline_tracked/${data_name} \
+  --clear_droped
+
+
+
+# # =====================================
+# # ======== Step 7: 生成评测指标=======
+# # =====================================
+# # echo "========== 🚩 Generate a metric  =========="
+
+python ./visual_data/mogo_dataset_track_lisy.py

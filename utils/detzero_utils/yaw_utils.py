@@ -77,7 +77,7 @@ def unwrap_yaw_angles_deg(angles):
     # 将角度转换为连续变化的形式
     diff = np.diff(angles)
     
-    jumps = np.abs(diff) > 150
+    jumps = np.abs(diff) > 130
     # 计算需要添加的补偿值
     corrections = np.zeros_like(angles)
     # 对于正向跳变（从正到负，且差值<-162度），添加180度
@@ -181,7 +181,7 @@ def fix_yaw_discontinuities(model_outputs):
                 
                 # 将修正后的角度转换回弧度并赋值回对象
                 for i, obj in enumerate(track_objects):
-                    obj.ry = math.radians(corrected_angles[i])
+                    obj.ry = math.radians(corrected_angles[i]%360)
                     # 更新原始 box 中的角度值
                     if len(obj.box) > 6:
                         obj.box[6] = obj.ry
