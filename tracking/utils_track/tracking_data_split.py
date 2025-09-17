@@ -78,6 +78,13 @@ def split_data(merged_dir, track_dir, sub_t, file_pattern='tracking-test'):
             if not os.path.exists(tracking_pkl_path):
                 raise FileNotFoundError(f"BiTrack-final.pkl not found in {clip_tracked_dir}")
             print(f"Processing {target_file}")
+        elif file_pattern == 'MCTrack':
+            # 处理MCTrack-final.pkl文件
+            target_file = 'MCTrack-final.pkl'
+            tracking_pkl_path = os.path.join(clip_tracked_dir, target_file)
+            if not os.path.exists(tracking_pkl_path):
+                raise FileNotFoundError(f"MCTrack-final.pkl not found in {clip_tracked_dir}")
+            print(f"Processing {target_file}")
         else:
             raise ValueError(f"Unknown file_pattern: {file_pattern}. Use 'tracking-test' or 'BiTrack'")
         
@@ -92,7 +99,7 @@ if __name__ == '__main__':
     parser.add_argument("--merged_dir", type=str, required=True)
     parser.add_argument("--dataset_name", type=str, required=True)
     parser.add_argument("--file_pattern", type=str, default="tracking-test", 
-                        help="File pattern to process: 'tracking-test' or 'BiTrack'")
+                        help="File pattern to process: 'tracking-test' or 'BiTrack' or 'MCTrack'")
     args = parser.parse_args()
 
     split_data(args.merged_dir, args.track_dir, args.dataset_name, args.file_pattern)

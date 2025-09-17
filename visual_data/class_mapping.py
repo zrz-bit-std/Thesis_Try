@@ -197,6 +197,7 @@ classname2id_7 = {
     "bicycle": 4,
     "pedestrian": 5,
     "motorcycle": 6,
+    "motor": 7,
     "ignore": 255,
 }
 class_name2refine_name = {
@@ -208,6 +209,7 @@ class_name2refine_name = {
     "pedestrian": 'Pedestrian',
     "person": 'Pedestrian',
     "motorcycle": 'Cyclist',
+    "motor": 'Cyclist',
     "ignore": 255,
 }
 classname2id_refine = {

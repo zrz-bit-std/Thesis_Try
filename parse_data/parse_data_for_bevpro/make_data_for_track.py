@@ -127,8 +127,9 @@ def get_track_data(res_dir,save_pkl_path,sequence_name):
         score_list = []
         boxes_lidar_list = []
         with open(frame_path,'r') as f:
+            print("frame_path is",frame_path)
             for line_ in f.readlines():
-                content_list = line_.strip().split('\t')
+                content_list = line_.strip().split()#'\t'
                 name_list.append(name_combile_dict[label_dict[content_list[0]]])
                 h,w,l,x,y,z,yaw,confidence = [float(i) for i in content_list[1:]] #c, h, w, l, new_center[0], new_center[1], new_center[2], yaw_new, confidence
                 score_list.append(confidence)

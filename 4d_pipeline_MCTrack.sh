@@ -4,7 +4,7 @@ export PYTHONPATH=$(pwd):$PYTHONPATH
 
 # # ========== 环境变量 ==========
 data_name=train_sh_3d_road_2_20250531_5000_lx
-src_dir=/rss/lishuaiyin/4D_label/origin
+src_dir=/rss/RALG/data/3.0_pro/Inter+Road/label/shanghai_road_2/p2_lx
 dst_dir=/rss/lishuaiyin/4D_label/dataset_track
 bev_config=/rss/yuanqingwen/4D_label/BEVFUSION/configs/camera+lidar+fisheye/raw_bevfusion_plus_fisheye_4D_prelabel_v2_200x200m_lmy.yaml
 ckpt_path=/rss/liumengyuan/BEVFUSION/tmp_output/bevfusion_lmy_0723/epoch_19.pth
@@ -37,19 +37,19 @@ IFS='_' read -r part1 location part3 part4 road_id part6 part7 <<< "$data_name"
 #   --mode ${mode} \
 
 
-# # echo "========== 🚩 Generate pkl =========="
+# echo "========== 🚩 Generate pkl =========="
 # python ./parse_data/parse_data_for_bevpro/create_data_mogo_wrh.py \
 #   --data_root ${dst_dir}/${data_name} \
 #   --use_fisheye
 
-# # =====================================
-# # ========== Step 2: 执行推理 ==========
-# # =====================================
-# # echo "========== 🚩 Run BEVFusion inference =========="
+# =====================================
+# ========== Step 2: 执行推理 ==========
+# =====================================
+# echo "========== 🚩 Run BEVFusion inference =========="
 # torchpack dist-run -np 4 python ./BEVFUSION/tools/visualize/get_infer_res.py ${bev_config} \
 #   --checkpoint ${ckpt_path} \
 #   --bbox-score 0.3 \
-  # --dataset_root ${dst_dir}/${data_name}
+#   --dataset_root ${dst_dir}/${data_name}
 # torchpack dist-run -np 8 python ./BEVFUSION/tools/visualize/get_infer_res.py ${bev_config} \
 #   --checkpoint ${ckpt_path} \
 #   --bbox-score 0.3 \
@@ -63,41 +63,42 @@ IFS='_' read -r part1 location part3 part4 road_id part6 part7 <<< "$data_name"
 #     --track_dir ${dst_dir}/offline_tracked \
 #     --dataset_name ${data_name} \
 
-# # =====================================
-# # ======== Step 3: 执行4D融合跟踪=======
-# # =====================================
+# =====================================
+# ======== Step 3: 执行4D融合跟踪=======
+# =====================================
 
-# # echo "========== 🚩 Perform 4D tracking =========="
-# # cd tracking
-# # pip install -e .
-# # cd ../utils
-# # python setup.py develop
-# # cd ../
+# echo "========== 🚩 Perform 4D tracking =========="
+# cd tracking
+# pip install -e .
+# cd ../utils
+# python setup.py develop
+# cd ../
 # python ./tracking/tools/run_track_20250224.py \
 #   --track_dir ${dst_dir}/offline_tracked \
 #   --dataset_name ${data_name} \
 #   --cfg_file ${track_cfg} \
 
-# # # # # # TODO：轨迹曲线拟合功能开发
+# # # # # TODO：轨迹曲线拟合功能开发
 
 
-# # # # # # echo "========== 🚩 Tracking result split =========="
+# # # # # echo "========== 🚩 Tracking result split =========="
 # python ./tracking/utils_track/tracking_data_split.py \
 #   --track_dir ${dst_dir}/offline_tracked \
 #   --merged_dir ${dst_dir}/merged \
 #   --dataset_name ${data_name} \
+#   --file_pattern MCTrack
 
 
-# # # # # # =====================================
-# # # # # # ======== Step 5: 将跟踪结果可视化为视频=======
-# # # # # # =====================================
-# # # # # # echo "========== 🚩 Generate a bev mp4 demo =========="
-# # # python ./visual_data/demo_track_pre_lsy.py \
-# # #   --sequence ${data_name} \
+# # # =====================================
+# # # ======== Step 5: 将跟踪结果可视化为视频=======
+# # # =====================================
+# # # echo "========== 🚩 Generate a bev mp4 demo =========="
+python ./visual_data/demo_track_pre_lsy.py \
+  --sequence ${data_name} \
 
 
-# # # # # # # =====================================
-# # # # # # ======== Step 6: 生成drop_box=======
+# # # # =====================================
+# # # ======== Step 6: 生成drop_box=======
 
 # python ./visual_data/drop_box.py \
 #   --pred ${dst_dir}/merged/${data_name} \
@@ -107,9 +108,9 @@ IFS='_' read -r part1 location part3 part4 road_id part6 part7 <<< "$data_name"
 
 
 
-# =====================================
-# ======== Step 7: 生成评测指标=======
-# =====================================
-# echo "========== 🚩 Generate a metric  =========="
+# # =====================================
+# # ======== Step 7: 生成评测指标=======
+# # =====================================
+# # echo "========== 🚩 Generate a metric  =========="
 
-python ./visual_data/mogo_dataset_track_lisy.py
+# python ./visual_data/mogo_dataset_track_lisy.py
