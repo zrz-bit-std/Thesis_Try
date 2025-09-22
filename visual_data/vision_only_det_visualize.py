@@ -90,11 +90,8 @@ def project_points(pts_3d, P, Tr):
     depth = pts_img[:, 2]
     pts_img[:, 0] /= pts_img[:, 2]
     pts_img[:, 1] /= pts_img[:, 2]
-
     mask = depth > 0.5
-    
 
-    # return pts_img[:, :2]
     return pts_img[mask, :2]
 
 
@@ -130,6 +127,7 @@ def visualize_scene(root_dir, frame_id=None):
     calib = load_calib(calib_file)
     boxes = parse_label(label_file)
 
+    # TODO: to read param by road_id!!!
     D_fisheye = np.array([-1.4700240669729036e-02, 
                           -2.1507305011098320e-03, 
                            2.5849931851393244e-04, 
@@ -194,7 +192,6 @@ def visualize_scene(root_dir, frame_id=None):
 
 
 if __name__ == "__main__":
-    # root_dir = "/adga/lushiyong/vis_anno/dataset/hm_i7_0908/kitti_result"   # 修改为你的数据集路径
-    root_dir = "/rss/4D_label_dataset_vision_only/Intersection/kitti_result"   # 修改为你的数据集路径
+    root_dir = "/rss/4D_label_dataset_vision_only/Intersection/train_bj_3d_road_7_20250919_lx-debug/kitti_result"   # 修改为你的数据集路径
     # frame_id = "1756955766059_wh3"                 # 修改为要可视化的帧id
     visualize_scene(root_dir, frame_id=None)

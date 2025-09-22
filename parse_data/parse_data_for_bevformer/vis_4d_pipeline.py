@@ -312,10 +312,7 @@ def vis_4d_pipeline(config):
 
 
 if __name__ == "__main__":
-    import config.wh_3 as config
+    # TODO: select config by road_id!!!
     import config.hm_7 as config
-    # import config.sh_2 as config
-    # import config.sh_5 as config
-    # import config.sh_6 as config
 
     dst_kitti_root = vis_4d_pipeline(config)
