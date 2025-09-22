@@ -62,6 +62,7 @@ class associate_det_to_tracks:
     def two_stage(self, det_data, track_data):
         det_box = det_data['boxes_global']
         det_score = det_data['score']
+        det_uuid = det_data['uuid']
         num_pts_in_det = det_data['num_points']
         det_name = det_data['name']
 
@@ -127,6 +128,7 @@ class associate_det_to_tracks:
     def only_two_stage(self, det_data, track_data):
         det_box = det_data['boxes_global']
         det_score = det_data['score']
+        det_uuid = det_data['uuid']
         num_pts_in_det = det_data['num_points']
         det_name = det_data['name']
 

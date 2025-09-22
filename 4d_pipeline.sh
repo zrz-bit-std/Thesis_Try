@@ -26,42 +26,42 @@ IFS='_' read -r part1 location part3 part4 road_id part6 part7 <<< "$data_name"
 # ========== Step 1: 数据解析：把采集好的数据进行解析 ==========
 # ===========================================================
 # echo "============== 🚩 Generate test.json =========="
-# python ./parse_data/parse_data_for_bevpro/create_data_for_bevpro_v2_lisy.py \
-#   --data_root ${src_dir} \
-#   --save_dir ${dst_dir} \
-#   --dataset_name ${data_name} \
-#   --location ${location} \
-#   --road ${road_id} \
-#   --calib ${calib} \
-#   --calib_version ${calib_version} \
-#   --mode ${mode} \
+python ./parse_data/parse_data_for_bevpro/create_data_for_bevpro_v2_lisy.py \
+  --data_root ${src_dir} \
+  --save_dir ${dst_dir} \
+  --dataset_name ${data_name} \
+  --location ${location} \
+  --road ${road_id} \
+  --calib ${calib} \
+  --calib_version ${calib_version} \
+  --mode ${mode} \
 
 
-# # echo "========== 🚩 Generate pkl =========="
-# python ./parse_data/parse_data_for_bevpro/create_data_mogo_wrh.py \
-#   --data_root ${dst_dir}/${data_name} \
-#   --use_fisheye
+# echo "========== 🚩 Generate pkl =========="
+python ./parse_data/parse_data_for_bevpro/create_data_mogo_wrh.py \
+  --data_root ${dst_dir}/${data_name} \
+  --use_fisheye
 
-# # =====================================
-# # ========== Step 2: 执行推理 ==========
-# # =====================================
-# # echo "========== 🚩 Run BEVFusion inference =========="
-# torchpack dist-run -np 4 python ./BEVFUSION/tools/visualize/get_infer_res.py ${bev_config} \
-#   --checkpoint ${ckpt_path} \
-#   --bbox-score 0.3 \
-  # --dataset_root ${dst_dir}/${data_name}
+# =====================================
+# ========== Step 2: 执行推理 ==========
+# =====================================
+# echo "========== 🚩 Run BEVFusion inference =========="
+torchpack dist-run -np 4 python ./BEVFUSION/tools/visualize/get_infer_res.py ${bev_config} \
+  --checkpoint ${ckpt_path} \
+  --bbox-score 0.3 \
+  --dataset_root ${dst_dir}/${data_name}
 # torchpack dist-run -np 8 python ./BEVFUSION/tools/visualize/get_infer_res.py ${bev_config} \
 #   --checkpoint ${ckpt_path} \
 #   --bbox-score 0.3 \
 #   --dataset_root /rss/RALG/data/3.0_pro/Inter+Road/version/val/v3/shanghai_5/
 
 # echo "========== 🚩 Split and synthesize the required pkl for tracking input =========="
-# python ./parse_data/parse_data_for_bevpro/make_data_for_track.py \
-#     --save_dir ${dst_dir}/merged \
-#     --origin_dir ${src_dir} \
-#     --det_dir ${dst_dir} \
-#     --track_dir ${dst_dir}/offline_tracked \
-#     --dataset_name ${data_name} \
+python ./parse_data/parse_data_for_bevpro/make_data_for_track.py \
+    --save_dir ${dst_dir}/merged \
+    --origin_dir ${src_dir} \
+    --det_dir ${dst_dir} \
+    --track_dir ${dst_dir}/offline_tracked \
+    --dataset_name ${data_name} \
 
 # # =====================================
 # # ======== Step 3: 执行4D融合跟踪=======
@@ -73,19 +73,19 @@ IFS='_' read -r part1 location part3 part4 road_id part6 part7 <<< "$data_name"
 # # cd ../utils
 # # python setup.py develop
 # # cd ../
-# python ./tracking/tools/run_track_20250224.py \
-#   --track_dir ${dst_dir}/offline_tracked \
-#   --dataset_name ${data_name} \
-#   --cfg_file ${track_cfg} \
+python ./tracking/tools/run_track_20250224.py \
+  --track_dir ${dst_dir}/offline_tracked \
+  --dataset_name ${data_name} \
+  --cfg_file ${track_cfg} \
 
 # # # # # # TODO：轨迹曲线拟合功能开发
 
 
 # # # # # # echo "========== 🚩 Tracking result split =========="
-# python ./tracking/utils_track/tracking_data_split.py \
-#   --track_dir ${dst_dir}/offline_tracked \
-#   --merged_dir ${dst_dir}/merged \
-#   --dataset_name ${data_name} \
+python ./tracking/utils_track/tracking_data_split.py \
+  --track_dir ${dst_dir}/offline_tracked \
+  --merged_dir ${dst_dir}/merged \
+  --dataset_name ${data_name} \
 
 
 # # # # # # =====================================
@@ -99,17 +99,17 @@ IFS='_' read -r part1 location part3 part4 road_id part6 part7 <<< "$data_name"
 # # # # # # # =====================================
 # # # # # # ======== Step 6: 生成drop_box=======
 
-# python ./visual_data/drop_box.py \
-#   --pred ${dst_dir}/merged/${data_name} \
-#   --track ${dst_dir}/offline_tracked/${data_name} \
-#   --droped ${dst_dir}/offline_tracked/${data_name} \
-#   --clear_droped
+python ./visual_data/drop_box.py \
+  --pred ${dst_dir}/merged/${data_name} \
+  --track ${dst_dir}/offline_tracked/${data_name} \
+  --droped ${dst_dir}/offline_tracked/${data_name} \
+  --clear_droped
 
 
 
-# =====================================
-# ======== Step 7: 生成评测指标=======
-# =====================================
-# echo "========== 🚩 Generate a metric  =========="
+=====================================
+======== Step 7: 生成评测指标=======
+=====================================
+echo "========== 🚩 Generate a metric  =========="
 
 python ./visual_data/mogo_dataset_track_lisy.py

@@ -110,7 +110,7 @@ class TrackManager():
         if self.modules_dicts['reverse_tracking_config'].enable:
             frm_tracks = dict()
             reverse_tracks = list()
-            keys = ['boxes_global', 'name', 'score', 'sample_idx',
+            keys = ['boxes_global', 'name','uuid', 'score', 'sample_idx',
                     'hit', 'num_points', 'obj_ids']
 
             # transfer the tracking result to frame-level strutcure
@@ -159,16 +159,20 @@ class TrackManager():
         tk_boxes = np.zeros((len(tracks), 9), dtype=np.float32)
         tk_name = list()
         tk_score = list()
+        tk_uuid = list()
 
         for i, tk in enumerate(tracks):
             tk_boxes[i] = tk.predict(frm_id)[:9]
             tk_name.append(tk.name)
             tk_score.append(tk.score)
+            tk_uuid.append(tk.uuid)
 
         tk_data = {
             'boxes_global': np.array(tk_boxes),
             'name': np.array(tk_name),
+            'uuid':np.array(tk_uuid),
             'score': np.array(tk_score),
+            
         }
         return tk_data
 
@@ -185,11 +189,13 @@ class TrackManager():
 
             det_boxes = det_data['boxes_global']
             det_name = det_data['name']
+            det_uuid = det_data['uuid']
             for match_idx, match in enumerate(matched):
                 tk_idx, det_idx = match
                 tracks[tk_idx].update(
                     det_boxes[det_idx],
                     det_name[det_idx],
+                    det_uuid[det_idx],
                     det_data['score'][det_idx],
                     det_data['num_points'][det_idx] if not da_stage else 0,
                     two_stage=matched_stage[match_idx]
@@ -198,7 +204,8 @@ class TrackManager():
             for _, det_idx in enumerate(det_unmatch):
                 tracks.append(self.modules_dicts['filter_module'](
                     bbox=det_boxes[det_idx],
-                    name=det_name[det_idx], 
+                    name=det_name[det_idx],
+                    uuid=det_uuid[det_idx], 
                     score=det_data['score'][det_idx],
                     frame_id=frame_id,
                     track_id=track_id_count, 
@@ -251,10 +258,11 @@ class TrackManager():
 
             det_boxes = det_data['boxes_global'][:, :9]
             det_name = det_data['name']
+            det_uuid = det_data['uuid']
             for match_idx, match in enumerate(matched):
                 trk_idx, det_idx = match
                 if trk_idx >= len(tracks): continue
-                tracks[trk_idx].update(det_boxes[det_idx], det_name[det_idx], det_data['score'][det_idx],
+                tracks[trk_idx].update(det_boxes[det_idx], det_name[det_idx],det_uuid, det_data['score'][det_idx],
                                         det_data['num_points'][det_idx] if not da_stage else 0, two_stage=True)
 
         if self.modules_dicts['track_merge_config']['enable']:
@@ -273,6 +281,7 @@ class TrackManager():
             tracks.append(self.modules_dicts['filter_module'](
                 bbox=trk_data['boxes_global'][obj_idx][:7], 
                 name=trk_data['name'][obj_idx],
+                uuid=trk_data['uuid'][obj_idx],
                 score=trk_data['score'][obj_idx],
                 frame_id=frame_id,
                 track_id=trk_data['obj_ids'][obj_idx],

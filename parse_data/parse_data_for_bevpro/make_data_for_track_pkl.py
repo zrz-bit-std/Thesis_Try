@@ -126,16 +126,20 @@ def get_track_data(res_dir,save_pkl_path,sequence_name):
         name_list = []
         score_list = []
         boxes_lidar_list = []
+        uuid_list = []
         with open(frame_path,'r') as f:
             for line_ in f.readlines():
                 content_list = line_.strip().split()#'\t'
-                name_list.append(name_combile_dict[label_dict[content_list[0]]])
-                h,w,l,x,y,z,yaw,confidence = [float(i) for i in content_list[1:]] #c, h, w, l, new_center[0], new_center[1], new_center[2], yaw_new, confidence
+                name_list.append(name_combile_dict[label_dict[content_list[1]]])
+                h,w,l,x,y,z,yaw,confidence = [float(i) for i in content_list[2:]] #c, h, w, l, new_center[0], new_center[1], new_center[2], yaw_new, confidence
                 score_list.append(confidence)
-                boxes_lidar_frame = np.array([x,y,z,l,w,h,math.radians(yaw),confidence,label_dict[content_list[0]]])
+                uuid_list.append(content_list[0])
+                boxes_lidar_frame = np.array([x,y,z,l,w,h,math.radians(yaw),confidence,label_dict[content_list[1]]])
                 boxes_lidar_list.append(boxes_lidar_frame)
         name_array = np.array(name_list,dtype=np.dtype('U22'))
+
         save_dict = {
+            'uuid':np.array(uuid_list),
             'name':name_array,
             'boxes_lidar':np.array(boxes_lidar_list),
             'frame_id':frame_id,

@@ -112,6 +112,7 @@ class DataProcessor(object):
         if data_dict.get('boxes_lidar', None) is not None and data_dict["boxes_lidar"].size > 0:
             boxes_lidar = data_dict["boxes_lidar"]
             names = data_dict["name"]
+            uuids = data_dict["uuid"]
             scores = data_dict["score"]
             if len(names) == 0:
                 return data_dict

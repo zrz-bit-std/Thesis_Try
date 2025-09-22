@@ -10,10 +10,11 @@ class AB3DMOT(BaseKalmanFilter):
     """
     Kalman Filter same with AB3DMOT
     """
-    def __init__(self, bbox, name, score, frame_id, track_id, num_points=0,
+    def __init__(self, bbox, name, uuid,score, frame_id, track_id, num_points=0,
                  x_dim=5, z_dim=3, delta_t=0.1, p=[1, 1], q=[1, 1], r=1):
         self.name = name
         self.score = score
+        self.uuid = uuid
         self.update_score = score
         self.num_points = -1
 
@@ -108,7 +109,7 @@ class AB3DMOT(BaseKalmanFilter):
         self.bbox = bbox
         return self.bbox
 
-    def update(self, bbox, name, score, num_points, two_stage=False):
+    def update(self, bbox, name, uuid, score, num_points, two_stage=False):
         """ 
         Updates the state vector with observed bbox.
         """
@@ -116,6 +117,7 @@ class AB3DMOT(BaseKalmanFilter):
         self.miss = 0
         self.hits += 1
         self.score = score
+        self.uuid = uuid
         self.name = name
 
         ######################### orientation correction
