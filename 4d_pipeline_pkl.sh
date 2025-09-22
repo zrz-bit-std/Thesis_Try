@@ -73,35 +73,35 @@ IFS='_' read -r part1 location part3 part4 road_id part6 part7 <<< "$data_name"
 # # # cd ../utils
 # # # python setup.py develop
 # # # cd ../
-# python ./tracking/tools/run_track_pkl.py \
-#   --track_dir ${dst_dir}/offline_tracked \
-#   --dataset_name ${data_name} \
-#   --cfg_file ${track_cfg} \
+python ./tracking/tools/run_track_pkl.py \
+  --track_dir ${dst_dir}/offline_tracked \
+  --dataset_name ${data_name} \
+  --cfg_file ${track_cfg} \
 
 
-# # # # # # # echo "========== 🚩 Tracking result split =========="
-# python ./tracking/utils_track/tracking_data_split_pkl.py \
-#   --track_dir ${dst_dir}/offline_tracked \
-#   --merged_dir ${dst_dir}/merged \
-#   --dataset_name ${data_name} \
+# # # # # # echo "========== 🚩 Tracking result split =========="
+python ./tracking/utils_track/tracking_data_split_pkl.py \
+  --track_dir ${dst_dir}/offline_tracked \
+  --merged_dir ${dst_dir}/merged \
+  --dataset_name ${data_name} \
+
+
+# # # # # =====================================
+# # # # # ======== Step 5: 将跟踪结果可视化为视频=======
+# # # # # =====================================
+# # # # # echo "========== 🚩 Generate a bev mp4 demo =========="
+# # python ./visual_data/demo_track_pre_lsy.py \
+# #   --sequence ${data_name} \
 
 
 # # # # # # =====================================
-# # # # # # ======== Step 5: 将跟踪结果可视化为视频=======
-# # # # # # =====================================
-# # # # # # echo "========== 🚩 Generate a bev mp4 demo =========="
-# # # python ./visual_data/demo_track_pre_lsy.py \
-# # #   --sequence ${data_name} \
+# # # # # ======== Step 6: 生成drop_box.pkl文件和 track_box.pkl文件=======
 
-
-# # # # # # # =====================================
-# # # # # # ======== Step 6: 生成drop_box.pkl文件和 track_box.pkl文件=======
-
-# python ./visual_data/drop_box_pkl.py \
-#   --pred ${dst_dir}/merged/${data_name} \
-#   --track ${dst_dir}/offline_tracked/${data_name} \
-#   --droped ${dst_dir}/offline_tracked/${data_name} \
-#   --clear_droped
+python ./visual_data/drop_box_pkl.py \
+  --pred ${dst_dir}/merged/${data_name} \
+  --track ${dst_dir}/offline_tracked/${data_name} \
+  --droped ${dst_dir}/offline_tracked/${data_name} \
+  --clear_droped
 
 
 
@@ -110,4 +110,4 @@ IFS='_' read -r part1 location part3 part4 road_id part6 part7 <<< "$data_name"
 # =====================================
 # # echo "========== 🚩 Generate a metric  =========="
 
-python ./visual_data/mogo_dataset_track_lisy_pkl.py
+# python ./visual_data/mogo_dataset_track_lisy_pkl.py

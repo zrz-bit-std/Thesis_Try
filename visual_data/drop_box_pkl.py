@@ -67,14 +67,14 @@ def read_pred_txt(file_path):
             if len(vals) < 9:
                 continue
                 
-            # 检查标签是否在映射中
+            # 棜查标签是否在映射中
             if vals[1] not in class_name2refine_name:
                 print(f"Warning: Unknown label '{vals[1]}' in file {file_path}")
                 continue
                 
             class_name = class_name2refine_name[vals[1]]  # 获取映射后的类别名，如'person'->'Pedestrian'
-            vals = list(map(float, vals[2:10]))
-            h, w, l, x, y, z, yaw, confidence = vals
+            vals_ = list(map(float, vals[2:10]))
+            h, w, l, x, y, z, yaw, confidence = vals_
             yaw = np.radians(yaw)
             # 构造bbox: [x, y, z, w, l, h, yaw, confidence, class_name]
             bbox = [x, y, z, w, l, h, yaw, confidence, class_name,vals[0]]
@@ -133,7 +133,7 @@ def read_detection_txt(file_path):
                         continue
                     
                     # 构造bbox: [x, y, z, w, l, h, yaw, score, class_name]
-                    bbox = [x, y, z, w, l, h, yaw, score, final_class_name]
+                    bbox = [x, y, z, w, l, h, yaw, score, final_class_name,vals[0]]
                     boxes.append(bbox)
                 except Exception as e:
                     print(f"Warning: Error parsing line {line_num} in {file_path}: {e}")
@@ -197,6 +197,34 @@ def find_unmatched_detections(pred_boxes, track_boxes, distance_threshold=1.0):
             
     return unmatched
 
+def find_added_detections(pred_boxes, track_boxes, distance_threshold=1.0):
+    """
+    找到在track中存在但在pred中没有匹配的检测框（新增的目标）
+    使用中心点距离来判断是否匹配
+    """
+    added = []
+    
+    for track_box in track_boxes:
+        matched = False
+        for pred_box in pred_boxes:
+            # 首先检查类别是否相同
+            if track_box[8] != pred_box[8]:  # class_name
+                continue
+                
+            # 计算中心点距离
+            distance = box_distance(track_box, pred_box)
+            
+            # 如果距离小于阈值，则认为是匹配的
+            if distance < distance_threshold:
+                matched = True
+                break
+                
+        # 只有当跟踪框没有匹配的预测框时，才将其添加到新增列表中
+        if not matched:
+            added.append(track_box)
+            
+    return added
+
 def clear_droped_files(drop_root):
     """
     清除droped文件夹下的所有txt文件
@@ -212,12 +240,28 @@ def clear_droped_files(drop_root):
                 txt_file.unlink()
             print(f"Cleared txt files in {droped_dir}")
 
+def clear_added_files(added_root):
+    """
+    清除added文件夹下的所有txt文件
+    """
+    if not added_root.exists():
+        return
+        
+    # 遍历added_root目录及其子目录，查找所有added文件夹
+    for added_dir in added_root.rglob("added"):
+        if added_dir.is_dir():
+            # 删除added目录下的所有txt文件
+            for txt_file in added_dir.glob("*.txt"):
+                txt_file.unlink()
+            print(f"Cleared txt files in {added_dir}")
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--pred', type=str, required=True, help='预测文件目录')
     parser.add_argument('--track', type=str, required=True, help='跟踪结果目录')
     parser.add_argument('--droped', type=str, required=True, help='输出的droped目录')
     parser.add_argument('--clear_droped', action='store_true', help='在生成新文件前清空droped目录下的txt文件')
+    parser.add_argument('--clear_added', action='store_true', help='在生成新文件前清空added目录下的txt文件')
     args = parser.parse_args()
     
     pred_root = Path(args.pred)
@@ -227,6 +271,10 @@ def main():
     # 如果指定--clear_droped参数，则清空droped目录下的txt文件
     if args.clear_droped:
         clear_droped_files(drop_root)
+    
+    # 如果指定--clear_added参数，则清空added目录下的txt文件
+    if args.clear_added:
+        clear_added_files(drop_root)
     
     # drop_root.mkdir(parents=True, exist_ok=True)
     
@@ -325,6 +373,48 @@ def main():
         elif drop_file.exists():
             # 如果没有未匹配的框，但drop文件已存在，则删除它
             drop_file.unlink()
+            
+        # 查找新增的检测框（在跟踪结果中存在但在预测结果中不存在）
+        added_boxes = find_added_detections(pred_boxes, track_boxes)
+        
+        # 确定added文件路径，与droped同级
+        added_path_parts = list(relative_path.parts)
+        if len(added_path_parts) > 0:
+            added_path_parts.insert(1, "added")
+        else:
+            added_path_parts = ["added"]
+            
+        added_relative_path = Path(*added_path_parts)
+        added_file = drop_root / added_relative_path
+        
+        # 确保输出目录存在
+        added_file.parent.mkdir(parents=True, exist_ok=True)
+        
+        # 写入added文件
+        if len(added_boxes) > 0:
+            with open(added_file, 'w') as f:
+                for box in added_boxes:
+                    # 转换回原始格式: label h w l x y z yaw_deg score
+                    # 查找原始标签
+                    class_name = box[8]
+                    
+                    # 尝试找到原始标签
+                    original_label = None
+                    # 通过class_name2refine_name反向查找
+                    for k, v in class_name2refine_name.items():
+                        if v == class_name:
+                            original_label = k
+                            break
+                    
+                    # 如果无法找到原始标签，使用类别名作为标签
+                    if original_label is None:
+                        original_label = str(class_name)
+                    
+                    yaw_deg = np.degrees(box[6])
+                    f.write(f"{box[9]} {original_label} {box[5]} {box[3]} {box[4]} {box[0]} {box[1]} {box[2]} {yaw_deg} {box[7]}\n")
+        elif added_file.exists():
+            # 如果没有新增的框，但added文件已存在，则删除它
+            added_file.unlink()
+
 if __name__ == "__main__":
     main()
-

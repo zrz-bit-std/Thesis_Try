@@ -201,6 +201,10 @@ class TrackManager():
                     two_stage=matched_stage[match_idx]
                 )
 
+            # 对于未匹配的跟踪结果，将uuid设置为9999
+            for tk_idx in track_unmatch:
+                tracks[tk_idx].uuid = 9999
+
             for _, det_idx in enumerate(det_unmatch):
                 tracks.append(self.modules_dicts['filter_module'](
                     bbox=det_boxes[det_idx],
