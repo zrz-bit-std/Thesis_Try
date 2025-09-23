@@ -39,6 +39,7 @@ def split_clip_for_merged(save_dir, origin_dir, det_dir, sub_t):
     clip_list = os.listdir(orgin_sub_t)
     model_sub_t = os.path.join(det_dir, sub_t, 'model_pred')
     model_txt_set = set([i.split('.t')[0] for i in os.listdir(model_sub_t)])
+    breakpoint()
     for clip_name in tqdm(clip_list):
         if 'txt' in clip_name:
             continue
