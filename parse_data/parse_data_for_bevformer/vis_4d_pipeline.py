@@ -240,7 +240,10 @@ def vis_anno_pipeline(config):
             line_data = np.array([line.strip().split(' ') for line in lines])
             line_data = np.delete(line_data, np.s_[1:8], axis=1)
             
-            line_data[:, -2] = np.float32(line_data[:, -2])/3.14*180.0
+            # line_data[:, -2] = np.float32(line_data[:, -2])/3.14*180.0
+            yaw = np.float32(line_data[:, -2]) / 3.14 * 180.0
+            line_data[:, -2] = [f"{v:.6f}" for v in yaw]   # 保留6位小数
+
             target_num = len(lines)
             with open(pkl_path, 'rb') as f:
                 data = pickle.load(f)
