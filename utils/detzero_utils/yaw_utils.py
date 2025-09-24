@@ -76,8 +76,7 @@ def unwrap_yaw_angles_deg(angles):
         
     # 将角度转换为连续变化的形式
     diff = np.diff(angles)
-    
-    jumps = np.abs(diff) > 130
+    jumps = (np.abs(diff) > 130) & (np.abs(diff) < 300)
     # 计算需要添加的补偿值
     corrections = np.zeros_like(angles)
     # 对于正向跳变（从正到负，且差值<-162度），添加180度
