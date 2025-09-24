@@ -52,7 +52,12 @@ python ./visual_data/process_pkl_to_txt.py \
 
 
 
-
+python ./parse_data/parse_data_for_bevpro/make_data_for_track_pkl.py \
+    --save_dir ${dst_dir}/merged \
+    --origin_dir ${src_dir} \
+    --det_dir ${dst_dir} \
+    --track_dir ${dst_dir}/offline_tracked \
+    --dataset_name ${data_name} \
 
 # # # =====================================
 # # # ======== Step 3: 执行4D融合跟踪=======
