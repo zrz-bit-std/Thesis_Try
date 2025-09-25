@@ -82,4 +82,8 @@ for pkl_file in pkl_files:
             print(f"[模拟] 将会重命名: {pkl_file} -> {new_name}")
         else:
             shutil.move(old_path, new_path)
+<<<<<<< HEAD
             count += 1
+=======
+            count += 1
+>>>>>>> 5cd46e38c1f0eebe4dce71aa501d95bed9d34e95

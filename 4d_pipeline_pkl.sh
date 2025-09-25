@@ -38,7 +38,7 @@ dst_pkl_dir="${dst_dir}/${data_name}/model_pred_pkl"
 
 
 # ===========================================================
-# ========== Step 1: 数据解析：将数据放到指定路径下 ==========
+# ========== Step 2: 数据解析：将数据放到指定路径下 ==========
 # ===========================================================
 # echo "============== 🚩 执行cp命令 =========="
 # # # # # # # # # 检查源目录是否存在
@@ -67,14 +67,12 @@ dst_pkl_dir="${dst_dir}/${data_name}/model_pred_pkl"
 #   --output_dir ${dst_dir}/${data_name}/model_pred
 
 
-# echo "========== 🚩 Split and synthesize the required pkl for tracking input =========="
-# python ./parse_data/parse_data_for_bevpro/make_data_for_track_pkl.py \
-#     --save_dir ${dst_dir}/merged \
-#     --origin_dir ${src_dir} \
-#     --det_dir ${dst_dir} \
-#     --track_dir ${dst_dir}/offline_tracked \
-#     --dataset_name ${data_name} \
-
+python ./parse_data/parse_data_for_bevpro/make_data_for_track_pkl.py \
+    --save_dir ${dst_dir}/merged \
+    --origin_dir ${src_dir} \
+    --det_dir ${dst_dir} \
+    --track_dir ${dst_dir}/offline_tracked \
+    --dataset_name ${data_name} \
 
 # # # =====================================
 # # # ======== Step 3: 执行4D融合跟踪=======
@@ -101,7 +99,7 @@ dst_pkl_dir="${dst_dir}/${data_name}/model_pred_pkl"
 
 
 # # # # # # =====================================
-# # # # # ======== Step 5: 生成drop_box.pkl文件和 track_box.pkl文件=======
+# # # # # ======== Step 4: 生成drop_box.pkl文件和 track_box.pkl文件=======
 
 # python ./visual_data/drop_box_pkl.py \
 #   --pred ${dst_dir}/merged/${data_name} \
@@ -112,7 +110,7 @@ dst_pkl_dir="${dst_dir}/${data_name}/model_pred_pkl"
 
 
 # # # # # ==================================================
-# # # # # ======== Step 6: 将跟踪结果可视化为视频_Lidar=======
+# # # # # ======== Step 5: 将跟踪结果可视化为视频_Lidar=======
 # # # # # ==================================================
 # #  echo "========== 🚩 Generate a bev mp4 demo =========="
 # # python ./visual_data/demo_track_pre_lsy.py \
@@ -121,12 +119,12 @@ dst_pkl_dir="${dst_dir}/${data_name}/model_pred_pkl"
 
 
 # # # # # ===================================================
-# # # # # ======== Step 6: 将跟踪结果可视化为视频_Camera=======
+# # # # # ======== Step 5: 将跟踪结果可视化为视频_Camera=======
 # # # # # ===================================================
 # 两者都做 & 合并视频
-python ./visual_data/demo_track_bev_camera_combine.py \
-    --sequence ${data_name} \
-    --vis-type both
+# python ./visual_data/demo_track_bev_camera_combine.py \
+#     --sequence ${data_name} \
+#     --vis-type both
 
 # 生成覆盖视频
 # python ./visual_data/demo_track_bev_camera_combine.py \
@@ -136,7 +134,7 @@ python ./visual_data/demo_track_bev_camera_combine.py \
 
 
 # =====================================
-# ======== Step 7: 生成评测指标=======
+# ======== Step 6: 生成评测指标=======
 # =====================================
 # # echo "========== 🚩 Generate a metric  =========="
 
