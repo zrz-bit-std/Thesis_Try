@@ -83,18 +83,3 @@ for pkl_file in pkl_files:
         else:
             shutil.move(old_path, new_path)
             count += 1
-```
-
-```python
-<<<<<<< SEARCH
-print(f"成功重命名 {count} 个文件")
-if args.dry_run:
-    print(f"[模拟] 完成。共找到 {count} 个可重命名文件（未实际执行）")
-else:
-    print(f"成功重命名 {count} 个文件")
-        # 可选：打印重命名详情
-        # print(f"重命名: {pkl_file} -> {new_name}")
-    else:
-        print(f"警告: 没有找到时间戳 {timestamp} 对应的jpg文件")
-
-print(f"成功重命名 {count} 个文件")
