@@ -7,6 +7,9 @@ data/
 # Explicitly ignore Waymo raw data
 data/waymo/raw_data/
 
+# Ignore visualization/output artifacts
+detection_vis/output/
+
 **log**
 
 *.ipynb_checkpoints/
