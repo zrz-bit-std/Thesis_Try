@@ -1,0 +1,109 @@
+CLASS_NAMES: ['Vehicle', 'Pedestrian', 'Cyclist']
+
+DATA_CONFIG:
+    _BASE_CONFIG_: cfgs/det_dataset_cfgs/waymo_vision_small.yaml
+
+MODEL:
+    NAME: BEVFormer
+    
+    USE_GRID_MASK: True
+    VIDEO_TEST_MODE: True
+    
+    # Image backbone
+    IMG_BACKBONE:
+        TYPE: ResNet
+        DEPTH: 50
+        NUM_STAGES: 4
+        OUT_INDICES: [1, 2, 3]
+        FROZEN_STAGES: 1
+        NORM_CFG:
+            TYPE: BN2d
+            REQUIRES_GRAD: False
+        NORM_EVAL: True
+        STYLE: caffe
+    
+    # Image neck (FPN)
+    IMG_NECK:
+        TYPE: FPN
+        IN_CHANNELS: [512, 1024, 2048]
+        OUT_CHANNELS: 256
+        START_LEVEL: 0
+        ADD_EXTRA_CONVS: on_output
+        NUM_OUTS: 4
+        RELU_BEFORE_EXTRA_CONVS: True
+    
+    # BEVFormer head
+    PTS_BBOX_HEAD:
+        TYPE: BEVFormerHead
+        BEV_H: 200
+        BEV_W: 200
+        NUM_QUERY: 900
+        NUM_CLASSES: 3
+        IN_CHANNELS: 256
+        SYNC_CLS_AVG_FACTOR: True
+        WITH_BOX_REFINE: True
+        AS_TWO_STAGE: False
+        
+        TRANSFORMER:
+            TYPE: PerceptionTransformer
+            ROTATE_PREV_BEV: True
+            USE_SHIFT: True
+            USE_CAN_BUS: True
+            EMBED_DIMS: 256
+            
+            ENCODER:
+                TYPE: BEVFormerEncoder
+                NUM_LAYERS: 6
+                PC_RANGE: [-74.88, -74.88, -2, 74.88, 74.88, 4]
+                NUM_POINTS_IN_PILLAR: 4
+                RETURN_INTERMEDIATE: False
+            
+            DECODER:
+                TYPE: DetectionTransformerDecoder
+                NUM_LAYERS: 6
+                RETURN_INTERMEDIATE: True
+        
+        BBOX_CODER:
+            TYPE: NMSFreeCoder
+            POST_CENTER_RANGE: [-80, -80, -10.0, 80, 80, 10.0]
+            PC_RANGE: [-74.88, -74.88, -2, 74.88, 74.88, 4]
+            MAX_NUM: 300
+            VOXEL_SIZE: [0.2, 0.2, 8]
+            NUM_CLASSES: 3
+        
+        LOSS_CLS:
+            TYPE: FocalLoss
+            USE_SIGMOID: True
+            GAMMA: 2.0
+            ALPHA: 0.25
+            LOSS_WEIGHT: 2.0
+        
+        LOSS_BBOX:
+            TYPE: L1Loss
+            LOSS_WEIGHT: 0.25
+        
+        LOSS_IOU:
+            TYPE: GIoULoss
+            LOSS_WEIGHT: 0.0
+    
+    POST_PROCESSING:
+        RECALL_THRESH_LIST: [0.3, 0.5, 0.7]
+        SCORE_THRESH: 0.1
+        OUTPUT_RAW_SCORE: False
+        EVAL_METRIC: waymo
+
+OPTIMIZATION:
+    BATCH_SIZE_PER_GPU: 1
+    NUM_EPOCHS: 24
+
+    OPTIMIZER: adamw
+    LR: 2e-4
+    WEIGHT_DECAY: 0.01
+    
+    # Cosine annealing
+    LR_SCHEDULER: cosine
+    WARMUP_EPOCH: 1
+    MIN_LR_RATIO: 1e-3
+    
+    GRAD_NORM_CLIP: 35
+

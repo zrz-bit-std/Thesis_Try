@@ -4,6 +4,9 @@
 
 data/
 
+# Explicitly ignore Waymo raw data
+data/waymo/raw_data/
+
 **log**
 
 *.ipynb_checkpoints/
