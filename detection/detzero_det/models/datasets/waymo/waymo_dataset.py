@@ -7,9 +7,9 @@ import numpy as np
 from detzero_utils import common_utils
 from detzero_utils.ops.roiaware_pool3d import roiaware_pool3d_utils
 
-from detzero_det.datasets.dataset import DatasetTemplate
-from detzero_det.datasets.augmentor.data_augmentor import DataAugmentor
-from detzero_det.datasets.augmentor.test_time_augmentor import TestTimeAugmentor
+from detzero_det.models.datasets.dataset import DatasetTemplate
+from detzero_det.models.datasets.augmentor.data_augmentor import DataAugmentor
+from detzero_det.models.datasets.augmentor.test_time_augmentor import TestTimeAugmentor
 
 
 class WaymoDetectionDataset(DatasetTemplate):

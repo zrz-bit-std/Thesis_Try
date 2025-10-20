@@ -15,8 +15,8 @@ import torch
 from detzero_utils import common_utils, box_utils
 from detzero_utils.ops.roiaware_pool3d import roiaware_pool3d_utils
 
-from detzero_det.datasets.waymo.waymo_dataset import WaymoDetectionDataset
-from detzero_det.datasets.waymo import waymo_utils
+from detzero_det.models.datasets.waymo.waymo_dataset import WaymoDetectionDataset
+from detzero_det.models.datasets.waymo import waymo_utils
 
 
 def get_infos_worker(save_path, sample_sequence_file_list,
@@ -30,8 +30,11 @@ def get_infos_worker(save_path, sample_sequence_file_list,
         waymo_utils.process_single_sequence_and_save,
         save_path=save_path,
         has_label=has_label,
+        filter_empty_boxes=False,  # Keep all GT boxes, don't filter by point count
     )
-
+    # breakpoint()
+    # temp_res = waymo_utils.process_single_sequence_and_save(save_path=save_path, has_label=has_label)
+    # breakpoint
     with futures.ThreadPoolExecutor(num_workers) as executor:
         sequence_infos = list(tqdm(executor.map(process_single_sequence, sample_sequence_file_list),
                                    total=len(sample_sequence_file_list)))
@@ -51,7 +54,9 @@ def create_waymo_infos(dataset_cfg, class_names, data_path, save_path,
     )
     sweeps = dataset.sweep_count
     
-    train_split, val_split, test_split = 'train', 'val', 'test'
+    train_split = dataset_cfg.DATA_SPLIT['train']
+    val_split = dataset_cfg.DATA_SPLIT['test']  # 使用test作为验证集
+    test_split = dataset_cfg.DATA_SPLIT['test']
     train_filename = os.path.join(save_path, ('waymo_infos_%s.pkl' % train_split))
     val_filename = os.path.join(save_path, ('waymo_infos_%s.pkl' % val_split))
     test_filename = os.path.join(save_path, ('waymo_infos_%s.pkl' % test_split))
@@ -66,17 +71,19 @@ def create_waymo_infos(dataset_cfg, class_names, data_path, save_path,
         dataset.check_sequence_name_with_all_version(os.path.join(raw_data_path, sequence_file))
         for sequence_file in dataset.sample_sequence_list
     ]
-    
+    # breakpoint()
+
     waymo_infos_train = get_infos_worker(
         save_path=os.path.join(save_path, processed_data_tag),
         sample_sequence_file_list=sample_sequence_file_list,
         num_workers=workers,
         has_label=True
     )
-
+    
     with open(train_filename, 'wb') as f:
         pickle.dump(waymo_infos_train, f)
     print('----------------Waymo info train file is saved to %s----------------' % train_filename)
+    
 
     # pre-process valdation part
     dataset.set_split(val_split)
@@ -86,7 +93,7 @@ def create_waymo_infos(dataset_cfg, class_names, data_path, save_path,
         dataset.check_sequence_name_with_all_version(os.path.join(raw_data_path, sequence_file))
         for sequence_file in dataset.sample_sequence_list
     ]
-
+    # breakpoint()
     waymo_infos_val = get_infos_worker(
         save_path=os.path.join(save_path, processed_data_tag),
         sample_sequence_file_list=sample_sequence_file_list,
@@ -106,7 +113,7 @@ def create_waymo_infos(dataset_cfg, class_names, data_path, save_path,
         dataset.check_sequence_name_with_all_version(os.path.join(raw_data_path, sequence_file))
         for sequence_file in dataset.sample_sequence_list
     ]
-    
+    # breakpoint()
     waymo_infos_test = get_infos_worker(
         save_path=os.path.join(save_path, processed_data_tag),
         sample_sequence_file_list=sample_sequence_file_list,

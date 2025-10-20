@@ -220,11 +220,10 @@ def process_single_sequence_and_save(sequence_file: str, save_path: Path, has_la
         os.makedirs(cur_save_dir)
     pkl_file = os.path.join(cur_save_dir, ('%s.pkl' % sequence_name))
 
-    # 强制重新处理，不检查缓存
-    # if os.path.exists(pkl_file):
-    #     sequence_infos = pickle.load(open(pkl_file, 'rb'))
-    #     print('Skip sequence since it has been processed before: %s' % pkl_file)
-    #     return sequence_infos
+    if os.path.exists(pkl_file):
+        sequence_infos = pickle.load(open(pkl_file, 'rb'))
+        print('Skip sequence since it has been processed before: %s' % pkl_file)
+        return sequence_infos
     # breakpoint()
     sequence_infos, sequence_points = \
         process_single_tfrecord_multiprocessing(
